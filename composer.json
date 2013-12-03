@@ -1,0 +1,26 @@
+{
+    "name": "graham-campbell/core",
+    "description": "Core Provides Some Extra Functionality For Laravel 4",
+    "keywords": ["laravel", "framework", "base", "starter", "core", "Core", "Laravel Core", "Laravel-Core", "Graham Campbell", "GrahamCampbell"],
+    "license": "Apache License 2.0",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@mineuk.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.7",
+        "orchestra/testbench": "~2"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.*@stable",
+        "phpunit/phpunit": "3.7.*@stable"
+    },
+    "autoload": {
+        "psr-0": {
+            "GrahamCampbell\\Core": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
