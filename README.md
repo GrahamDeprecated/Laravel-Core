@@ -1,5 +1,5 @@
 Laravel Core
-===============
+============
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/Laravel-Core/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
@@ -12,7 +12,7 @@ Laravel Core
 
 ## What Is Laravel Core?
 
-Laravel Core provides some extra core functionality for [Laravel 4](http://laravel.com).  
+Laravel Core provides some extra functionality for [Laravel 4](http://laravel.com).  
 
 * Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Core uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Core) to run tests to check if it's working as it should.  
