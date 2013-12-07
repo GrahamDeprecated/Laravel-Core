@@ -39,7 +39,7 @@ To get the latest version of Laravel Core, simply require it in your `composer.j
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
-Then you can now extend or implement the classes in this package to speed up writing Laravel packages further.
+Once Laravel Core is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
 
 
 ## Updating Your Fork
