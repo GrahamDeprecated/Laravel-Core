@@ -30,7 +30,7 @@ interface IPaginateProvider {
     public function paginate();
 
     /**
-     * Get the paginate links.
+     * Get the paginated links.
      *
      * @return string
      */

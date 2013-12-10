@@ -23,7 +23,7 @@
 interface ILocationModel {
 
     /**
-     * Get location.
+     * Get the location.
      *
      * @return string
      */

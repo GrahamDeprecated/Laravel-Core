@@ -20,10 +20,10 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-use App;
 use Controller;
-use Request;
-use View;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\View;
 
 class BaseController extends Controller {
 

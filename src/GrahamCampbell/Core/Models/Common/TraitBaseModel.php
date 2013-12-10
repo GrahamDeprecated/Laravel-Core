@@ -20,13 +20,13 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-use Illuminate\Support\Facades\Event as LaravelEvent;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Event as LaravelEvent;
 
 trait TraitBaseModel {
 
     /**
-     * Get id.
+     * Get the id.
      *
      * @return int
      */
@@ -119,7 +119,7 @@ trait TraitBaseModel {
     /**
      * Delete an existing model.
      *
-     * @return void
+     * @return mixed
      */
     public function delete() {
         LaravelEvent::fire(static::$name.'.deleting');

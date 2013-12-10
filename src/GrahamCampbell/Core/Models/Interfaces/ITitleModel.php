@@ -23,7 +23,7 @@
 interface ITitleModel {
 
     /**
-     * Get title.
+     * Get the title.
      *
      * @return string
      */

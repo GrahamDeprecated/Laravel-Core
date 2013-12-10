@@ -23,7 +23,7 @@
 interface IBodyModel {
 
     /**
-     * Get body.
+     * Get the body.
      *
      * @return string
      */

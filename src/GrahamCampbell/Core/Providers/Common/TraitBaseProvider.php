@@ -37,7 +37,7 @@ trait TraitBaseProvider {
      * Find an existing model.
      *
      * @param  int    $id
-     * @param  array  $input
+     * @param  array  $columns
      * @return mixed
      */
     public function find($id, array $columns = array('*')) {
@@ -48,8 +48,7 @@ trait TraitBaseProvider {
     /**
      * Find all models.
      *
-     * @param  int    $id
-     * @param  array  $input
+     * @param  array  $columns
      * @return mixed
      */
     public function all(array $columns = array('*')) {

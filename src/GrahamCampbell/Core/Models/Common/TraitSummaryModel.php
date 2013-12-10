@@ -23,7 +23,7 @@
 trait TraitSummaryModel {
 
     /**
-     * Get summary.
+     * Get the summary.
      *
      * @return string
      */
