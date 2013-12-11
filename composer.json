@@ -14,13 +14,19 @@
         "orchestra/testbench": "~2"
     },
     "require-dev": {
-        "mockery/mockery": "0.8.*@stable",
-        "phpunit/phpunit": "3.7.*@stable"
+        "mockery/mockery": "0.8.*",
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": {
             "GrahamCampbell\\Core": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
