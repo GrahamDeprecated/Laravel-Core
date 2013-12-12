@@ -23,7 +23,7 @@
 trait TraitVersionModel {
 
     /**
-     * Get version.
+     * Get the version.
      *
      * @return int
      */

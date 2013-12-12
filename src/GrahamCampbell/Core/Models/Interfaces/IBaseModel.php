@@ -23,7 +23,7 @@
 interface IBaseModel {
 
     /**
-     * Get id.
+     * Get the id.
      *
      * @return int
      */
@@ -96,7 +96,7 @@ interface IBaseModel {
     /**
      * Delete an existing model.
      *
-     * @return void
+     * @return mixed
      */
     public function delete();
 

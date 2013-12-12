@@ -23,21 +23,21 @@
 interface INameModel {
 
     /**
-     * Get first_name.
+     * Get the first name.
      *
      * @return string
      */
     public function getFirstName();
 
     /**
-     * Get last_name.
+     * Get the last name.
      *
      * @return string
      */
     public function getLastName();
 
     /**
-     * Get combined name.
+     * Get the combined name.
      *
      * @return string
      */

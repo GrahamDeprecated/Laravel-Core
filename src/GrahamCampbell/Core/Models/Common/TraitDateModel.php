@@ -35,12 +35,23 @@ trait TraitDateModel {
     }
 
     /**
+     * Get the date by format.
+     *
+     * @param  string  $format
+     * @return string
+     */
+    public function getDateByFormat($format) {
+        $date = $this->getDate()->format($format);
+        return $date;
+    }
+
+    /**
      * Get the formatted date.
      *
      * @return string
      */
     public function getFormattedDate() {
-        $date = new Carbon($this->date);
-        return $date->format('l jS F Y \\- H:i:s');
+        $date = $this->getDateByFormat('l jS F Y \\- H:i:s');
+        return $date;
     }
 }

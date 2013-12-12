@@ -23,7 +23,7 @@
 interface ISummaryModel {
 
     /**
-     * Get summary.
+     * Get the summary.
      *
      * @return string
      */

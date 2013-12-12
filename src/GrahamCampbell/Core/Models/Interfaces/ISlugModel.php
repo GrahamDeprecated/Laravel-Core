@@ -23,7 +23,7 @@
 interface ISlugModel {
 
     /**
-     * Get slug.
+     * Get the slug.
      *
      * @return string
      */

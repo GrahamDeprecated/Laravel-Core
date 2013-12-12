@@ -23,7 +23,7 @@
 interface IVersionModel {
 
     /**
-     * Get version.
+     * Get the version.
      *
      * @return int
      */

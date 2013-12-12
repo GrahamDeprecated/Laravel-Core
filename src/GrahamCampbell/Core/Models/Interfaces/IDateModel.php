@@ -30,6 +30,14 @@ interface IDateModel {
     public function getDate();
 
     /**
+     * Get the date by format.
+     *
+     * @param  string  $format
+     * @return string
+     */
+    public function getDateByFormat($format);
+
+    /**
      * Get the formatted date.
      *
      * @return string

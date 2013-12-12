@@ -23,7 +23,7 @@
 trait TraitLocationModel {
 
     /**
-     * Get location.
+     * Get the location.
      *
      * @return string
      */

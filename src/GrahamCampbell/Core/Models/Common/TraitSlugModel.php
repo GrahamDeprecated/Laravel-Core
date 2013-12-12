@@ -23,7 +23,7 @@
 trait TraitSlugModel {
 
     /**
-     * Get slug.
+     * Get the slug.
      *
      * @return string
      */

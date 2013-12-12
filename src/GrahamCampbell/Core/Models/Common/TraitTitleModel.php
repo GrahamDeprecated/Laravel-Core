@@ -23,7 +23,7 @@
 trait TraitTitleModel {
 
     /**
-     * Get title.
+     * Get the title.
      *
      * @return string
      */

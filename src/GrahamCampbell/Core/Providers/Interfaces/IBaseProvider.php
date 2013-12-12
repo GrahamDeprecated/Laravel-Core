@@ -34,7 +34,7 @@ interface IBaseProvider {
      * Find an existing model.
      *
      * @param  int    $id
-     * @param  array  $input
+     * @param  array  $columns
      * @return mixed
      */
     public function find($id, array $columns = array('*'));
@@ -42,8 +42,7 @@ interface IBaseProvider {
     /**
      * Find all models.
      *
-     * @param  int    $id
-     * @param  array  $input
+     * @param  array  $columns
      * @return mixed
      */
     public function all(array $columns = array('*'));

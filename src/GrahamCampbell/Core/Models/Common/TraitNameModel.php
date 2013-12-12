@@ -23,7 +23,7 @@
 trait TraitNameModel {
 
     /**
-     * Get first_name.
+     * Get the first name.
      *
      * @return string
      */
@@ -32,7 +32,7 @@ trait TraitNameModel {
     }
 
     /**
-     * Get last_name.
+     * Get the last name.
      *
      * @return string
      */
@@ -41,7 +41,7 @@ trait TraitNameModel {
     }
 
     /**
-     * Get combined name.
+     * Get the combined name.
      *
      * @return string
      */
