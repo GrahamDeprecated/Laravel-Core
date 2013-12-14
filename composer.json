@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/core",
-    "description": "Core Provides Some Extra Functionality For Laravel 4",
+    "description": "Core Provides Some Extra Functionality For Laravel 4.1",
     "keywords": ["laravel", "framework", "base", "starter", "core", "Core", "Laravel Core", "Laravel-Core", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache License 2.0",
     "authors": [
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.7",
-        "orchestra/testbench": "2.0.*|2.1.*"
+        "orchestra/testbench": "2.1.*"
     },
     "require-dev": {
         "mockery/mockery": "0.8.*",

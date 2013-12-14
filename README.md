@@ -12,7 +12,7 @@ Laravel Core
 
 ## What Is Laravel Core?
 
-Laravel Core provides some extra functionality for [Laravel 4](http://laravel.com).  
+Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.com).  
 
 * Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Core uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Core) to run tests to check if it's working as it should.  
@@ -24,8 +24,8 @@ Laravel Core provides some extra functionality for [Laravel 4](http://laravel.co
 
 ## System Requirements
 
-* PHP 5.4+ or PHP 5.5+ is required.
-* You will need [Laravel 4](http://laravel.com) because this package is designed for it.  
+* PHP 5.4.7+ or PHP 5.5+ is required.
+* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Core.  
 
 
