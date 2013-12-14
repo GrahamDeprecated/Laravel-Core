@@ -65,7 +65,8 @@ trait TraitBaseProvider
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function index() {
+    public function index()
+    {
         $model = $this->model;
 
         if (property_exists($model, 'order')) {
