@@ -22,14 +22,16 @@
 
 use Carbon\Carbon;
 
-trait TraitDateModel {
+trait TraitDateModel
+{
 
     /**
      * Get the date.
      *
      * @return \Carbon\Carbon
      */
-    public function getDate() {
+    public function getDate()
+    {
         $date = new Carbon($this->date);
         return $date;
     }
@@ -40,7 +42,8 @@ trait TraitDateModel {
      * @param  string  $format
      * @return string
      */
-    public function getDateByFormat($format) {
+    public function getDateByFormat($format)
+    {
         $date = $this->getDate()->format($format);
         return $date;
     }
@@ -50,7 +53,8 @@ trait TraitDateModel {
      *
      * @return string
      */
-    public function getFormattedDate() {
+    public function getFormattedDate()
+    {
         $date = $this->getDateByFormat('l jS F Y \\- H:i:s');
         return $date;
     }

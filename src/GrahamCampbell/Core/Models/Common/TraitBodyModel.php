@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitBodyModel {
+trait TraitBodyModel
+{
 
     /**
      * Get the body.
      *
      * @return string
      */
-    public function getBody() {
+    public function getBody()
+    {
         return $this->body;
     }
 }

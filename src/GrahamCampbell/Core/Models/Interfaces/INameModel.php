@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface INameModel {
+interface INameModel
+{
 
     /**
      * Get the first name.
@@ -42,5 +43,4 @@ interface INameModel {
      * @return string
      */
     public function getName();
-
 }

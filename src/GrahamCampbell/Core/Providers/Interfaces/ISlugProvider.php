@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface ISlugProvider {
+interface ISlugProvider
+{
 
     /**
      * Find an existing model by slug.
@@ -30,5 +31,4 @@ interface ISlugProvider {
      * @return mixed
      */
     public function find($slug, array $columns = array('*'));
-
 }

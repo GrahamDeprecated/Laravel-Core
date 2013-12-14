@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface ISlugModel {
+interface ISlugModel
+{
 
     /**
      * Get the slug.
@@ -28,5 +29,4 @@ interface ISlugModel {
      * @return string
      */
     public function getSlug();
-
 }

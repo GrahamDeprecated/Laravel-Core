@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitTitleModel {
+trait TraitTitleModel
+{
 
     /**
      * Get the title.
      *
      * @return string
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 }

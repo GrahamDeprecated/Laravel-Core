@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitSummaryModel {
+trait TraitSummaryModel
+{
 
     /**
      * Get the summary.
      *
      * @return string
      */
-    public function getSummary() {
+    public function getSummary()
+    {
         return $this->summary;
     }
 }

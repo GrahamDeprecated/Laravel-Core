@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface IBaseModel {
+interface IBaseModel
+{
 
     /**
      * Get the id.
@@ -114,5 +115,4 @@ interface IBaseModel {
      * @return mixed
      */
     public function afterDelete($return);
-
 }

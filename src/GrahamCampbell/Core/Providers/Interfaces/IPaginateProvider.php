@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface IPaginateProvider {
+interface IPaginateProvider
+{
 
     /**
      * Get a paginated list of the models.
@@ -35,5 +36,4 @@ interface IPaginateProvider {
      * @return string
      */
     public function links();
-
 }

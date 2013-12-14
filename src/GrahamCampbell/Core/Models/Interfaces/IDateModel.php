@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface IDateModel {
+interface IDateModel
+{
 
     /**
      * Get the date.
@@ -43,5 +44,4 @@ interface IDateModel {
      * @return string
      */
     public function getFormattedDate();
-
 }

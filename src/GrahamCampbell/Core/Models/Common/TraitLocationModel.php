@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitLocationModel {
+trait TraitLocationModel
+{
 
     /**
      * Get the location.
      *
      * @return string
      */
-    public function getLocation() {
+    public function getLocation()
+    {
         return $this->location;
     }
 }

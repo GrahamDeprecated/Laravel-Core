@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface ITitleModel {
+interface ITitleModel
+{
 
     /**
      * Get the title.
@@ -28,5 +29,4 @@ interface ITitleModel {
      * @return string
      */
     public function getTitle();
-
 }

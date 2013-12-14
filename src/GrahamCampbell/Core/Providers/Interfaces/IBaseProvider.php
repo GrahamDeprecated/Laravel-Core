@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface IBaseProvider {
+interface IBaseProvider
+{
 
     /**
      * Create a new model.
@@ -60,5 +61,4 @@ interface IBaseProvider {
      * @return int
      */
     public function count();
-
 }

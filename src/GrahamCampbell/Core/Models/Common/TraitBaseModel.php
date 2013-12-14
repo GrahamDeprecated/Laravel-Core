@@ -23,14 +23,16 @@
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Event as LaravelEvent;
 
-trait TraitBaseModel {
+trait TraitBaseModel
+{
 
     /**
      * Get the id.
      *
      * @return int
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -39,7 +41,8 @@ trait TraitBaseModel {
      *
      * @return \Carbon\Carbon
      */
-    public function getCreatedAt() {
+    public function getCreatedAt()
+    {
         return new Carbon($this->created_at);
     }
 
@@ -48,7 +51,8 @@ trait TraitBaseModel {
      *
      * @return \Carbon\Carbon
      */
-    public function getUpdatedAt() {
+    public function getUpdatedAt()
+    {
         return new Carbon($this->updated_at);
     }
 
@@ -58,7 +62,8 @@ trait TraitBaseModel {
      * @param  array  $input
      * @return mixed
      */
-    public static function create(array $input) {
+    public static function create(array $input)
+    {
         LaravelEvent::fire(static::$name.'.creating');
         static::beforeCreate($input);
         $return = parent::create($input);
@@ -73,7 +78,10 @@ trait TraitBaseModel {
      * @param  array  $input
      * @return mixed
      */
-    public static function beforeCreate(array $input) {}
+    public static function beforeCreate(array $input)
+    {
+        // can be overwritten by extending class
+    }
 
     /**
      * After creating a new model.
@@ -82,7 +90,10 @@ trait TraitBaseModel {
      * @param  mixed  $return
      * @return mixed
      */
-    public static function afterCreate(array $input, $return) {}
+    public static function afterCreate(array $input, $return)
+    {
+        // can be overwritten by extending class
+    }
 
     /**
      * Update an existing model.
@@ -90,7 +101,8 @@ trait TraitBaseModel {
      * @param  array  $input
      * @return mixed
      */
-    public function update(array $input = array()) {
+    public function update(array $input = array())
+    {
         LaravelEvent::fire(static::$name.'.updating');
         $this->beforeUpdate($input);
         $return = parent::update($input);
@@ -105,7 +117,10 @@ trait TraitBaseModel {
      * @param  array  $input
      * @return mixed
      */
-    public function beforeUpdate(array $input) {}
+    public function beforeUpdate(array $input)
+    {
+        // can be overwritten by extending class
+    }
 
     /**
      * After updating an existing model.
@@ -114,14 +129,18 @@ trait TraitBaseModel {
      * @param  mixed  $return
      * @return mixed
      */
-    public function afterUpdate(array $input, $return) {}
+    public function afterUpdate(array $input, $return)
+    {
+        // can be overwritten by extending class
+    }
 
     /**
      * Delete an existing model.
      *
      * @return mixed
      */
-    public function delete() {
+    public function delete()
+    {
         LaravelEvent::fire(static::$name.'.deleting');
         $this->beforeDelete();
         $return = parent::delete();
@@ -135,7 +154,10 @@ trait TraitBaseModel {
      *
      * @return mixed
      */
-    public function beforeDelete() {}
+    public function beforeDelete()
+    {
+        // can be overwritten by extending class
+    }
 
     /**
      * After deleting an existing model.
@@ -143,6 +165,8 @@ trait TraitBaseModel {
      * @param  mixed  $return
      * @return mixed
      */
-    public function afterDelete($return) {}
-
+    public function afterDelete($return)
+    {
+        // can be overwritten by extending class
+    }
 }

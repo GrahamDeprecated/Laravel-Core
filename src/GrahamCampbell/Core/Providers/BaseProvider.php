@@ -23,8 +23,8 @@
 use GrahamCampbell\Core\Providers\Interfaces\IBaseProvider;
 use GrahamCampbell\Core\Providers\Common\TraitBaseProvider;
 
-abstract class BaseProvider implements IBaseProvider {
+abstract class BaseProvider implements IBaseProvider
+{
 
     use TraitBaseProvider;
-
 }

@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface ILocationModel {
+interface ILocationModel
+{
 
     /**
      * Get the location.
@@ -28,5 +29,4 @@ interface ILocationModel {
      * @return string
      */
     public function getLocation();
-
 }

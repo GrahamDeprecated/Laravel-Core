@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface IBodyModel {
+interface IBodyModel
+{
 
     /**
      * Get the body.
@@ -28,5 +29,4 @@ interface IBodyModel {
      * @return string
      */
     public function getBody();
-
 }

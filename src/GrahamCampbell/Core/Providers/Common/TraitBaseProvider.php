@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitBaseProvider {
+trait TraitBaseProvider
+{
 
     /**
      * Create a new model.
@@ -28,7 +29,8 @@ trait TraitBaseProvider {
      * @param  array  $input
      * @return mixed
      */
-    public function create(array $input) {
+    public function create(array $input)
+    {
         $model = $this->model;
         return $model::create($input);
     }
@@ -40,7 +42,8 @@ trait TraitBaseProvider {
      * @param  array  $columns
      * @return mixed
      */
-    public function find($id, array $columns = array('*')) {
+    public function find($id, array $columns = array('*'))
+    {
         $model = $this->model;
         return $model::find($id, $columns);
     }
@@ -51,7 +54,8 @@ trait TraitBaseProvider {
      * @param  array  $columns
      * @return mixed
      */
-    public function all(array $columns = array('*')) {
+    public function all(array $columns = array('*'))
+    {
         $model = $this->model;
         return $model::all($columns);
     }
@@ -76,7 +80,8 @@ trait TraitBaseProvider {
      *
      * @return int
      */
-    public function count() {
+    public function count()
+    {
         $model = $this->model;
         return $model::where('id', '>=', 1)->count();
     }

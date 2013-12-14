@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitSlugProvider {
+trait TraitSlugProvider
+{
 
     /**
      * Find an existing model by slug.
@@ -29,7 +30,8 @@ trait TraitSlugProvider {
      * @param  array   $input
      * @return mixed
      */
-    public function find($slug, array $columns = array('*')) {
+    public function find($slug, array $columns = array('*'))
+    {
         $model = $this->model;
         return $model::where('slug', '=', $slug)->first($columns);
     }

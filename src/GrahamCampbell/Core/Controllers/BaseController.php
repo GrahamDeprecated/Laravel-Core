@@ -20,19 +20,21 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-use Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View;
 
-class BaseController extends Controller {
+class BaseController extends Controller
+{
 
     /**
      * Setup the layout used by the controller.
      *
      * @return void
      */
-    protected function setupLayout() {
+    protected function setupLayout()
+    {
         if (!is_null($this->layout)) {
             $this->layout = View::make($this->layout);
         }
@@ -43,7 +45,8 @@ class BaseController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    protected function checkAjax() {
+    protected function checkAjax()
+    {
         if (!Request::ajax()) {
             return App::abort(405, 'Ajax Is Required');
         }

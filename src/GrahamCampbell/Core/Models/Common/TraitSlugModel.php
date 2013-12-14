@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitSlugModel {
+trait TraitSlugModel
+{
 
     /**
      * Get the slug.
      *
      * @return string
      */
-    public function getSlug() {
+    public function getSlug()
+    {
         return $this->slug;
     }
 }

@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitVersionModel {
+trait TraitVersionModel
+{
 
     /**
      * Get the version.
      *
      * @return int
      */
-    public function getVersion() {
+    public function getVersion()
+    {
         return $this->version;
     }
 }

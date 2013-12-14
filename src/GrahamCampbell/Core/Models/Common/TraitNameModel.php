@@ -20,14 +20,16 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-trait TraitNameModel {
+trait TraitNameModel
+{
 
     /**
      * Get the first name.
      *
      * @return string
      */
-    public function getFirstName() {
+    public function getFirstName()
+    {
         return $this->first_name;
     }
 
@@ -36,7 +38,8 @@ trait TraitNameModel {
      *
      * @return string
      */
-    public function getLastName() {
+    public function getLastName()
+    {
         return $this->last_name;
     }
 
@@ -45,7 +48,8 @@ trait TraitNameModel {
      *
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->first_name.' '.$this->last_name;
     }
 }

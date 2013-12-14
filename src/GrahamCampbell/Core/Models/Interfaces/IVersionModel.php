@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface IVersionModel {
+interface IVersionModel
+{
 
     /**
      * Get the version.
@@ -28,5 +29,4 @@ interface IVersionModel {
      * @return int
      */
     public function getVersion();
-
 }

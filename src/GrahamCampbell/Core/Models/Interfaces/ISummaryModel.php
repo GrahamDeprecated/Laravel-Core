@@ -20,7 +20,8 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 
-interface ISummaryModel {
+interface ISummaryModel
+{
 
     /**
      * Get the summary.
@@ -28,5 +29,4 @@ interface ISummaryModel {
      * @return string
      */
     public function getSummary();
-
 }

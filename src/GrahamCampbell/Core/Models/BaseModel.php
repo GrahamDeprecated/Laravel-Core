@@ -24,7 +24,8 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 use GrahamCampbell\Core\Models\Interfaces\IBaseModel;
 use GrahamCampbell\Core\Models\Common\TraitBaseModel;
 
-abstract class BaseModel extends Eloquent implements IBaseModel {
+abstract class BaseModel extends Eloquent implements IBaseModel
+{
 
     use TraitBaseModel;
 
@@ -34,5 +35,4 @@ abstract class BaseModel extends Eloquent implements IBaseModel {
      * @var array
      */
     protected $guarded = array('_token', '_method', 'id');
-
 }
