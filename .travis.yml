@@ -4,12 +4,8 @@ php:
   - 5.4
   - 5.5
 
-env:
-  - PREFER_STABLE="true"
-  - PREFER_STABLE="false"
-
 before_script:
   - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev --prefer-stable ${PREFER_STABLE}
+  - php composer.phar install --no-interaction --dev
 
 script: phpunit
