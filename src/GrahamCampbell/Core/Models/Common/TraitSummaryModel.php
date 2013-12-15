@@ -22,7 +22,6 @@
 
 trait TraitSummaryModel
 {
-
     /**
      * Get the summary.
      *

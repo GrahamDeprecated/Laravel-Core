@@ -22,7 +22,6 @@
 
 trait TraitNameModel
 {
-
     /**
      * Get the first name.
      *

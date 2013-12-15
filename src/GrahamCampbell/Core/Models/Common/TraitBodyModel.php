@@ -22,7 +22,6 @@
 
 trait TraitBodyModel
 {
-
     /**
      * Get the body.
      *

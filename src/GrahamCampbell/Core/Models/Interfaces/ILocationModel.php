@@ -22,7 +22,6 @@
 
 interface ILocationModel
 {
-
     /**
      * Get the location.
      *

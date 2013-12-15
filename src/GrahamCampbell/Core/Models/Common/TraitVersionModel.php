@@ -22,7 +22,6 @@
 
 trait TraitVersionModel
 {
-
     /**
      * Get the version.
      *

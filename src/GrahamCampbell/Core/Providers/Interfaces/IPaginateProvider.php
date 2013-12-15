@@ -22,7 +22,6 @@
 
 interface IPaginateProvider
 {
-
     /**
      * Get a paginated list of the models.
      *

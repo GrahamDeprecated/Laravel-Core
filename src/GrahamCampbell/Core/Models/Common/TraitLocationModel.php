@@ -22,7 +22,6 @@
 
 trait TraitLocationModel
 {
-
     /**
      * Get the location.
      *

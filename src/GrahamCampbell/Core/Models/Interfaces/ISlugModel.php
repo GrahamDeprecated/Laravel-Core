@@ -22,7 +22,6 @@
 
 interface ISlugModel
 {
-
     /**
      * Get the slug.
      *

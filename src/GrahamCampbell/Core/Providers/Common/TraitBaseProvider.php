@@ -22,7 +22,6 @@
 
 trait TraitBaseProvider
 {
-
     /**
      * Create a new model.
      *

@@ -22,7 +22,6 @@
 
 interface IBaseModel
 {
-
     /**
      * Get the id.
      *

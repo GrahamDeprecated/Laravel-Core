@@ -22,7 +22,6 @@
 
 interface ISlugProvider
 {
-
     /**
      * Find an existing model by slug.
      *

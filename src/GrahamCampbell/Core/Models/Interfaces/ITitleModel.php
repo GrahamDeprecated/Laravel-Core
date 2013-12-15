@@ -22,7 +22,6 @@
 
 interface ITitleModel
 {
-
     /**
      * Get the title.
      *

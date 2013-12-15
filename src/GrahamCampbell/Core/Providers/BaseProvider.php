@@ -25,6 +25,5 @@ use GrahamCampbell\Core\Providers\Common\TraitBaseProvider;
 
 abstract class BaseProvider implements IBaseProvider
 {
-
     use TraitBaseProvider;
 }

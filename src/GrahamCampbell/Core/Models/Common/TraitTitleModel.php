@@ -22,7 +22,6 @@
 
 trait TraitTitleModel
 {
-
     /**
      * Get the title.
      *

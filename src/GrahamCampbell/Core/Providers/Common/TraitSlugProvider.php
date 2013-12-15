@@ -22,7 +22,6 @@
 
 trait TraitSlugProvider
 {
-
     /**
      * Find an existing model by slug.
      *

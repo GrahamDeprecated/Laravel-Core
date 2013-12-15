@@ -22,7 +22,6 @@
 
 interface ISummaryModel
 {
-
     /**
      * Get the summary.
      *

@@ -22,7 +22,6 @@
 
 interface IDateModel
 {
-
     /**
      * Get the date.
      *

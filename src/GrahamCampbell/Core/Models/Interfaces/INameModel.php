@@ -22,7 +22,6 @@
 
 interface INameModel
 {
-
     /**
      * Get the first name.
      *

@@ -22,7 +22,6 @@
 
 trait TraitSlugModel
 {
-
     /**
      * Get the slug.
      *

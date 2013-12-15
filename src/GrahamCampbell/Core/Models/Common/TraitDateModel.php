@@ -24,7 +24,6 @@ use Carbon\Carbon;
 
 trait TraitDateModel
 {
-
     /**
      * Get the date.
      *

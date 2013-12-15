@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Event as LaravelEvent;
 
 trait TraitBaseModel
 {
-
     /**
      * Get the id.
      *

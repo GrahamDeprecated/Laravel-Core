@@ -22,7 +22,6 @@
 
 interface IBaseProvider
 {
-
     /**
      * Create a new model.
      *

@@ -22,7 +22,6 @@
 
 interface IBodyModel
 {
-
     /**
      * Get the body.
      *
