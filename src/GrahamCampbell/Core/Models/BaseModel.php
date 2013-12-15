@@ -26,7 +26,6 @@ use GrahamCampbell\Core\Models\Common\TraitBaseModel;
 
 abstract class BaseModel extends Eloquent implements IBaseModel
 {
-
     use TraitBaseModel;
 
     /**
