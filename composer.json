@@ -40,7 +40,7 @@
     "autoload": {
         "psr-0": {
             "GrahamCampbell\\Core": "src/",
-            "GrahamCampbell\\Core\\Tests": "tests/"
+            "GrahamCampbell\\Tests\\Core": "tests/"
         }
     },
     "extra": {
