@@ -39,9 +39,7 @@
     },
     "autoload": {
         "psr-0": {
-            "GrahamCampbell\\Core\\Controllers": "src/",
-            "GrahamCampbell\\Core\\Models": "src/",
-            "GrahamCampbell\\Core\\Providers": "src/",
+            "GrahamCampbell\\Core": "src/",
             "GrahamCampbell\\Core\\Tests": "tests/"
         }
     },
