@@ -35,7 +35,7 @@
         "laravel/framework": "4.1.*"
     },
     "require-dev": {
-        "graham-campbell/testbench": "0.1.*"
+        "graham-campbell/testbench": "0.1.*@dev"
     },
     "autoload": {
         "psr-0": {
