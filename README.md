@@ -24,7 +24,7 @@ Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.
 
 ## System Requirements
 
-* PHP 5.4.7+ or PHP 5.5+ is required.
+* PHP 5.4.7+ or PHP 5.5+ is required.  
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Core.  
 
@@ -33,13 +33,21 @@ Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.
 
 Please check the system requirements before installing Laravel Core.  
 
-To get the latest version of Laravel Core, simply require it in your `composer.json` file.
+To get the latest version of Laravel Core, simply require it in your `composer.json` file.  
 
-`"graham-campbell/core": "dev-master"`
+`"graham-campbell/core": "dev-master"`  
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
-Once Laravel Core is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
+Once Laravel Core is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.  
+
+
+## Usage
+
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Core
+) for Laravel Core.  
+
+You may see an example of implementation in [Laravel Queuing](https://github.com/GrahamCampbell/Laravel-Queuing) or [CMS Core](https://github.com/GrahamCampbell/CMS-Core).  
 
 
 ## Updating Your Fork
