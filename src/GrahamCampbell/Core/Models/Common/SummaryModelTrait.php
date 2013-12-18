@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models\Interfaces;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Common;
+
+/**
+ * This is the summary model trait.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,13 +25,15 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-interface ILocationModel
+trait SummaryModelTrait
 {
     /**
-     * Get the location.
+     * Get the summary.
      *
      * @return string
      */
-    public function getLocation();
+    public function getSummary()
+    {
+        return $this->summary;
+    }
 }

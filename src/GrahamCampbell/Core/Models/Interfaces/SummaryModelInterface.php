@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Providers\Common;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Interfaces;
+
+/**
+ * This is the summary model interface.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,19 +25,12 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-trait TraitSlugProvider
+interface SummaryModelInterface
 {
     /**
-     * Find an existing model by slug.
+     * Get the summary.
      *
-     * @param  string  $slug
-     * @param  array   $input
-     * @return mixed
+     * @return string
      */
-    public function find($slug, array $columns = array('*'))
-    {
-        $model = $this->model;
-        return $model::where('slug', '=', $slug)->first($columns);
-    }
+    public function getSummary();
 }

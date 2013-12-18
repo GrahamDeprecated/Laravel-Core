@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Providers\Interfaces;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,16 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models;
+
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use GrahamCampbell\Core\Models\Interfaces\BaseModelInterface;
+use GrahamCampbell\Core\Models\Common\BaseModelTrait;
+
+/**
+ * This is the abstract model class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,20 +29,14 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-interface IPaginateProvider
+abstract class AbstractModel extends Eloquent implements BaseModelInterface
 {
-    /**
-     * Get a paginated list of the models.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function paginate();
+    use BaseModelTrait;
 
     /**
-     * Get the paginated links.
+     * A list of methods protected from mass assignment.
      *
-     * @return string
+     * @var array
      */
-    public function links();
+    protected $guarded = array('_token', '_method', 'id');
 }

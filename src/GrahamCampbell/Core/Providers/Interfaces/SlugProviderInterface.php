@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Providers;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Providers\Interfaces;
+
+/**
+ * This is the slug provider interface.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,11 +25,14 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-use GrahamCampbell\Core\Providers\Interfaces\IBaseProvider;
-use GrahamCampbell\Core\Providers\Common\TraitBaseProvider;
-
-abstract class BaseProvider implements IBaseProvider
+interface SlugProviderInterface
 {
-    use TraitBaseProvider;
+    /**
+     * Find an existing model by slug.
+     *
+     * @param  string  $slug
+     * @param  array   $input
+     * @return mixed
+     */
+    public function find($slug, array $columns = array('*'));
 }

@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models\Common;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,14 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Common;
+
+use Carbon\Carbon;
+
+/**
+ * This is the date model trait.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,16 +27,39 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-trait TraitLocationModel
+trait DateModelTrait
 {
     /**
-     * Get the location.
+     * Get the date.
+     *
+     * @return \Carbon\Carbon
+     */
+    public function getDate()
+    {
+        $date = new Carbon($this->date);
+        return $date;
+    }
+
+    /**
+     * Get the date by format.
+     *
+     * @param  string  $format
+     * @return string
+     */
+    public function getDateByFormat($format)
+    {
+        $date = $this->getDate()->format($format);
+        return $date;
+    }
+
+    /**
+     * Get the formatted date.
      *
      * @return string
      */
-    public function getLocation()
+    public function getFormattedDate()
     {
-        return $this->location;
+        $date = $this->getDateByFormat('l jS F Y \\- H:i:s');
+        return $date;
     }
 }

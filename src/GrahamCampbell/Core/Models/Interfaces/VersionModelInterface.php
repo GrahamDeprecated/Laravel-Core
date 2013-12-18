@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models\Common;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Interfaces;
+
+/**
+ * This is the version model interface.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,36 +25,13 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-trait TraitNameModel
+interface VersionModelInterface
 {
-    /**
-     * Get the first name.
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->first_name;
-    }
 
     /**
-     * Get the last name.
+     * Get the version.
      *
-     * @return string
+     * @return int
      */
-    public function getLastName()
-    {
-        return $this->last_name;
-    }
-
-    /**
-     * Get the combined name.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->first_name.' '.$this->last_name;
-    }
+    public function getVersion();
 }

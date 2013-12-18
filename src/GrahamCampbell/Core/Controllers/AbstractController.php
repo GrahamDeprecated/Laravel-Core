@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Controllers;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,16 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Controllers;
+
+use Illuminate\Routing\Controller;
+use GrahamCampbell\Core\Models\Interfaces\IBaseModel;
+use GrahamCampbell\Core\Models\Common\TraitBaseModel;
+
+/**
+ * This is the abstract controller class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,13 +29,7 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\View;
-
-class BaseController extends Controller
+abstract class AbstractController extends Controller
 {
     /**
      * Setup the layout used by the controller.

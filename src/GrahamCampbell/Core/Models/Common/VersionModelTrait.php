@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models\Interfaces;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Common;
+
+/**
+ * This is the version model trait.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,27 +25,15 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-interface INameModel
+trait VersionModelTrait
 {
     /**
-     * Get the first name.
+     * Get the version.
      *
-     * @return string
+     * @return int
      */
-    public function getFirstName();
-
-    /**
-     * Get the last name.
-     *
-     * @return string
-     */
-    public function getLastName();
-
-    /**
-     * Get the combined name.
-     *
-     * @return string
-     */
-    public function getName();
+    public function getVersion()
+    {
+        return $this->version;
+    }
 }

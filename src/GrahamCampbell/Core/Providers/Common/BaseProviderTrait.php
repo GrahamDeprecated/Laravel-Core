@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Providers\Interfaces;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Providers\Common;
+
+/**
+ * This is the base provider trait.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,8 +25,7 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-interface IBaseProvider
+trait BaseProviderTrait
 {
     /**
      * Create a new model.
@@ -28,7 +33,11 @@ interface IBaseProvider
      * @param  array  $input
      * @return mixed
      */
-    public function create(array $input);
+    public function create(array $input)
+    {
+        $model = $this->model;
+        return $model::create($input);
+    }
 
     /**
      * Find an existing model.
@@ -37,7 +46,11 @@ interface IBaseProvider
      * @param  array  $columns
      * @return mixed
      */
-    public function find($id, array $columns = array('*'));
+    public function find($id, array $columns = array('*'))
+    {
+        $model = $this->model;
+        return $model::find($id, $columns);
+    }
 
     /**
      * Find all models.
@@ -45,19 +58,36 @@ interface IBaseProvider
      * @param  array  $columns
      * @return mixed
      */
-    public function all(array $columns = array('*'));
+    public function all(array $columns = array('*'))
+    {
+        $model = $this->model;
+        return $model::all($columns);
+    }
 
     /**
      * Get a list of the models.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function index();
+    public function index()
+    {
+        $model = $this->model;
+
+        if (property_exists($model, 'order')) {
+            return $model::orderBy($model::$order, $model::$sort)->get($model::$index);
+        }
+
+        return $model::get($model::$index);
+    }
 
     /**
      * Get the number of rows.
      *
      * @return int
      */
-    public function count();
+    public function count()
+    {
+        $model = $this->model;
+        return $model::where('id', '>=', 1)->count();
+    }
 }

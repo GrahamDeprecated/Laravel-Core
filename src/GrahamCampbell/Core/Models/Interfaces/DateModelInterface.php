@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models\Common;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Interfaces;
+
+/**
+ * This is the date model interface.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,21 +25,14 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-use Carbon\Carbon;
-
-trait TraitDateModel
+interface DateModelInterface
 {
     /**
      * Get the date.
      *
      * @return \Carbon\Carbon
      */
-    public function getDate()
-    {
-        $date = new Carbon($this->date);
-        return $date;
-    }
+    public function getDate();
 
     /**
      * Get the date by format.
@@ -41,20 +40,12 @@ trait TraitDateModel
      * @param  string  $format
      * @return string
      */
-    public function getDateByFormat($format)
-    {
-        $date = $this->getDate()->format($format);
-        return $date;
-    }
+    public function getDateByFormat($format);
 
     /**
      * Get the formatted date.
      *
      * @return string
      */
-    public function getFormattedDate()
-    {
-        $date = $this->getDateByFormat('l jS F Y \\- H:i:s');
-        return $date;
-    }
+    public function getFormattedDate();
 }

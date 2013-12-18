@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Interfaces;
+
+/**
+ * This is the name model interface.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,19 +25,26 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-use Illuminate\Database\Eloquent\Model as Eloquent;
-use GrahamCampbell\Core\Models\Interfaces\IBaseModel;
-use GrahamCampbell\Core\Models\Common\TraitBaseModel;
-
-abstract class BaseModel extends Eloquent implements IBaseModel
+interface NameModelInterface
 {
-    use TraitBaseModel;
+    /**
+     * Get the first name.
+     *
+     * @return string
+     */
+    public function getFirstName();
 
     /**
-     * A list of methods protected from mass assignment.
+     * Get the last name.
      *
-     * @var array
+     * @return string
      */
-    protected $guarded = array('_token', '_method', 'id');
+    public function getLastName();
+
+    /**
+     * Get the combined name.
+     *
+     * @return string
+     */
+    public function getName();
 }

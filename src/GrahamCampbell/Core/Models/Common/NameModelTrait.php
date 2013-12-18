@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Core\Models\Interfaces;
+<?php
 
 /**
  * This file is part of Laravel Core by Graham Campbell.
@@ -12,6 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+namespace GrahamCampbell\Core\Models\Common;
+
+/**
+ * This is the name model trait.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -19,28 +25,35 @@
  * @copyright  Copyright 2013 Graham Campbell
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-
-interface IDateModel
+trait NameModelTrait
 {
     /**
-     * Get the date.
-     *
-     * @return \Carbon\Carbon
-     */
-    public function getDate();
-
-    /**
-     * Get the date by format.
-     *
-     * @param  string  $format
-     * @return string
-     */
-    public function getDateByFormat($format);
-
-    /**
-     * Get the formatted date.
+     * Get the first name.
      *
      * @return string
      */
-    public function getFormattedDate();
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * Get the last name.
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    /**
+     * Get the combined name.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
 }
