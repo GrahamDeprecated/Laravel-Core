@@ -17,8 +17,9 @@
 namespace GrahamCampbell\Core\Controllers;
 
 use Illuminate\Routing\Controller;
-use GrahamCampbell\Core\Models\Interfaces\IBaseModel;
-use GrahamCampbell\Core\Models\Common\TraitBaseModel;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\View;
 
 /**
  * This is the abstract controller class.
