@@ -31,4 +31,21 @@ use GrahamCampbell\Core\Providers\Common\BaseProviderTrait;
 abstract class AbstractProvider implements BaseProviderInterface
 {
     use BaseProviderTrait;
+
+    /**
+     * The name of the model to provide.
+     *
+     * @var string
+     */
+    protected $model;
+
+    /**
+     * Create a new instance.
+     *
+     * @param  string  $model
+     * @return void
+     */
+    public function __construct($model) {
+        $this->model = $model;
+    }
 }
