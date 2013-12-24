@@ -16,6 +16,7 @@
 
 namespace GrahamCampbell\Core\Providers;
 
+use Illuminate\Database\Eloquent\Model;
 use GrahamCampbell\Core\Providers\Interfaces\BaseProviderInterface;
 use GrahamCampbell\Core\Providers\Common\BaseProviderTrait;
 
@@ -33,19 +34,19 @@ abstract class AbstractProvider implements BaseProviderInterface
     use BaseProviderTrait;
 
     /**
-     * The name of the model to provide.
+     * The model to provide.
      *
-     * @var string
+     * @var \Illuminate\Database\Eloquent\Model
      */
     protected $model;
 
     /**
      * Create a new instance.
      *
-     * @param  string  $model
+     * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
      */
-    public function __construct($model) {
+    public function __construct(Model $model) {
         $this->model = $model;
     }
 }
