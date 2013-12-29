@@ -68,11 +68,11 @@ trait BaseModelTrait
      */
     public static function create(array $input)
     {
-        LaravelEvent::fire(static::$name.'.creating');
+        LaravelEvent::fire(static::$name.'.creating', $this);
         static::beforeCreate($input);
         $return = parent::create($input);
         static::afterCreate($input, $return);
-        LaravelEvent::fire(static::$name.'.created');
+        LaravelEvent::fire(static::$name.'.created', $this);
         return $return;
     }
 
@@ -107,11 +107,11 @@ trait BaseModelTrait
      */
     public function update(array $input = array())
     {
-        LaravelEvent::fire(static::$name.'.updating');
+        LaravelEvent::fire(static::$name.'.updating', $this);
         $this->beforeUpdate($input);
         $return = parent::update($input);
         $this->afterUpdate($input, $return);
-        LaravelEvent::fire(static::$name.'.updated');
+        LaravelEvent::fire(static::$name.'.updated', $this);
         return $return;
     }
 
@@ -145,11 +145,11 @@ trait BaseModelTrait
      */
     public function delete()
     {
-        LaravelEvent::fire(static::$name.'.deleting');
+        LaravelEvent::fire(static::$name.'.deleting', $this);
         $this->beforeDelete();
         $return = parent::delete();
         $this->afterDelete($return);
-        LaravelEvent::fire(static::$name.'.deleted');
+        LaravelEvent::fire(static::$name.'.deleted', $this);
         return $return;
     }
 
