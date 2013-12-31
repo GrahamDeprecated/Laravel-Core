@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Tests\Core;
 
-use GrahamCampbell\TestBench\Classes\AbstractLaravelTestCase as TestCase;
+use GrahamCampbell\TestBench\Classes\AbstractLaravelTestCase;
 
 /**
  * This is the abstract test case class.
@@ -27,7 +27,7 @@ use GrahamCampbell\TestBench\Classes\AbstractLaravelTestCase as TestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-abstract class AbstractTestCase extends TestCase
+abstract class AbstractTestCase extends AbstractLaravelTestCase
 {
     /**
      * Get the application base path.
@@ -37,15 +37,5 @@ abstract class AbstractTestCase extends TestCase
     protected function getBasePath()
     {
         return __DIR__.'/../../../../src';
-    }
-
-    /**
-     * Get the package service providers.
-     *
-     * @return array
-     */
-    protected function getPackageProviders()
-    {
-        return array();
     }
 }
