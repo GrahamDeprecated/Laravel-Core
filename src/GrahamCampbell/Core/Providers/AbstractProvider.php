@@ -46,7 +46,8 @@ abstract class AbstractProvider implements BaseProviderInterface
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
      */
-    public function __construct(Model $model) {
+    public function __construct(Model $model)
+    {
         $this->model = $model;
     }
 }
