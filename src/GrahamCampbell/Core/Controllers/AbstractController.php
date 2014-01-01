@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\View;
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
- * @copyright  Copyright 2013 Graham Campbell
+ * @copyright  Copyright 2013-2014 Graham Campbell
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
