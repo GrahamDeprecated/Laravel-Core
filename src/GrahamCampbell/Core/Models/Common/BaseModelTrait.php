@@ -68,11 +68,11 @@ trait BaseModelTrait
      */
     public static function create(array $input)
     {
-        LaravelEvent::fire(static::$name.'.creating', $this);
+        LaravelEvent::fire(static::$name.'.creating');
         static::beforeCreate($input);
         $return = parent::create($input);
         static::afterCreate($input, $return);
-        LaravelEvent::fire(static::$name.'.created', $this);
+        LaravelEvent::fire(static::$name.'.created');
         return $return;
     }
 
