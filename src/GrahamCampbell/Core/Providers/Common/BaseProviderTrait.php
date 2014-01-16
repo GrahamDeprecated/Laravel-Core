@@ -22,7 +22,7 @@ namespace GrahamCampbell\Core\Providers\Common;
  * @package    Laravel-Core
  * @author     Graham Campbell
  * @copyright  Copyright 2013-2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/develop/LICENSE.md
+ * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
 trait BaseProviderTrait
