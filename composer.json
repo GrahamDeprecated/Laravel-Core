@@ -1,25 +1,53 @@
 {
     "name": "graham-campbell/core",
-    "description": "Core Provides Some Extra Functionality For Laravel 4",
+    "description": "Core Provides Some Extra Functionality For Laravel 4.1",
     "keywords": ["laravel", "framework", "base", "starter", "core", "Core", "Laravel Core", "Laravel-Core", "Graham Campbell", "GrahamCampbell"],
-    "license": "Apache License 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Graham Campbell",
             "email": "graham@mineuk.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "sebastianbergmann/phpcov",
+                "version": "1.1.0",
+                "dist": {
+                    "url": "https://github.com/sebastianbergmann/phpcov/archive/1.1.0.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/sebastianbergmann/phpcov.git",
+                    "type": "git",
+                    "reference": "1.1.0"
+                },
+                "bin": [
+                    "phpcov.php"
+                ]
+            }
+        }
+    ],
     "require": {
         "php": ">=5.4.7",
-        "orchestra/testbench": "2.0.*|2.1.*"
+        "laravel/framework": "4.1.*",
+        "symfony/config": "2.4.*",
+        "symfony/filesystem": "2.4.*"
     },
     "require-dev": {
-        "mockery/mockery": "0.8.*",
-        "phpunit/phpunit": "3.7.*"
+        "graham-campbell/testbench": "0.2.*"
     },
     "autoload": {
         "psr-0": {
-            "GrahamCampbell\\Core": "src/"
+            "GrahamCampbell\\Core": "src/",
+            "GrahamCampbell\\Tests\\Core": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
         }
     },
     "minimum-stability": "dev",
