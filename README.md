@@ -18,7 +18,7 @@ Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.
 * Laravel Core uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Core) to run tests to check if it's working as it should.  
 * Laravel Core uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Core) to run additional tests and checks.  
 * Laravel Core uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* Laravel Core provides a [change log](https://github.com/GrahamCampbell/Laravel-Core/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Core/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Core/wiki).  
+* Laravel Core provides a [change log](https://github.com/GrahamCampbell/Laravel-Core/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Core/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Core/wiki).  
 * Laravel Core is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md).  
 
 
@@ -71,7 +71,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 ## Pull Requests
 
-Please submit pull requests against the develop branch.  
+Please review these guidelines before submitting any pull requests.  
 
 * Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
