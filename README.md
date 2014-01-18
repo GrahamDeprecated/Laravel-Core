@@ -15,8 +15,8 @@ Laravel Core
 Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.com).  
 
 * Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
-* Laravel Core uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Core) to run tests to check if it's working as it should.  
-* Laravel Core uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Core) to run additional tests and checks.  
+* Laravel Core uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Core) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Core) to check everything is working.  
+* Laravel Core uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65) to run additional checks.  
 * Laravel Core uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * Laravel Core provides a [change log](https://github.com/GrahamCampbell/Laravel-Core/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Core/releases), and [api docs](http://grahamcampbell.github.io/Laravel-Core).  
 * Laravel Core is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md).  
