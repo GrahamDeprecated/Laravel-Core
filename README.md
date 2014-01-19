@@ -7,6 +7,7 @@ Laravel Core
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Core/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Core)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core/badges/quality-score.png?s=8b83d4d22d5af457e6313d26c037fffef76b85d0)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65/mini.png)](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65)
+[![Software License](https://poser.pugx.org/graham-campbell/core/license.png)](https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md)
 [![Latest Version](https://poser.pugx.org/graham-campbell/core/v/stable.png)](https://packagist.org/packages/graham-campbell/core)
 
 
