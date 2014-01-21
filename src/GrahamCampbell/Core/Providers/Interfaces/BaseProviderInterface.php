@@ -65,4 +65,12 @@ interface BaseProviderInterface
      * @return int
      */
     public function count();
+
+    /**
+     * Register an observer.
+     *
+     * @param  object  $class
+     * @return $this
+     */
+    public function observe($class);
 }
