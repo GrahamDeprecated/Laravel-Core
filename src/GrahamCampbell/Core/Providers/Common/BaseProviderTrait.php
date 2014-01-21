@@ -90,4 +90,18 @@ trait BaseProviderTrait
         $model = $this->model;
         return $model::where('id', '>=', 1)->count();
     }
+
+    /**
+     * Register an observer.
+     *
+     * @param  object  $class
+     * @return $this
+     */
+    public function observe($class)
+    {
+        $model = $this->model;
+        $model::observe($class);
+
+        return $this;
+    }
 }
