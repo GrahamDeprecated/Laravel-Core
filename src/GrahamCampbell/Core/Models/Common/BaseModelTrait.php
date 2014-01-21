@@ -31,36 +31,6 @@ use Illuminate\Support\Facades\Event as LaravelEvent;
 trait BaseModelTrait
 {
     /**
-     * Get the id.
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get created_at.
-     *
-     * @return \Carbon\Carbon
-     */
-    public function getCreatedAt()
-    {
-        return new Carbon($this->created_at);
-    }
-
-    /**
-     * Get updated_at.
-     *
-     * @return \Carbon\Carbon
-     */
-    public function getUpdatedAt()
-    {
-        return new Carbon($this->updated_at);
-    }
-
-    /**
      * Create a new model.
      *
      * @param  array  $input

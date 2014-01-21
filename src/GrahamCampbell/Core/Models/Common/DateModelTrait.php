@@ -30,36 +30,12 @@ use Carbon\Carbon;
 trait DateModelTrait
 {
     /**
-     * Get the date.
+     * Get the attributes that should be converted to dates.
      *
-     * @return \Carbon\Carbon
+     * @return array
      */
-    public function getDate()
+    public function getDates()
     {
-        $date = new Carbon($this->date);
-        return $date;
-    }
-
-    /**
-     * Get the date by format.
-     *
-     * @param  string  $format
-     * @return string
-     */
-    public function getDateByFormat($format)
-    {
-        $date = $this->getDate()->format($format);
-        return $date;
-    }
-
-    /**
-     * Get the formatted date.
-     *
-     * @return string
-     */
-    public function getFormattedDate()
-    {
-        $date = $this->getDateByFormat('l jS F Y \\- H:i:s');
-        return $date;
+        return array_merge(array('date'), parent::getDates());
     }
 }

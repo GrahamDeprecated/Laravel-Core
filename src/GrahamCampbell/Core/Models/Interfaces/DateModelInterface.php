@@ -28,24 +28,9 @@ namespace GrahamCampbell\Core\Models\Interfaces;
 interface DateModelInterface
 {
     /**
-     * Get the date.
+     * Get the attributes that should be converted to dates.
      *
-     * @return \Carbon\Carbon
+     * @return array
      */
-    public function getDate();
-
-    /**
-     * Get the date by format.
-     *
-     * @param  string  $format
-     * @return string
-     */
-    public function getDateByFormat($format);
-
-    /**
-     * Get the formatted date.
-     *
-     * @return string
-     */
-    public function getFormattedDate();
+    public function getDates();
 }

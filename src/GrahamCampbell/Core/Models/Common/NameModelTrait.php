@@ -28,26 +28,6 @@ namespace GrahamCampbell\Core\Models\Common;
 trait NameModelTrait
 {
     /**
-     * Get the first name.
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->first_name;
-    }
-
-    /**
-     * Get the last name.
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->last_name;
-    }
-
-    /**
      * Get the combined name.
      *
      * @return string

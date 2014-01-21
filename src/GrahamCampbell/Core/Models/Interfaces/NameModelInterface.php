@@ -28,20 +28,6 @@ namespace GrahamCampbell\Core\Models\Interfaces;
 interface NameModelInterface
 {
     /**
-     * Get the first name.
-     *
-     * @return string
-     */
-    public function getFirstName();
-
-    /**
-     * Get the last name.
-     *
-     * @return string
-     */
-    public function getLastName();
-
-    /**
      * Get the combined name.
      *
      * @return string
