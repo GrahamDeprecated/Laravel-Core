@@ -16,8 +16,6 @@
 
 namespace GrahamCampbell\Core\Models\Common;
 
-use Carbon\Carbon;
-
 /**
  * This is the date model trait.
  *
