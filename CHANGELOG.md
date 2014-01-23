@@ -8,7 +8,7 @@ CHANGE LOG
 * Travis and Scrutinizer tweaks
 * Coding style fixes
 * Added unit tests
-* Added some more model functions
+* Model refactoring
 * Minor tweaks
 
 
