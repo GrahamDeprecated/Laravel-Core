@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Core\Controllers;
+namespace GrahamCampbell\Core;
 
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 /**
- * This is the abstract controller class.
+ * This is the core service provider class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -30,17 +27,46 @@ use Illuminate\Support\Facades\View;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-abstract class AbstractController extends Controller
+class CoreServiceProvider extends ServiceProvider
 {
     /**
-     * Setup the layout used by the controller.
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
+
+    /**
+     * Bootstrap the application events.
      *
      * @return void
      */
-    protected function setupLayout()
+    public function boot()
     {
-        if (!is_null($this->layout)) {
-            $this->layout = View::make($this->layout);
-        }
+        $this->package('graham-campbell/core');
+
+        include __DIR__.'/../../filters.php';
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array(
+            //
+        );
     }
 }
