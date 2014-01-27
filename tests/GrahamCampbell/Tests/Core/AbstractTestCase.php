@@ -38,4 +38,14 @@ abstract class AbstractTestCase extends AbstractLaravelTestCase
     {
         return __DIR__.'/../../../../src';
     }
+
+    /**
+     * Get the service provider class.
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass()
+    {
+        return 'GrahamCampbell\Core\CoreServiceProvider';
+    }
 }
