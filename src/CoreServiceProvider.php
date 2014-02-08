@@ -45,7 +45,7 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->package('graham-campbell/core');
 
-        include __DIR__.'/../../filters.php';
+        include __DIR__.'/filters.php';
     }
 
     /**
