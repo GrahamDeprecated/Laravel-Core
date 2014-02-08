@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V0.3 Alpha (Upcoming)
+
+* Added more unit tests
+
+
 ## V0.2 Alpha (Upcoming)
 
 * PSR-4 autoloading
@@ -12,7 +17,7 @@ CHANGE LOG
 * Added filters
 * Coding style fixes
 * Cleaned up old code
-* Added unit tests
+* Tweaked unit tests
 * Model refactoring
 * Minor tweaks
 
