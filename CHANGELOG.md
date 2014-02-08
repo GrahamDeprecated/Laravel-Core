@@ -4,6 +4,8 @@ CHANGE LOG
 
 ## V0.2 Alpha (Upcoming)
 
+* PSR-4 autoloading
+* Updated docs
 * Dropped Laravel 4.0 support
 * Travis and Scrutinizer tweaks
 * Coding style fixes
