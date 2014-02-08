@@ -43,7 +43,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('graham-campbell/core');
+        $this->package('graham-campbell/core', 'graham-campbell/core', __DIR__);
 
         include __DIR__.'/filters.php';
     }
