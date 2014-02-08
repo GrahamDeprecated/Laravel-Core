@@ -8,7 +8,10 @@ CHANGE LOG
 * Updated docs
 * Dropped Laravel 4.0 support
 * Travis and Scrutinizer tweaks
+* Added a service provider
+* Added filters
 * Coding style fixes
+* Cleaned up old code
 * Added unit tests
 * Model refactoring
 * Minor tweaks
