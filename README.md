@@ -5,7 +5,7 @@ Laravel Core
 [![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Core/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Core)
 [![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Core/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Core)
 [![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md)
-[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Core.svg)](https://packagist.org/packages/graham-campbell/testbench)
+[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Core.svg)](https://packagist.org/packages/graham-campbell/core)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core/badges/quality-score.png?s=8b83d4d22d5af457e6313d26c037fffef76b85d0)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65/mini.png)](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65)
 
