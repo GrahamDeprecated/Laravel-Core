@@ -2,13 +2,12 @@ Laravel Core
 ============
 
 
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Core.png)](https://travis-ci.org/GrahamCampbell/Laravel-Core)
-[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Core/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Core)
+[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Core/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Core)
+[![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Core/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Core)
+[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md)
+[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Core.svg)](https://packagist.org/packages/graham-campbell/testbench)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core/badges/quality-score.png?s=8b83d4d22d5af457e6313d26c037fffef76b85d0)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65/mini.png)](https://insight.sensiolabs.com/projects/9f583ab1-1203-44b9-927b-86488a326f65)
-[![Software License](https://poser.pugx.org/graham-campbell/core/license.png)](https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md)
-[![Latest Version](https://poser.pugx.org/graham-campbell/core/v/stable.png)](https://packagist.org/packages/graham-campbell/core)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Core.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Core)
 
 
 ## What Is Laravel Core?
@@ -25,7 +24,7 @@ Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 2.4+ is required.
+* PHP 5.4.7+ or HHVM 3.0+ is required.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Core.
 
