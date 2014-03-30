@@ -2,10 +2,16 @@ CHANGE LOG
 ==========
 
 
+## V0.4 Alpha (Upcoming)
+
+* Added more unit tests
+
+
 ## V0.3 Alpha (Upcoming)
 
 * PHP 5.6 and HHVM compatibility
-* Added more unit tests
+* Composer tweaks
+* Merged with viewer package
 
 
 ## V0.2 Alpha (08/02/2014)
