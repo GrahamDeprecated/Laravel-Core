@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Core;
-
-use Illuminate\Support\ServiceProvider;
+namespace GrahamCampbell\Core\Commands;
 
 /**
- * This is the core service provider class.
+ * This is the app update command class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -27,48 +25,32 @@ use Illuminate\Support\ServiceProvider;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-class CoreServiceProvider extends ServiceProvider
+class AppUpdate extends AbstractCommand
 {
     /**
-     * Indicates if loading of the provider is deferred.
+     * The command name.
      *
-     * @var bool
+     * @var string
      */
-    protected $defer = false;
+    protected $name = 'app:update';
 
     /**
-     * Bootstrap the application events.
+     * The command description.
+     *
+     * @var string
+     */
+    protected $description = 'Updates The Application';
+
+    /**
+     * Run the commend.
      *
      * @return void
      */
-    public function boot()
+    public function fire()
     {
-        $this->package('graham-campbell/core', 'graham-campbell/core', __DIR__);
-
-        include __DIR__.'/artisan.php';
-        include __DIR__.'/filters.php';
-        include __DIR__.'/listeners.php';
-    }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array(
-            //
-        );
+        $this->runMigrations();
+        $this->updateCache();
+        $this->genAssets();
+        $this->tryStartCron();
     }
 }
