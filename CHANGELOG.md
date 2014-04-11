@@ -4,14 +4,16 @@ CHANGE LOG
 
 ## V0.4 Alpha (Upcoming)
 
+* Upgraded to laravel 4.2
+* Merged with old viewer package
 * Added more unit tests
 
 
 ## V0.3 Alpha (Upcoming)
 
 * PHP 5.6 and HHVM compatibility
+* Command improvements
 * Composer tweaks
-* Merged with viewer package
 
 
 ## V0.2 Alpha (08/02/2014)
