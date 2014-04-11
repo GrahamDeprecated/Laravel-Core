@@ -45,9 +45,12 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->package('graham-campbell/core', 'graham-campbell/core', __DIR__);
 
-        include __DIR__.'/artisan.php';
         include __DIR__.'/filters.php';
         include __DIR__.'/listeners.php';
+
+        $this->commands('command.appupdate');
+        $this->commands('command.appinstall');
+        $this->commands('command.appreset');
     }
 
     /**
@@ -57,7 +60,51 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerUpdateCommand();
+        $this->registerInstallCommand();
+        $this->registerResetCommand();
+    }
+
+    /**
+     * Register the updated command class.
+     *
+     * @return void
+     */
+    protected function registerUpdateCommand()
+    {
+        $this->app->bindShared('command.appupdate', function ($app) {
+            $events = $app['events'];
+
+            return new Commands\AppUpdate($events);
+        });
+    }
+
+    /**
+     * Register the install command class.
+     *
+     * @return void
+     */
+    protected function registerInstallCommand()
+    {
+        $this->app->bindShared('command.appinstall', function ($app) {
+            $events = $app['events'];
+
+            return new Commands\AppInstall($events);
+        });
+    }
+
+    /**
+     * Register the reset command class.
+     *
+     * @return void
+     */
+    protected function registerResetCommand()
+    {
+        $this->app->bindShared('command.appreset', function ($app) {
+            $events = $app['events'];
+
+            return new Commands\AppReset($events);
+        });
     }
 
     /**
@@ -68,7 +115,9 @@ class CoreServiceProvider extends ServiceProvider
     public function provides()
     {
         return array(
-            //
+            'command.appupdate',
+            'command.appinstall',
+            'command.appreset'
         );
     }
 }

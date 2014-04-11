@@ -17,7 +17,7 @@
 namespace GrahamCampbell\Core\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Events\Dispatcher;
 
 /**
  * This is the abstract command class.
@@ -31,13 +31,31 @@ use Illuminate\Support\Facades\Event;
 abstract class AbstractCommand extends Command
 {
     /**
+     * The events instance.
+     *
+     * @var \Illuminate\Events\Dispatcher
+     */
+    protected $events;
+
+    /**
+     * Create a new instance.
+     *
+     * @param  \Illuminate\Events\Dispatcher  $events
+     * @return void
+     */
+    public function __construct(Dispatcher $events)
+    {
+        $this->events = $events;
+    }
+
+    /**
      * Regenerate the app encryption key.
      *
      * @return void
      */
     protected function genAppKey()
     {
-        Event::fire('command.genappkey', $this);
+        $this->events->fire('command.genappkey', $this);
     }
 
     /**
@@ -47,7 +65,7 @@ abstract class AbstractCommand extends Command
      */
     protected function resetMigrations()
     {
-        Event::fire('command.resetmigrations', $this);
+        $this->events->fire('command.resetmigrations', $this);
     }
 
     /**
@@ -57,7 +75,7 @@ abstract class AbstractCommand extends Command
      */
     protected function runMigrations()
     {
-        Event::fire('command.runmigrations', $this);
+        $this->events->fire('command.runmigrations', $this);
     }
 
     /**
@@ -67,7 +85,7 @@ abstract class AbstractCommand extends Command
      */
     protected function runSeeding()
     {
-        Event::fire('command.runseeding', $this);
+        $this->events->fire('command.runseeding', $this);
     }
 
     /**
@@ -77,7 +95,7 @@ abstract class AbstractCommand extends Command
      */
     protected function genAssets()
     {
-        Event::fire('command.genassets', $this);
+        $this->events->fire('command.genassets', $this);
     }
 
     /**
@@ -87,7 +105,7 @@ abstract class AbstractCommand extends Command
      */
     protected function updateCache()
     {
-        Event::fire('command.updatecache', $this);
+        $this->events->fire('command.updatecache', $this);
     }
 
     /**
@@ -97,6 +115,16 @@ abstract class AbstractCommand extends Command
      */
     protected function extraStuff()
     {
-        Event::fire('command.extrastuff', $this);
+        $this->events->fire('command.extrastuff', $this);
+    }
+
+    /**
+     * Get the events instance.
+     *
+     * @return \Illuminate\Events\Dispatcher
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 }
