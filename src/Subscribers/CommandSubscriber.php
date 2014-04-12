@@ -35,7 +35,7 @@ class CommandSubscriber
     /**
      * Register the listeners for the subscriber.
      *
-     * @param  Illuminate\Events\Dispatcher  $events
+     * @param  \Illuminate\Events\Dispatcher  $events
      * @return array
      */
     public function subscribe(Dispatcher $events)
@@ -51,7 +51,7 @@ class CommandSubscriber
     /**
      * Handle a command.genappkey event.
      *
-     * @param  Illuminate\Console\Command  $command
+     * @param  \Illuminate\Console\Command  $command
      * @return void
      */
     public function onGenAppKey(Command $command)
@@ -63,7 +63,7 @@ class CommandSubscriber
     /**
      * Handle a command.resetmigrations event.
      *
-     * @param  Illuminate\Console\Command  $command
+     * @param  \Illuminate\Console\Command  $command
      * @return void
      */
     public function onResetMigrations(Command $command)
@@ -74,7 +74,7 @@ class CommandSubscriber
     /**
      * Handle a command.runmigrations event.
      *
-     * @param  Illuminate\Console\Command  $command
+     * @param  \Illuminate\Console\Command  $command
      * @return void
      */
     public function onRunMigrations(Command $command)
@@ -85,7 +85,7 @@ class CommandSubscriber
     /**
      * Handle a command.runseeding event.
      *
-     * @param  Illuminate\Console\Command  $command
+     * @param  \Illuminate\Console\Command  $command
      * @return void
      */
     public function onRunSeeding(Command $command)
@@ -96,7 +96,7 @@ class CommandSubscriber
     /**
      * Handle a command.updatecache event.
      *
-     * @param  Illuminate\Console\Command  $command
+     * @param  \Illuminate\Console\Command  $command
      * @return void
      */
     public function onUpdateCache(Command $command)
@@ -109,7 +109,7 @@ class CommandSubscriber
     /**
      * Handle a command.genassets event.
      *
-     * @param  Illuminate\Console\Command  $command
+     * @param  \Illuminate\Console\Command  $command
      * @return void
      */
     public function onGenAssets(Command $command)
