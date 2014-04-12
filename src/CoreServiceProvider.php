@@ -119,7 +119,7 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->app->bindShared('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
             $config = $app['config'];
-            $crypt = $app['crypt'];
+            $crypt = $app['encrypter'];
 
             return new Subscribers\CommandSubscriber($config, $crypt);
         });
