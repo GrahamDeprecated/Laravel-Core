@@ -165,7 +165,7 @@ class CommandSubscriber
      *
      * @return \Illuminate\Config\Repository
      */
-    public function getComfig()
+    public function getConfig()
     {
         return $this->config;
     }
