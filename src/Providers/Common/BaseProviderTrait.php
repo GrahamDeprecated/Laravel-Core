@@ -147,18 +147,17 @@ trait BaseProviderTrait
     /**
      * Validate the data.
      *
-     * @param  array  $data
-     * @param  array  $rules
-     * @param  array  $messages
-     * @param  array  $custom
+     * @param  array         $data
+     * @param  array|string  $rules
+     * @param  bool          $custom
      * @return \Illuminate\Validation\Validator
      */
-    public function validate(array $data, array $rules = array(), array $messages = array(), array $custom = array())
+    public function validate(array $data, $rules = null, $custom = false)
     {
-        if (empty($rules)) {
-            $rules = $this->rules();
+        if (!$custom) {
+            $rules = $this->rules($rules);
         }
 
-        return $this->validator->make($data, $rules, $messages, $custom);
+        return $this->validator->make($data, $rules);
     }
 }
