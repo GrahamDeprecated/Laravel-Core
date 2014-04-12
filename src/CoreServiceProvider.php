@@ -56,7 +56,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($app['config']['graham-campbell/core::commands']) {
+        if ($this->app['config']['graham-campbell/core::commands']) {
             $this->registerUpdateCommand();
             $this->registerInstallCommand();
             $this->registerResetCommand();
