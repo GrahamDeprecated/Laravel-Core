@@ -47,10 +47,6 @@ class CoreServiceProvider extends ServiceProvider
 
         include __DIR__.'/filters.php';
         include __DIR__.'/listeners.php';
-
-        $this->commands('command.appupdate');
-        $this->commands('command.appinstall');
-        $this->commands('command.appreset');
     }
 
     /**
@@ -78,6 +74,8 @@ class CoreServiceProvider extends ServiceProvider
 
             return new Commands\AppUpdate($events);
         });
+
+        $this->commands('command.appupdate');
     }
 
     /**
@@ -92,6 +90,8 @@ class CoreServiceProvider extends ServiceProvider
 
             return new Commands\AppInstall($events);
         });
+
+        $this->commands('command.appinstall');
     }
 
     /**
@@ -106,6 +106,8 @@ class CoreServiceProvider extends ServiceProvider
 
             return new Commands\AppReset($events);
         });
+
+        $this->commands('command.appreset');
     }
 
     /**
