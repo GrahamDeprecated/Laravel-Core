@@ -73,4 +73,22 @@ interface BaseProviderInterface
      * @return $this
      */
     public function observe($class);
+
+    /**
+     * Return the rules.
+     *
+     * @return array
+     */
+    public function rules();
+
+    /**
+     * Validate the data.
+     *
+     * @param  array  $data
+     * @param  array  $rules
+     * @param  array  $messages
+     * @param  array  $custom
+     * @return \Illuminate\Validation\Validator
+     */
+    public function validate(array $data, array $rules = array(), array $messages = array(), array $custom = array());
 }

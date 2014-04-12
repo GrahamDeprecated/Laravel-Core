@@ -104,4 +104,42 @@ trait BaseProviderTrait
 
         return $this;
     }
+
+    /**
+     * Return the rules.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        $model = $this->model;
+
+        if (isset($model::$rules)) {
+            $rules = $model::$rules;
+        }
+
+        if (!is_array($rules)) {
+            $rules = array();
+        }
+
+        return $rules;
+    }
+
+    /**
+     * Validate the data.
+     *
+     * @param  array  $data
+     * @param  array  $rules
+     * @param  array  $messages
+     * @param  array  $custom
+     * @return \Illuminate\Validation\Validator
+     */
+    public function validate(array $data, array $rules = array(), array $messages = array(), array $custom = array())
+    {
+        if (empty($rules)) {
+            $rules = $this->rules();
+        }
+
+        return $this->validator->make($data, $rules, $messages, $custom);
+    }
 }
