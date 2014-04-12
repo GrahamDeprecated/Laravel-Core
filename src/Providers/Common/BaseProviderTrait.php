@@ -136,12 +136,7 @@ trait BaseProviderTrait
         }
 
         // get the relevant rules
-        $stuff = array();
-        foreach ($query as $val) {
-            $stuff[$val] = $rules[$val];
-        }
-
-        return array_filter($stuff);
+        return array_filter(array_only($rules, $query));
     }
 
     /**
