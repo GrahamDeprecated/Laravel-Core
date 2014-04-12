@@ -60,6 +60,8 @@ class AppUpdate extends Command
     public function __construct(Dispatcher $events)
     {
         $this->events = $events;
+
+        parent::__construct();
     }
 
     /**

@@ -60,6 +60,8 @@ class AppReset extends Command
     public function __construct(Dispatcher $events)
     {
         $this->events = $events;
+
+        parent::__construct();
     }
 
     /**
