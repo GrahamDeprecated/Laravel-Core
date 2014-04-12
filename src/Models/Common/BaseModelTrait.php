@@ -16,6 +16,7 @@
 
 namespace GrahamCampbell\Core\Models\Common;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event as LaravelEvent;
 
 /**
@@ -37,11 +38,21 @@ trait BaseModelTrait
      */
     public static function create(array $input)
     {
-        LaravelEvent::fire(static::$name.'.creating');
-        static::beforeCreate($input);
-        $return = parent::create($input);
-        static::afterCreate($input, $return);
-        LaravelEvent::fire(static::$name.'.created');
+        DB::beginTransaction();
+
+        try {
+            LaravelEvent::fire(static::$name.'.creating');
+            static::beforeCreate($input);
+            $return = parent::create($input);
+            static::afterCreate($input, $return);
+            LaravelEvent::fire(static::$name.'.created');
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw $e;
+        }
+
         return $return;
     }
 
@@ -76,11 +87,21 @@ trait BaseModelTrait
      */
     public function update(array $input = array())
     {
-        LaravelEvent::fire(static::$name.'.updating', $this);
-        $this->beforeUpdate($input);
-        $return = parent::update($input);
-        $this->afterUpdate($input, $return);
-        LaravelEvent::fire(static::$name.'.updated', $this);
+        DB::beginTransaction();
+
+        try {
+            LaravelEvent::fire(static::$name.'.updating', $this);
+            $this->beforeUpdate($input);
+            $return = parent::update($input);
+            $this->afterUpdate($input, $return);
+            LaravelEvent::fire(static::$name.'.updated', $this);
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw $e;
+        }
+
         return $return;
     }
 
@@ -114,11 +135,21 @@ trait BaseModelTrait
      */
     public function delete()
     {
-        LaravelEvent::fire(static::$name.'.deleting', $this);
-        $this->beforeDelete();
-        $return = parent::delete();
-        $this->afterDelete($return);
-        LaravelEvent::fire(static::$name.'.deleted', $this);
+        DB::beginTransaction();
+
+        try {
+            LaravelEvent::fire(static::$name.'.deleting', $this);
+            $this->beforeDelete();
+            $return = parent::delete();
+            $this->afterDelete($return);
+            LaravelEvent::fire(static::$name.'.deleted', $this);
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw $e;
+        }
+
         return $return;
     }
 
