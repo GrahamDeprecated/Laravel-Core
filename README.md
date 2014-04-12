@@ -44,7 +44,21 @@ You can now extend or implement the classes and filters in this package to speed
 
 ## Configuration
 
-Laravel Core requires no configuration. Just follow the simple install instructions and go!
+Laravel Core supports optional configuration.
+
+To get started, first publish the package config file:
+
+    php artisan config:publish graham-campbell/core
+
+There are two config options:
+
+**Home Page URL**
+
+This option (`'home'`) defines the url to use for the home page. The default value for this setting is `'/'`.
+
+**Enable Commands**
+
+This option (`'commands'`) enables the install/update/reset commands and bindings shipped with this package. Other packages can read this config to save time by not registering event command event listeners if command are disabled. The default value for this setting is `true`.
 
 
 ## Usage
