@@ -16,10 +16,10 @@
 
 namespace GrahamCampbell\Core\Subscribers;
 
+use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
+use Illuminate\Encryption\Encrypter;
 use Illuminate\Events\Dispatcher;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Crypt;
 
 /**
  * This is the command subscriber class.
@@ -33,6 +33,33 @@ use Illuminate\Support\Facades\Crypt;
 class CommandSubscriber
 {
     /**
+     * The events instance.
+     *
+     * @var \Illuminate\Events\Dispatcher
+     */
+    protected $config;
+
+    /**
+     * The events instance.
+     *
+     * @var \Illuminate\Events\Dispatcher
+     */
+    protected $crypt;
+
+    /**
+     * Create a new instance.
+     *
+     * @param  \Illuminate\Config\Repository  $config
+     * @param  \Illuminate\Encryption\Encrypter  $crypt
+     * @return void
+     */
+    public function __construct(Repository $config, Encrypter $crypt)
+    {
+        $this->config = $config;
+        $this->crypt = $crypt;
+    }
+
+    /**
      * Register the listeners for the subscriber.
      *
      * @param  \Illuminate\Events\Dispatcher  $events
@@ -40,12 +67,18 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen('command.genappkey', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAppKey', 5);
-        $events->listen('command.resetmigrations', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onResetMigrations', 5);
-        $events->listen('command.runmigrations', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunMigrations', 5);
-        $events->listen('command.runseeding', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunSeeding', 5);
-        $events->listen('command.updatecache', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache', 5);
-        $events->listen('command.genassets', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets', 5);
+        $events->listen('command.genappkey',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAppKey', 5);
+        $events->listen('command.resetmigrations',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onResetMigrations', 5);
+        $events->listen('command.runmigrations',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunMigrations', 5);
+        $events->listen('command.runseeding',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunSeeding', 5);
+        $events->listen('command.updatecache',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache', 5);
+        $events->listen('command.genassets',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets', 5);
     }
 
     /**
@@ -57,7 +90,7 @@ class CommandSubscriber
     public function onGenAppKey(Command $command)
     {
         $command->call('key:generate');
-        Crypt::setKey(Config::get('app.key'));
+        $this->crypt->setKey($this->config->get('app.key'));
     }
 
     /**
@@ -115,9 +148,9 @@ class CommandSubscriber
     public function onGenAssets(Command $command)
     {
         if (class_exists('Barryvdh\Debugbar\Console\PublishCommand')) {
-            $command->line('Publishing assets...');
+            $command->line('Publishing debugbar assets...');
             $command->call('debugbar:publish');
-            $command->info('Assets published!');
+            $command->info('Debugbar assets published!');
         }
 
         if (class_exists('Lightgear\Asset\Commands\Generate')) {
@@ -125,5 +158,25 @@ class CommandSubscriber
             $command->call('asset:generate');
             $command->info('Assets built!');
         }
+    }
+
+    /**
+     * Get the config instance.
+     *
+     * @return \Illuminate\Config\Repository
+     */
+    public function getComfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * Get the crypt instance.
+     *
+     * @return \Illuminate\Encryption\Encrypter
+     */
+    public function getCrypt()
+    {
+        return $this->crypt;
     }
 }

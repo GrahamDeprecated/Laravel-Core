@@ -63,6 +63,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->registerUpdateCommand();
         $this->registerInstallCommand();
         $this->registerResetCommand();
+        $this->registerCommandSubscriber();
     }
 
     /**
@@ -104,6 +105,21 @@ class CoreServiceProvider extends ServiceProvider
             $events = $app['events'];
 
             return new Commands\AppReset($events);
+        });
+    }
+
+    /**
+     * Register the command subscriber class.
+     *
+     * @return void
+     */
+    protected function registerCommandSubscriber()
+    {
+        $this->app->bindShared('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
+            $config = $app['config'];
+            $crypt = $app['crypt'];
+
+            return new Subscribers\CommandSubscriber($config, $crypt);
         });
     }
 
