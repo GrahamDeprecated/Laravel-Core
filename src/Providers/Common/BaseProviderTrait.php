@@ -108,21 +108,40 @@ trait BaseProviderTrait
     /**
      * Return the rules.
      *
+     * @param  array|string  $query
      * @return array
      */
-    public function rules()
+    public function rules($query = null)
     {
         $model = $this->model;
 
+        // get rules from the model if set
         if (isset($model::$rules)) {
             $rules = $model::$rules;
         }
 
+        // return an empty array
         if (!is_array($rules)) {
-            $rules = array();
+            return array();
         }
 
-        return $rules;
+        // return all of the rules
+        if (is_null($query)) {
+            return array_filter($rules);
+        }
+
+        // convert string to array
+        if (is_string($query)) {
+            $query = array($query);
+        }
+
+        // get the relevant rules
+        $stuff = array();
+        foreach ($query as $val) {
+            $stuff[$val] = $rules[$val];
+        }
+
+        return array_filter($stuff);
     }
 
     /**

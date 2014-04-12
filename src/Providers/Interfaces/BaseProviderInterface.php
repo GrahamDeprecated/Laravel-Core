@@ -77,9 +77,10 @@ interface BaseProviderInterface
     /**
      * Return the rules.
      *
+     * @param  array|string  $query
      * @return array
      */
-    public function rules();
+    public function rules($query = null);
 
     /**
      * Validate the data.
