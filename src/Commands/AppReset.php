@@ -16,6 +16,9 @@
 
 namespace GrahamCampbell\Core\Commands;
 
+use Illuminate\Console\Command;
+use Illuminate\Events\Dispatcher;
+
 /**
  * This is the app reset command class.
  *
@@ -25,7 +28,7 @@ namespace GrahamCampbell\Core\Commands;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-class AppReset extends AbstractCommand
+class AppReset extends Command
 {
     /**
      * The command name.
@@ -42,18 +45,46 @@ class AppReset extends AbstractCommand
     protected $description = 'Resets And Installs The Application';
 
     /**
+     * The events instance.
+     *
+     * @var \Illuminate\Events\Dispatcher
+     */
+    protected $events;
+
+    /**
+     * Create a new instance.
+     *
+     * @param  \Illuminate\Events\Dispatcher  $events
+     * @return void
+     */
+    public function __construct(Dispatcher $events)
+    {
+        $this->events = $events;
+    }
+
+    /**
      * Run the commend.
      *
      * @return void
      */
     public function fire()
     {
-        $this->genAppKey();
-        $this->resetMigrations();
-        $this->runMigrations();
-        $this->runSeeding();
-        $this->updateCache();
-        $this->genAssets();
-        $this->tryStartCron();
+        $this->events->fire('command.genappkey', $this);
+        $this->events->fire('command.resetmigrations', $this);
+        $this->events->fire('command.runmigrations', $this);
+        $this->events->fire('command.runseeding', $this);
+        $this->events->fire('command.updatecache', $this);
+        $this->events->fire('command.genassets', $this);
+        $this->events->fire('command.extrastuff', $this);
+    }
+
+    /**
+     * Get the events instance.
+     *
+     * @return \Illuminate\Events\Dispatcher
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 }

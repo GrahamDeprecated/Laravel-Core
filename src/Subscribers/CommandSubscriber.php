@@ -16,6 +16,8 @@
 
 namespace GrahamCampbell\Core\Subscribers;
 
+use Illuminate\Console\Command;
+use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Crypt;
 
@@ -36,23 +38,23 @@ class CommandSubscriber
      * @param  Illuminate\Events\Dispatcher  $events
      * @return array
      */
-    public function subscribe($events)
+    public function subscribe(Dispatcher $events)
     {
         $events->listen('command.genappkey', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAppKey', 5);
         $events->listen('command.resetmigrations', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onResetMigrations', 5);
         $events->listen('command.runmigrations', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunMigrations', 5);
         $events->listen('command.runseeding', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunSeeding', 5);
-        $events->listen('command.genassets', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets', 5);
         $events->listen('command.updatecache', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache', 5);
+        $events->listen('command.genassets', 'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets', 5);
     }
 
     /**
      * Handle a command.genappkey event.
      *
-     * @param  GrahamCampbell\Core\Commands\AbstractCommand  $command
+     * @param  Illuminate\Console\Command  $command
      * @return void
      */
-    public function onGenAppKey($command)
+    public function onGenAppKey(Command $command)
     {
         $command->call('key:generate');
         Crypt::setKey(Config::get('app.key'));
@@ -61,10 +63,10 @@ class CommandSubscriber
     /**
      * Handle a command.resetmigrations event.
      *
-     * @param  GrahamCampbell\Core\Commands\AbstractCommand  $command
+     * @param  Illuminate\Console\Command  $command
      * @return void
      */
-    public function onResetMigrations($command)
+    public function onResetMigrations(Command $command)
     {
         $command->call('migrate:reset');
     }
@@ -72,10 +74,10 @@ class CommandSubscriber
     /**
      * Handle a command.runmigrations event.
      *
-     * @param  GrahamCampbell\Core\Commands\AbstractCommand  $command
+     * @param  Illuminate\Console\Command  $command
      * @return void
      */
-    public function onRunMigrations($command)
+    public function onRunMigrations(Command $command)
     {
         $command->call('migrate');
     }
@@ -83,21 +85,34 @@ class CommandSubscriber
     /**
      * Handle a command.runseeding event.
      *
-     * @param  GrahamCampbell\Core\Commands\AbstractCommand  $command
+     * @param  Illuminate\Console\Command  $command
      * @return void
      */
-    public function onRunSeeding($command)
+    public function onRunSeeding(Command $command)
     {
         $command->call('db:seed');
     }
 
     /**
-     * Handle a command.genassets event.
+     * Handle a command.updatecache event.
      *
-     * @param  GrahamCampbell\Core\Commands\AbstractCommand  $command
+     * @param  Illuminate\Console\Command  $command
      * @return void
      */
-    public function onGenAssets($command)
+    public function onUpdateCache(Command $command)
+    {
+        $command->line('Clearing cache...');
+        $command->call('cache:clear');
+        $command->info('Cache cleared!');
+    }
+
+    /**
+     * Handle a command.genassets event.
+     *
+     * @param  Illuminate\Console\Command  $command
+     * @return void
+     */
+    public function onGenAssets(Command $command)
     {
         if (class_exists('Barryvdh\Debugbar\Console\PublishCommand')) {
             $command->line('Publishing assets...');
@@ -110,18 +125,5 @@ class CommandSubscriber
             $command->call('asset:generate');
             $command->info('Assets built!');
         }
-    }
-
-    /**
-     * Handle a command.updatecache event.
-     *
-     * @param  GrahamCampbell\Core\Commands\AbstractCommand  $command
-     * @return void
-     */
-    public function onUpdateCache($command)
-    {
-        $command->line('Clearing cache...');
-        $command->call('cache:clear');
-        $command->info('Cache cleared!');
     }
 }
