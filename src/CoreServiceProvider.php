@@ -45,6 +45,10 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->package('graham-campbell/core', 'graham-campbell/core', __DIR__);
 
+        if ($this->app['config']['graham-campbell/core::commands']) {
+            $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
+        }
+
         include __DIR__.'/filters.php';
         include __DIR__.'/listeners.php';
     }
@@ -56,12 +60,10 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app['config']['graham-campbell/core::commands']) {
-            $this->registerUpdateCommand();
-            $this->registerInstallCommand();
-            $this->registerResetCommand();
-            $this->registerCommandSubscriber();
-        }
+        $this->registerUpdateCommand();
+        $this->registerInstallCommand();
+        $this->registerResetCommand();
+        $this->registerCommandSubscriber();
     }
 
     /**
@@ -76,8 +78,6 @@ class CoreServiceProvider extends ServiceProvider
 
             return new Commands\AppUpdate($events);
         });
-
-        $this->commands('command.appupdate');
     }
 
     /**
@@ -92,8 +92,6 @@ class CoreServiceProvider extends ServiceProvider
 
             return new Commands\AppInstall($events);
         });
-
-        $this->commands('command.appinstall');
     }
 
     /**
@@ -108,8 +106,6 @@ class CoreServiceProvider extends ServiceProvider
 
             return new Commands\AppReset($events);
         });
-
-        $this->commands('command.appreset');
     }
 
     /**
