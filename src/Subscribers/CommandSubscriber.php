@@ -67,18 +67,36 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen('command.genappkey',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAppKey', 5);
-        $events->listen('command.resetmigrations',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onResetMigrations', 5);
-        $events->listen('command.runmigrations',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunMigrations', 5);
-        $events->listen('command.runseeding',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunSeeding', 5);
-        $events->listen('command.updatecache',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache', 5);
-        $events->listen('command.genassets',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets', 5);
+        $events->listen(
+            'command.genappkey',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAppKey',
+            5
+        );
+        $events->listen(
+            'command.resetmigrations',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onResetMigrations',
+            5
+        );
+        $events->listen(
+            'command.runmigrations',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunMigrations',
+            5
+        );
+        $events->listen(
+            'command.runseeding',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunSeeding',
+            5
+        );
+        $events->listen(
+            'command.updatecache',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache',
+            5
+        );
+        $events->listen(
+            'command.genassets',
+            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets',
+            5
+        );
     }
 
     /**
