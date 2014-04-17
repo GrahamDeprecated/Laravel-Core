@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V0.4 Alpha (Upcoming)
+## V1.0 Beta 1 (Upcoming - July 2014)
 
 * Upgraded to laravel 4.2
 * Merged with old viewer package
