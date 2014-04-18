@@ -52,9 +52,9 @@ class CoreServiceProvider extends ServiceProvider
 
         $this->app['html']->macro('ago', function (Carbon $carbon, $id = null) {
             if ($id) {
-                return '<abbr class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
-            } else {
                 return '<abbr id="'.$id.'" class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+            } else {
+                return '<abbr class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
             }
         });
 
