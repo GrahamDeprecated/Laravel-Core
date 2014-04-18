@@ -50,8 +50,12 @@ class CoreServiceProvider extends ServiceProvider
             $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
         }
 
-        $this->app['html']->macro('ago', function (Carbon $carbon) {
-            return '<abbr class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+        $this->app['html']->macro('ago', function (Carbon $carbon, $id = null) {
+            if ($id) {
+                return '<abbr class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+            } else {
+                return '<abbr id="'.$id.'" class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+            }
         });
 
         include __DIR__.'/filters.php';
