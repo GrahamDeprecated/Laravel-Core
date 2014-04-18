@@ -16,6 +16,7 @@
 
 namespace GrahamCampbell\Core;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -48,6 +49,10 @@ class CoreServiceProvider extends ServiceProvider
         if ($this->app['config']['graham-campbell/core::commands']) {
             $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
         }
+
+        $this->app['html']->macro('ago', function (Carbon $carbon) {
+            return '<abbr class="timeago" title="'.$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+        });
 
         include __DIR__.'/filters.php';
         include __DIR__.'/listeners.php';

@@ -15,6 +15,7 @@ CHANGE LOG
 * Command improvements
 * Improved validation
 * Database transactions
+* Added ago html macro
 * Added config
 * Composer tweaks
 
