@@ -16,6 +16,7 @@ CHANGE LOG
 * Improved validation
 * Database transactions
 * Added ago html macro
+* Improved paginator
 * Added config
 * Composer tweaks
 

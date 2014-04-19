@@ -1,5 +1,7 @@
 <?php
 
+use use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 /**
  * This file is part of Laravel Core by Graham Campbell.
  *
@@ -32,7 +34,7 @@ trait PaginateProviderTrait
      *
      * @var string
      */
-    protected $paginatelinks;
+    protected $paginateLinks;
 
     /**
      * Get a paginated list of the models.
@@ -49,10 +51,12 @@ trait PaginateProviderTrait
             $values = $model::paginate($model::$paginate, $model::$index);
         }
 
-        if (count($values) != 0) {
-            $this->paginatelinks = $values->links();
-        } else {
-            $this->paginatelinks = '';
+        if ($values->getCurrentPage() > $values->getLastPage()) {
+            throw new NotFoundHttpException();
+        }
+
+        if (!$values->getTotal()) {
+            $this->paginateLinks = $values->links();
         }
 
         return $values;
@@ -65,6 +69,6 @@ trait PaginateProviderTrait
      */
     public function links()
     {
-        return $this->paginatelinks;
+        return $this->paginateLinks;
     }
 }
