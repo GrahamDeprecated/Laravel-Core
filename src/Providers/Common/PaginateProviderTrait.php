@@ -51,7 +51,7 @@ trait PaginateProviderTrait
             $values = $model::paginate($model::$paginate, $model::$index);
         }
 
-        if ($values->getCurrentPage() > $values->getLastPage()) {
+        if ($values->getEnvironment()->getCurrentPage() > $values->getLastPage()) {
             throw new NotFoundHttpException();
         }
 
