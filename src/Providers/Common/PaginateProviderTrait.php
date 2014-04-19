@@ -1,7 +1,5 @@
 <?php
 
-use use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
 /**
  * This file is part of Laravel Core by Graham Campbell.
  *
@@ -17,6 +15,8 @@ use use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 
 namespace GrahamCampbell\Core\Providers\Common;
+
+use use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * This is the paginate provider trait.
