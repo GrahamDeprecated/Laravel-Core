@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Core\Providers\Common;
 
-use use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * This is the paginate provider trait.
