@@ -55,7 +55,7 @@ trait PaginateProviderTrait
             throw new NotFoundHttpException();
         }
 
-        if (!$values->getTotal()) {
+        if ($values->getTotal()) {
             $this->paginateLinks = $values->links();
         }
 
