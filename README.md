@@ -12,7 +12,7 @@ Laravel Core
 
 ## What Is Laravel Core?
 
-Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.com).
+Laravel Core provides some extra functionality for [Laravel 4.2](http://laravel.com).
 
 * Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
 * Laravel Core uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Core) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Core) to check everything is working.
@@ -24,8 +24,8 @@ Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 3.0+ is required.
-* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
+* PHP 5.4.7+ or HHVM 3.1+ is required.
+* You will need [Laravel 4.2](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Core.
 
 
@@ -33,7 +33,7 @@ Laravel Core provides some extra functionality for [Laravel 4.1](http://laravel.
 
 Please check the system requirements before installing Laravel Core.
 
-To get the latest version of Laravel Core, simply require `"graham-campbell/core": "0.3.*@alpha"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Core, simply require `"graham-campbell/core": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Core is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
