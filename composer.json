@@ -16,6 +16,7 @@
         "illuminate/database": "4.2.*",
         "illuminate/encryption": "4.2.*",
         "illuminate/events": "4.2.*",
+        "illuminate/pagination": "4.2.*",
         "illuminate/support": "4.2.*",
         "illuminate/validation": "4.2.*"
     },
