@@ -33,7 +33,7 @@ Laravel Core provides some extra functionality for [Laravel 4.2](http://laravel.
 
 Please check the system requirements before installing Laravel Core.
 
-To get the latest version of Laravel Core, simply require `"graham-campbell/core": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Core, simply require `"graham-campbell/core": "~0.4"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Core is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 

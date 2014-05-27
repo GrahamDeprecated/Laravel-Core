@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V1.0 Beta 1 (Upcoming - July 2014)
+## V0.4 Alpha (Upcoming - July 2014)
 
 * Upgraded to laravel 4.2
 * Added more unit tests
