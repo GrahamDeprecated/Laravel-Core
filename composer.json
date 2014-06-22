@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/core",
-    "description": "Core Provides Some Extra Functionality For Laravel 4.2",
+    "description": "Core Provides Some Extra Functionality For Laravel 4.1+",
     "keywords": ["laravel", "framework", "base", "starter", "core", "Core", "Laravel Core", "Laravel-Core", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache-2.0",
     "authors": [
@@ -11,14 +11,11 @@
     ],
     "require": {
         "php": ">=5.4.7",
-        "illuminate/config": "4.2.*",
-        "illuminate/console": "4.2.*",
-        "illuminate/database": "4.2.*",
-        "illuminate/encryption": "4.2.*",
-        "illuminate/events": "4.2.*",
-        "illuminate/pagination": "4.2.*",
-        "illuminate/support": "4.2.*",
-        "illuminate/validation": "4.2.*"
+        "illuminate/config": "~4.1",
+        "illuminate/console": "~4.1",
+        "illuminate/encryption": "~4.1",
+        "illuminate/events": "~4.1",
+        "illuminate/support": "~4.1"
     },
     "require-dev": {
         "graham-campbell/testbench": "~1.0"
