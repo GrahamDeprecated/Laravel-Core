@@ -4,7 +4,7 @@ CHANGE LOG
 
 ## V0.4 Alpha (Upcoming - July 2014)
 
-* Upgraded to laravel 4.2
+* Upgraded to laravel 4.1+
 * Moved database stuff to a separate package
 * Added more unit tests
 
