@@ -18,6 +18,6 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 Route::filter('ajax', function ($route, $request) {
     if (!$request->ajax()) {
-        throw new MethodNotAllowedHttpException('Ajax Is Required');
+        throw new MethodNotAllowedHttpException(array(), 'Ajax Is Required');
     }
 });
