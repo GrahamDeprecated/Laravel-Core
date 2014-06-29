@@ -47,16 +47,25 @@ class CommandSubscriber
     protected $crypt;
 
     /**
+     * The forced flag.
+     *
+     * @var bool
+     */
+    protected $force;
+
+    /**
      * Create a new instance.
      *
      * @param  \Illuminate\Config\Repository  $config
      * @param  \Illuminate\Encryption\Encrypter  $crypt
+     * @param  bool  $force
      * @return void
      */
-    public function __construct(Repository $config, Encrypter $crypt)
+    public function __construct(Repository $config, Encrypter $crypt, $force)
     {
         $this->config = $config;
         $this->crypt = $crypt;
+        $this->force = $force;
     }
 
     /**
@@ -119,7 +128,11 @@ class CommandSubscriber
      */
     public function onResetMigrations(Command $command)
     {
-        $command->call('migrate:reset');
+        if ($this->force) {
+            $command->call('migrate:reset', array('--force' => true));
+        } else {
+            $command->call('migrate:reset');
+        }
     }
 
     /**
@@ -130,7 +143,11 @@ class CommandSubscriber
      */
     public function onRunMigrations(Command $command)
     {
-        $command->call('migrate');
+        if ($this->force) {
+            $command->call('migrate', array('--force' => true));
+        } else {
+            $command->call('migrate');
+        }
     }
 
     /**
@@ -141,7 +158,11 @@ class CommandSubscriber
      */
     public function onRunSeeding(Command $command)
     {
-        $command->call('db:seed');
+        if ($this->force) {
+            $command->call('db:seed', array('--force' => true));
+        } else {
+            $command->call('db:seed');
+        }
     }
 
     /**
