@@ -6,6 +6,7 @@ CHANGE LOG
 
 * Upgraded to laravel 4.1+
 * Moved database stuff to a separate package
+* Minor refactoring
 * Added more unit tests
 
 

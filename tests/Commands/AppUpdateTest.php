@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Core;
+namespace GrahamCampbell\Tests\Core\Commands;
 
-use GrahamCampbell\TestBench\AbstractLaravelTestCase;
+use Mockery;
+use GrahamCampbell\Core\Commands\AppUpdate;
+use GrahamCampbell\TestBench\AbstractTestCase;
 
 /**
- * This is the abstract test case class.
+ * This is the app update test class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -27,38 +29,24 @@ use GrahamCampbell\TestBench\AbstractLaravelTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-abstract class AbstractTestCase extends AbstractLaravelTestCase
+class AppUpdateTest extends AbstractTestCase
 {
-    /**
-     * Get the application base path.
-     *
-     * @return string
-     */
-    protected function getBasePath()
+    public function testFire()
     {
-        return __DIR__.'/../src';
+        $command = $this->getCommand();
+
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.runmigrations', $command);
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.updatecache', $command);
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.genassets', $command);
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.extrastuff', $command);
+
+        $command->fire();
     }
 
-    /**
-     * Get the service provider class.
-     *
-     * @return string
-     */
-    protected function getServiceProviderClass()
+    protected function getCommand()
     {
-        return 'GrahamCampbell\Core\CoreServiceProvider';
-    }
+        $events = Mockery::mock('Illuminate\Events\Dispatcher');
 
-    /**
-     * Get the required service providers.
-     *
-     * @return array
-     */
-    protected function getRequiredServiceProviders()
-    {
-        return array(
-            'Barryvdh\Debugbar\ServiceProvider',
-            'Lightgear\Asset\AssetServiceProvider'
-        );
+        return new AppUpdate($events);
     }
 }

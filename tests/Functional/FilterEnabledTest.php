@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Core;
+namespace GrahamCampbell\Tests\Core\Functional;
 
-use GrahamCampbell\TestBench\AbstractLaravelTestCase;
+use GrahamCampbell\Tests\Core\AbstractTestCase;
 
 /**
- * This is the abstract test case class.
+ * This is the filter test class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -27,38 +27,36 @@ use GrahamCampbell\TestBench\AbstractLaravelTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-abstract class AbstractTestCase extends AbstractLaravelTestCase
+class FilterTest extends AbstractTestCase
 {
     /**
-     * Get the application base path.
+     * Specify if routing filters are enabled.
      *
-     * @return string
+     * @return bool
      */
-    protected function getBasePath()
+    protected function enableFilters()
     {
-        return __DIR__.'/../src';
+        return true;
+    }
+
+    public function testWithAjax()
+    {
+        $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
+            return 'Hello World';
+        }));
+
+        $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'));
     }
 
     /**
-     * Get the service provider class.
-     *
-     * @return string
+     * @expectedException \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException
      */
-    protected function getServiceProviderClass()
+    public function testWithOut()
     {
-        return 'GrahamCampbell\Core\CoreServiceProvider';
-    }
+        $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
+            return 'Hello World';
+        }));
 
-    /**
-     * Get the required service providers.
-     *
-     * @return array
-     */
-    protected function getRequiredServiceProviders()
-    {
-        return array(
-            'Barryvdh\Debugbar\ServiceProvider',
-            'Lightgear\Asset\AssetServiceProvider'
-        );
+        $this->call('GET', 'ajax-test-route');
     }
 }

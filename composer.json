@@ -9,6 +9,12 @@
             "email": "graham@mineuk.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/GrahamCampbell/asset"
+        }
+    ],
     "require": {
         "php": ">=5.4.7",
         "illuminate/config": "~4.1",
@@ -18,7 +24,9 @@
         "illuminate/support": "~4.1"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~1.0"
+        "graham-campbell/testbench": "~1.0",
+        "barryvdh/laravel-debugbar": "1.6.*",
+        "lightgear/asset": "1.4"
     },
     "autoload": {
         "psr-4": {

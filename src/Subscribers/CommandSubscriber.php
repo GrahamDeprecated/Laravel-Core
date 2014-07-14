@@ -54,18 +54,36 @@ class CommandSubscriber
     protected $force;
 
     /**
+     * The debugbar flag.
+     *
+     * @var bool
+     */
+    protected $debugbar;
+
+    /**
+     * The assets flag.
+     *
+     * @var bool
+     */
+    protected $assets;
+
+    /**
      * Create a new instance.
      *
      * @param  \Illuminate\Config\Repository  $config
      * @param  \Illuminate\Encryption\Encrypter  $crypt
      * @param  bool  $force
+     * @param  bool  $debugbar
+     * @param  bool  $assets
      * @return void
      */
-    public function __construct(Repository $config, Encrypter $crypt, $force)
+    public function __construct(Repository $config, Encrypter $crypt, $force, $debugbar = false, $assets = false)
     {
         $this->config = $config;
         $this->crypt = $crypt;
         $this->force = $force;
+        $this->debugbar = $debugbar;
+        $this->assets = $assets;
     }
 
     /**
@@ -186,36 +204,16 @@ class CommandSubscriber
      */
     public function onGenAssets(Command $command)
     {
-        if (class_exists('Barryvdh\Debugbar\Console\PublishCommand')) {
+        if ($this->debugbar) {
             $command->line('Publishing debugbar assets...');
             $command->call('debugbar:publish');
             $command->info('Debugbar assets published!');
         }
 
-        if (class_exists('Lightgear\Asset\Commands\Generate')) {
+        if ($this->assets) {
             $command->line('Building assets...');
             $command->call('asset:generate');
             $command->info('Assets built!');
         }
-    }
-
-    /**
-     * Get the config instance.
-     *
-     * @return \Illuminate\Config\Repository
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
-    /**
-     * Get the crypt instance.
-     *
-     * @return \Illuminate\Encryption\Encrypter
-     */
-    public function getCrypt()
-    {
-        return $this->crypt;
     }
 }

@@ -16,10 +16,10 @@
 
 namespace GrahamCampbell\Tests\Core;
 
-use GrahamCampbell\TestBench\AbstractLaravelTestCase;
+use Carbon\Carbon;
 
 /**
- * This is the abstract test case class.
+ * This is the macro test class.
  *
  * @package    Laravel-Core
  * @author     Graham Campbell
@@ -27,38 +27,19 @@ use GrahamCampbell\TestBench\AbstractLaravelTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Core
  */
-abstract class AbstractTestCase extends AbstractLaravelTestCase
+class MacroTest extends AbstractTestCase
 {
-    /**
-     * Get the application base path.
-     *
-     * @return string
-     */
-    protected function getBasePath()
+    public function testBasic()
     {
-        return __DIR__.'/../src';
+        $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5));
+
+        $this->assertEquals('<abbr class="timeago" title="2014-01-02T03:04:05+0000">2014-01-02 03:04:05</abbr>', $result);
     }
 
-    /**
-     * Get the service provider class.
-     *
-     * @return string
-     */
-    protected function getServiceProviderClass()
+    public function testId()
     {
-        return 'GrahamCampbell\Core\CoreServiceProvider';
-    }
+        $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5), 'foo');
 
-    /**
-     * Get the required service providers.
-     *
-     * @return array
-     */
-    protected function getRequiredServiceProviders()
-    {
-        return array(
-            'Barryvdh\Debugbar\ServiceProvider',
-            'Lightgear\Asset\AssetServiceProvider'
-        );
+        $this->assertEquals('<abbr id="foo" class="timeago" title="2014-01-02T03:04:05+0000">2014-01-02 03:04:05</abbr>', $result);
     }
 }
