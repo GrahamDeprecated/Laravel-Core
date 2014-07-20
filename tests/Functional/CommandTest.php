@@ -57,4 +57,10 @@ class CommandTest extends AbstractTestCase
     {
         $this->assertEquals(0, $this->app['artisan']->call('app:update'));
     }
+
+    public function testResetAfterInstall()
+    {
+        $this->assertEquals(0, $this->app['artisan']->call('app:install'));
+        $this->assertEquals(0, $this->app['artisan']->call('app:reset'));
+    }
 }
