@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V0.4 Alpha (Upcoming - July 2014)
+## V0.4 Alpha (20/07/2014)
 
 * Upgraded to laravel 4.1+
 * Moved database stuff to a separate package
