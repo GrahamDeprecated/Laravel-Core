@@ -33,16 +33,16 @@ use Illuminate\Events\Dispatcher;
 class CommandSubscriber
 {
     /**
-     * The events instance.
+     * The config instance.
      *
-     * @var \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Config\Repository
      */
     protected $config;
 
     /**
-     * The events instance.
+     * The encryption instance.
      *
-     * @var \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Encryption\Encrypter
      */
     protected $crypt;
 
