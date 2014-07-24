@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V0.4.1 Alpha (Upcoming - August 2014)
+
+* Minor fixes and tweaks
+
+
 ## V0.4 Alpha (20/07/2014)
 
 * Upgraded to laravel 4.1+
