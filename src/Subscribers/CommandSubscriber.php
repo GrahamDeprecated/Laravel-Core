@@ -24,57 +24,56 @@ use Illuminate\Events\Dispatcher;
 /**
  * This is the command subscriber class.
  *
- * @package    Laravel-Core
- * @author     Graham Campbell
- * @copyright  Copyright 2013-2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Core
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2013-2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
  */
 class CommandSubscriber
 {
     /**
      * The config instance.
      *
-     * @var \Illuminate\Config\Repository
+     * @type \Illuminate\Config\Repository
      */
     protected $config;
 
     /**
      * The encryption instance.
      *
-     * @var \Illuminate\Encryption\Encrypter
+     * @type \Illuminate\Encryption\Encrypter
      */
     protected $crypt;
 
     /**
      * The forced flag.
      *
-     * @var bool
+     * @type bool
      */
     protected $force;
 
     /**
      * The debugbar flag.
      *
-     * @var bool
+     * @type bool
      */
     protected $debugbar;
 
     /**
      * The assets flag.
      *
-     * @var bool
+     * @type bool
      */
     protected $assets;
 
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Config\Repository  $config
-     * @param  \Illuminate\Encryption\Encrypter  $crypt
-     * @param  bool  $force
-     * @param  bool  $debugbar
-     * @param  bool  $assets
+     * @param \Illuminate\Config\Repository    $config
+     * @param \Illuminate\Encryption\Encrypter $crypt
+     * @param bool                             $force
+     * @param bool                             $debugbar
+     * @param bool                             $assets
+     *
      * @return void
      */
     public function __construct(Repository $config, Encrypter $crypt, $force, $debugbar = false, $assets = false)
@@ -89,8 +88,9 @@ class CommandSubscriber
     /**
      * Register the listeners for the subscriber.
      *
-     * @param  \Illuminate\Events\Dispatcher  $events
-     * @return array
+     * @param \Illuminate\Events\Dispatcher $events
+     *
+     * @return void
      */
     public function subscribe(Dispatcher $events)
     {
@@ -129,7 +129,8 @@ class CommandSubscriber
     /**
      * Handle a command.genappkey event.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param \Illuminate\Console\Command $command
+     *
      * @return void
      */
     public function onGenAppKey(Command $command)
@@ -141,7 +142,8 @@ class CommandSubscriber
     /**
      * Handle a command.resetmigrations event.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param \Illuminate\Console\Command $command
+     *
      * @return void
      */
     public function onResetMigrations(Command $command)
@@ -156,7 +158,8 @@ class CommandSubscriber
     /**
      * Handle a command.runmigrations event.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param \Illuminate\Console\Command $command
+     *
      * @return void
      */
     public function onRunMigrations(Command $command)
@@ -171,7 +174,8 @@ class CommandSubscriber
     /**
      * Handle a command.runseeding event.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param \Illuminate\Console\Command $command
+     *
      * @return void
      */
     public function onRunSeeding(Command $command)
@@ -186,7 +190,8 @@ class CommandSubscriber
     /**
      * Handle a command.updatecache event.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param \Illuminate\Console\Command $command
+     *
      * @return void
      */
     public function onUpdateCache(Command $command)
@@ -199,7 +204,8 @@ class CommandSubscriber
     /**
      * Handle a command.genassets event.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param \Illuminate\Console\Command $command
+     *
      * @return void
      */
     public function onGenAssets(Command $command)

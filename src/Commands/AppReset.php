@@ -22,39 +22,38 @@ use Illuminate\Events\Dispatcher;
 /**
  * This is the app reset command class.
  *
- * @package    Laravel-Core
- * @author     Graham Campbell
- * @copyright  Copyright 2013-2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Core
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2013-2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
  */
 class AppReset extends Command
 {
     /**
      * The command name.
      *
-     * @var string
+     * @type string
      */
     protected $name = 'app:reset';
 
     /**
      * The command description.
      *
-     * @var string
+     * @type string
      */
     protected $description = 'Resets And Installs The Application';
 
     /**
      * The events instance.
      *
-     * @var \Illuminate\Events\Dispatcher
+     * @type \Illuminate\Events\Dispatcher
      */
     protected $events;
 
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Events\Dispatcher  $events
+     * @param \Illuminate\Events\Dispatcher $events
+     *
      * @return void
      */
     public function __construct(Dispatcher $events)
