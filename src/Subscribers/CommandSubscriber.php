@@ -33,35 +33,35 @@ class CommandSubscriber
     /**
      * The config instance.
      *
-     * @type \Illuminate\Config\Repository
+     * @var \Illuminate\Config\Repository
      */
     protected $config;
 
     /**
      * The encryption instance.
      *
-     * @type \Illuminate\Encryption\Encrypter
+     * @var \Illuminate\Encryption\Encrypter
      */
     protected $crypt;
 
     /**
      * The forced flag.
      *
-     * @type bool
+     * @var bool
      */
     protected $force;
 
     /**
      * The debugbar flag.
      *
-     * @type bool
+     * @var bool
      */
     protected $debugbar;
 
     /**
      * The assets flag.
      *
-     * @type bool
+     * @var bool
      */
     protected $assets;
 

@@ -31,21 +31,21 @@ class AppReset extends Command
     /**
      * The command name.
      *
-     * @type string
+     * @var string
      */
     protected $name = 'app:reset';
 
     /**
      * The command description.
      *
-     * @type string
+     * @var string
      */
     protected $description = 'Resets And Installs The Application';
 
     /**
      * The events instance.
      *
-     * @type \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Events\Dispatcher
      */
     protected $events;
 

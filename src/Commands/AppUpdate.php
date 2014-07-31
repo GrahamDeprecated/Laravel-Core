@@ -31,21 +31,21 @@ class AppUpdate extends Command
     /**
      * The command name.
      *
-     * @type string
+     * @var string
      */
     protected $name = 'app:update';
 
     /**
      * The command description.
      *
-     * @type string
+     * @var string
      */
     protected $description = 'Updates The Application';
 
     /**
      * The events instance.
      *
-     * @type \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Events\Dispatcher
      */
     protected $events;
 

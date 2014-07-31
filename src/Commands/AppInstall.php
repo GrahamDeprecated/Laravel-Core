@@ -31,21 +31,21 @@ class AppInstall extends Command
     /**
      * The command name.
      *
-     * @type string
+     * @var string
      */
     protected $name = 'app:install';
 
     /**
      * The command description.
      *
-     * @type string
+     * @var string
      */
     protected $description = 'Installs The Application';
 
     /**
      * The events instance.
      *
-     * @type \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Events\Dispatcher
      */
     protected $events;
 
