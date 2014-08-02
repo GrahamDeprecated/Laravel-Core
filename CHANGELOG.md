@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V0.4.1 Alpha (Upcoming - August 2014)
+## V0.4.1 Alpha (02/08/2014)
 
 * Minor fixes and tweaks
 
