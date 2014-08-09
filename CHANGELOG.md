@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V0.4.2 Alpha (09/08/2014)
+
+* Corrected the license comments
+
+
 ## V0.4.1 Alpha (02/08/2014)
 
 * Minor fixes and tweaks
