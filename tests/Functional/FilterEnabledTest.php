@@ -43,7 +43,7 @@ class FilterTest extends AbstractTestCase
             return 'Hello World';
         }));
 
-        $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'));
+        $this->assertInstanceOf('Illuminate\Http\Response', $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest')));
     }
 
     /**

@@ -31,20 +31,20 @@ class CommandSubscriberTest extends AbstractTestCase
 {
     public function testResetMigrations()
     {
-        $this->callCommand('migrate:reset', 'onResetMigrations');
-        $this->callCommand('migrate:reset', 'onResetMigrations', true);
+        $this->assertEmpty($this->callCommand('migrate:reset', 'onResetMigrations'));
+        $this->assertEmpty($this->callCommand('migrate:reset', 'onResetMigrations', true));
     }
 
     public function testRunMigrations()
     {
-        $this->callCommand('migrate', 'onRunMigrations');
-        $this->callCommand('migrate', 'onRunMigrations', true);
+        $this->assertEmpty($this->callCommand('migrate', 'onRunMigrations'));
+        $this->assertEmpty($this->callCommand('migrate', 'onRunMigrations', true));
     }
 
     public function testRunSeeding()
     {
-        $this->callCommand('db:seed', 'onRunSeeding');
-        $this->callCommand('db:seed', 'onRunSeeding', true);
+        $this->assertEmpty($this->callCommand('db:seed', 'onRunSeeding'));
+        $this->assertEmpty($this->callCommand('db:seed', 'onRunSeeding', true));
     }
 
     protected function callCommand($name, $method, $force = false)

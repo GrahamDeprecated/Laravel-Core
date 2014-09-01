@@ -40,7 +40,7 @@ class AppInstallTest extends AbstractTestCase
         $command->getEvents()->shouldReceive('fire')->once()->with('command.genassets', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.extrastuff', $command);
 
-        $command->fire();
+        $this->assertEmpty($command->fire());
     }
 
     protected function getCommand()
