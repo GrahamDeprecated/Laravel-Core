@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V0.5.0 Alpha (Upcoming)
+
+* Improved the test suite
+* Dropped debugbar support
+
+
 ## V0.4.2 Alpha (09/08/2014)
 
 * Corrected the license comments
