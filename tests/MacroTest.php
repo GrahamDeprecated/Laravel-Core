@@ -29,7 +29,7 @@ class MacroTest extends AbstractTestCase
 {
     public function testBasic()
     {
-        if (!$app->bound('html')) {
+        if (!$this->app->bound('html')) {
             return $this->markTestSkipped('The html component is not setup.');
         }
 

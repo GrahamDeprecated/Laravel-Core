@@ -48,7 +48,7 @@ class CoreServiceProvider extends ServiceProvider
             $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
         }
 
-        if ($app->bound('html')) {
+        if ($this->app->bound('html')) {
             $this->app['html']->macro('ago', function (Carbon $carbon, $id = null) {
                 if ($id) {
                     return '<abbr id="'.$id.'" class="timeago" title="'
