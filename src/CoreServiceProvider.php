@@ -127,10 +127,9 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->bindShared('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
             $config = $app['config'];
             $crypt = $app['encrypter'];
-            $force = trait_exists('Illuminate\Support\Traits\MacroableTrait');
             $assets = class_exists('Lightgear\Asset\Commands\Generate');
 
-            return new Subscribers\CommandSubscriber($config, $crypt, $force, $assets);
+            return new Subscribers\CommandSubscriber($config, $crypt, $assets);
         });
     }
 

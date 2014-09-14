@@ -43,7 +43,7 @@ class AppUpdateTest extends AbstractTestCase
 
     protected function getCommand()
     {
-        $events = Mockery::mock('Illuminate\Events\Dispatcher');
+        $events = Mockery::mock('Illuminate\Contracts\Events\Dispatcher');
 
         return new AppUpdate($events);
     }

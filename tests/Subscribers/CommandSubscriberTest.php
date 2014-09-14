@@ -32,41 +32,34 @@ class CommandSubscriberTest extends AbstractTestCase
     public function testResetMigrations()
     {
         $this->assertEmpty($this->callCommand('migrate:reset', 'onResetMigrations'));
-        $this->assertEmpty($this->callCommand('migrate:reset', 'onResetMigrations', true));
     }
 
     public function testRunMigrations()
     {
         $this->assertEmpty($this->callCommand('migrate', 'onRunMigrations'));
-        $this->assertEmpty($this->callCommand('migrate', 'onRunMigrations', true));
     }
 
     public function testRunSeeding()
     {
         $this->assertEmpty($this->callCommand('db:seed', 'onRunSeeding'));
-        $this->assertEmpty($this->callCommand('db:seed', 'onRunSeeding', true));
     }
 
-    protected function callCommand($name, $method, $force = false)
+    protected function callCommand($name, $method)
     {
-        $subscriber = $this->getSubscriber($force);
+        $subscriber = $this->getSubscriber();
         $command = $this->getCommand();
 
-        if ($force) {
-            $command->shouldReceive('call')->once()->with($name, array('--force' => true));
-        } else {
-            $command->shouldReceive('call')->once()->with($name);
-        }
+        $command->shouldReceive('call')->once()->with($name, array('--force' => true));
 
         $subscriber->$method($command);
     }
 
-    protected function getSubscriber($force)
+    protected function getSubscriber()
     {
-        $config = Mockery::mock('Illuminate\Config\Repository');
-        $crypt = Mockery::mock('Illuminate\Encryption\Encrypter');
+        $config = Mockery::mock('Illuminate\Contracts\Config\Config');
+        $crypt = Mockery::mock('Illuminate\Contracts\Encryption\Encrypter');
 
-        return new CommandSubscriber($config, $crypt, $force);
+        return new CommandSubscriber($config, $crypt);
     }
 
     protected function getCommand()

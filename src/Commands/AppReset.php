@@ -17,7 +17,7 @@
 namespace GrahamCampbell\Core\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Events\Dispatcher;
+use Illuminate\Contracts\Events\Dispatcher;
 
 /**
  * This is the app reset command class.
@@ -45,14 +45,14 @@ class AppReset extends Command
     /**
      * The events instance.
      *
-     * @var \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Contracts\Events\Dispatcher
      */
     protected $events;
 
     /**
      * Create a new instance.
      *
-     * @param \Illuminate\Events\Dispatcher $events
+     * @param \Illuminate\Contracts\Events\Dispatcher $events
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class AppReset extends Command
     /**
      * Get the events instance.
      *
-     * @return \Illuminate\Events\Dispatcher
+     * @return \Illuminate\Contracts\Events\Dispatcher
      */
     public function getEvents()
     {

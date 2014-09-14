@@ -16,10 +16,10 @@
 
 namespace GrahamCampbell\Core\Subscribers;
 
-use Illuminate\Config\Repository;
+use Illuminate\Contracts\Config\Config;
 use Illuminate\Console\Command;
-use Illuminate\Encryption\Encrypter;
-use Illuminate\Events\Dispatcher;
+use Illuminate\Contracts\Encryption\Encrypter;
+use Illuminate\Contracts\Events\Dispatcher;
 
 /**
  * This is the command subscriber class.
@@ -33,23 +33,16 @@ class CommandSubscriber
     /**
      * The config instance.
      *
-     * @var \Illuminate\Config\Repository
+     * @var \Illuminate\Contracts\Config\Config
      */
     protected $config;
 
     /**
      * The encryption instance.
      *
-     * @var \Illuminate\Encryption\Encrypter
+     * @var \Illuminate\Contracts\Encryption\Encrypter
      */
     protected $crypt;
-
-    /**
-     * The forced flag.
-     *
-     * @var bool
-     */
-    protected $force;
 
     /**
      * The assets flag.
@@ -61,25 +54,23 @@ class CommandSubscriber
     /**
      * Create a new instance.
      *
-     * @param \Illuminate\Config\Repository    $config
-     * @param \Illuminate\Encryption\Encrypter $crypt
-     * @param bool                             $force
-     * @param bool                             $assets
+     * @param \Illuminate\Contracts\Config\Config        $config
+     * @param \Illuminate\Contracts\Encryption\Encrypter $crypt
+     * @param bool                                       $assets
      *
      * @return void
      */
-    public function __construct(Repository $config, Encrypter $crypt, $force, $assets = false)
+    public function __construct(Repository $config, Encrypter $crypt, $assets = false)
     {
         $this->config = $config;
         $this->crypt = $crypt;
-        $this->force = $force;
         $this->assets = $assets;
     }
 
     /**
      * Register the listeners for the subscriber.
      *
-     * @param \Illuminate\Events\Dispatcher $events
+     * @param \Illuminate\Contracts\Events\Dispatcher $events
      *
      * @return void
      */
@@ -139,11 +130,7 @@ class CommandSubscriber
      */
     public function onResetMigrations(Command $command)
     {
-        if ($this->force) {
-            $command->call('migrate:reset', array('--force' => true));
-        } else {
-            $command->call('migrate:reset');
-        }
+        $command->call('migrate:reset', array('--force' => true));
     }
 
     /**
@@ -155,11 +142,7 @@ class CommandSubscriber
      */
     public function onRunMigrations(Command $command)
     {
-        if ($this->force) {
-            $command->call('migrate', array('--force' => true));
-        } else {
-            $command->call('migrate');
-        }
+        $command->call('migrate', array('--force' => true));
     }
 
     /**
@@ -171,11 +154,7 @@ class CommandSubscriber
      */
     public function onRunSeeding(Command $command)
     {
-        if ($this->force) {
-            $command->call('db:seed', array('--force' => true));
-        } else {
-            $command->call('db:seed');
-        }
+        $command->call('db:seed', array('--force' => true));
     }
 
     /**

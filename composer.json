@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/core",
-    "description": "Core Provides Some Extra Functionality For Laravel 4.1/4.2",
+    "description": "Core Provides Some Extra Functionality For Laravel 5",
     "keywords": ["laravel", "framework", "base", "starter", "core", "Core", "Laravel Core", "Laravel-Core", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache-2.0",
     "authors": [
@@ -17,15 +17,13 @@
     ],
     "require": {
         "php": ">=5.4.7",
-        "illuminate/config": "~4.1",
-        "illuminate/console": "~4.1",
-        "illuminate/encryption": "~4.1",
-        "illuminate/events": "~4.1",
-        "illuminate/support": "~4.1"
+        "illuminate/console": "~5.0",
+        "illuminate/contracts": "~5.0",
+        "illuminate/support": "~5.0"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~1.0",
-        "lightgear/asset": "1.4"
+        "graham-campbell/testbench": "~2.0",
+        "lightgear/asset": "1.5.*"
     },
     "autoload": {
         "psr-4": {
@@ -35,6 +33,11 @@
     "autoload-dev": {
         "psr-4": {
             "GrahamCampbell\\Tests\\Core\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     },
     "minimum-stability": "dev",
