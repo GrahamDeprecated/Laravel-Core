@@ -45,7 +45,6 @@ abstract class AbstractTestCase extends AbstractLaravelTestCase
     protected function getRequiredServiceProviders()
     {
         return array(
-            'Barryvdh\Debugbar\ServiceProvider',
             'Lightgear\Asset\AssetServiceProvider'
         );
     }

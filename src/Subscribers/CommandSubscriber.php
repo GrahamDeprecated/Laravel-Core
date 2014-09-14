@@ -52,13 +52,6 @@ class CommandSubscriber
     protected $force;
 
     /**
-     * The debugbar flag.
-     *
-     * @var bool
-     */
-    protected $debugbar;
-
-    /**
      * The assets flag.
      *
      * @var bool
@@ -71,17 +64,15 @@ class CommandSubscriber
      * @param \Illuminate\Config\Repository    $config
      * @param \Illuminate\Encryption\Encrypter $crypt
      * @param bool                             $force
-     * @param bool                             $debugbar
      * @param bool                             $assets
      *
      * @return void
      */
-    public function __construct(Repository $config, Encrypter $crypt, $force, $debugbar = false, $assets = false)
+    public function __construct(Repository $config, Encrypter $crypt, $force, $assets = false)
     {
         $this->config = $config;
         $this->crypt = $crypt;
         $this->force = $force;
-        $this->debugbar = $debugbar;
         $this->assets = $assets;
     }
 
@@ -210,12 +201,6 @@ class CommandSubscriber
      */
     public function onGenAssets(Command $command)
     {
-        if ($this->debugbar) {
-            $command->line('Publishing debugbar assets...');
-            $command->call('debugbar:publish');
-            $command->info('Debugbar assets published!');
-        }
-
         if ($this->assets) {
             $command->line('Building assets...');
             $command->call('asset:generate');

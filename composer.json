@@ -25,7 +25,6 @@
     },
     "require-dev": {
         "graham-campbell/testbench": "~1.0",
-        "barryvdh/laravel-debugbar": "1.6.*",
         "lightgear/asset": "1.4"
     },
     "autoload": {
@@ -40,7 +39,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.4-dev"
+            "dev-master": "0.5-dev"
         }
     },
     "minimum-stability": "dev",
