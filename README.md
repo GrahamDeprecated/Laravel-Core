@@ -9,6 +9,11 @@ Laravel Core
 [![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Core.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-Core/releases)
 
 
+### Looking for a laravel 5 compatable version?
+
+Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Core/tree/master), installable by requiring `"graham-campbell/core": "~1.0"`.
+
+
 ## Introduction
 
 Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some extra functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Core/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
@@ -18,7 +23,7 @@ Laravel Core was created by, and is maintained by [Graham Campbell](https://gith
 
 [PHP](https://php.net) 5.4+ or [HHVM](http://hhvm.com) 3.2+, and [Composer](https://getcomposer.org) are required.
 
-To get the latest version of Laravel Core, simply require `"graham-campbell/core": "~0.5"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Core, simply require `"graham-campbell/core": "0.5.*"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Core is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
