@@ -27,12 +27,29 @@ use Carbon\Carbon;
  */
 class MacroTest extends AbstractTestCase
 {
+    /**
+     * Get the required service providers.
+     *
+     * @return string[]
+     */
+    protected function getRequiredServiceProviders()
+    {
+        return array(
+            'Illuminate\Html\HtmlServiceProvider',
+            'Lightgear\Asset\AssetServiceProvider'
+        );
+    }
+
+    public function testSetup()
+    {
+        $this->assertTrue($this->app->bound('html'));
+    }
+
+    /**
+     * @depends testSetup
+     */
     public function testBasic()
     {
-        if (!$this->app->bound('html')) {
-            return $this->markTestSkipped('The html component is not setup.');
-        }
-
         $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5));
 
         $this->assertSame('<abbr class="timeago" title="2014-01-02T03:04:05+0000">2014-01-02 03:04:05</abbr>', $result);

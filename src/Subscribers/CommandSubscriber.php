@@ -60,7 +60,7 @@ class CommandSubscriber
      *
      * @return void
      */
-    public function __construct(Repository $config, Encrypter $crypt, $assets = false)
+    public function __construct(Config $config, Encrypter $crypt, $assets = false)
     {
         $this->config = $config;
         $this->crypt = $crypt;
