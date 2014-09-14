@@ -29,11 +29,18 @@ class MacroTest extends AbstractTestCase
 {
     public function testBasic()
     {
+        if (!$app->bound('html')) {
+            return $this->markTestSkipped('The html component is not setup.');
+        }
+
         $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5));
 
         $this->assertSame('<abbr class="timeago" title="2014-01-02T03:04:05+0000">2014-01-02 03:04:05</abbr>', $result);
     }
 
+    /**
+     * @depends testBasic
+     */
     public function testId()
     {
         $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5), 'foo');
