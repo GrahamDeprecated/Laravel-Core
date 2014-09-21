@@ -7,7 +7,7 @@ CHANGE LOG
 * Upgraded to laravel 5
 
 
-## V0.5.0 Alpha (Upcoming)
+## V1.0 RC 1 (Upcoming)
 
 * Improved the test suite
 * Dropped debugbar support
