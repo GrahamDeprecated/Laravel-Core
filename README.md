@@ -11,7 +11,7 @@ Laravel Core
 
 ### Looking for a laravel 4 compatable version?
 
-Checkout the [0.5 branch](https://github.com/GrahamCampbell/Laravel-Core/tree/0.5), installable by requiring `"graham-campbell/core": "0.5.*"`.
+Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Core/tree/1.0), installable by requiring `"graham-campbell/core": "~1.0"`.
 
 
 ## Introduction
@@ -23,7 +23,7 @@ Laravel Core was created by, and is maintained by [Graham Campbell](https://gith
 
 [PHP](https://php.net) 5.4+ or [HHVM](http://hhvm.com) 3.2+, and [Composer](https://getcomposer.org) are required.
 
-To get the latest version of Laravel Core, simply require `"graham-campbell/core": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Core, simply require `"graham-campbell/core": "~2.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Core is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
