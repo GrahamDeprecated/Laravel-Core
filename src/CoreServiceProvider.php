@@ -18,6 +18,7 @@ namespace GrahamCampbell\Core;
 
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 /**
  * This is the core service provider class.
@@ -49,19 +50,59 @@ class CoreServiceProvider extends ServiceProvider
         }
 
         if ($this->app->bound('html')) {
-            $this->app['html']->macro('ago', function (Carbon $carbon, $id = null) {
-                if ($id) {
-                    return '<abbr id="'.$id.'" class="timeago" title="'
-                        .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
-                } else {
-                    return '<abbr class="timeago" title="'
-                        .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
-                }
-            });
+            $this->setupMacros();
+
         }
 
-        include __DIR__.'/filters.php';
-        include __DIR__.'/listeners.php';
+        $this->setupFilters();
+        $this->setupListeners();
+    }
+
+    /**
+     * Setup the html macros.
+     *
+     * @return void
+     */
+    protected function setupMacros()
+    {
+        $this->app['html']->macro('ago', function (Carbon $carbon, $id = null) {
+            if ($id) {
+                return '<abbr id="'.$id.'" class="timeago" title="'
+                    .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+            } else {
+                return '<abbr class="timeago" title="'
+                    .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
+            }
+        });
+    }
+
+    /**
+     * Setup the filters.
+     *
+     * @return void
+     */
+    protected function setupFilters()
+    {
+        $router = $this->app['router'];
+
+        $router->filter('ajax', function ($route, $request) {
+            if (!$request->ajax()) {
+                throw new MethodNotAllowedHttpException(array(), 'Ajax Is Required');
+            }
+        });
+    }
+
+    /**
+     * Setup the listeners.
+     *
+     * @return void
+     */
+    protected function setupListeners()
+    {
+        if ($this->app['config']['graham-campbell/core::commands']) {
+            $subscriber = $this->app->make('GrahamCampbell\Core\Subscribers\CommandSubscriber');
+            $this->app['events']->subscribe($subscriber);
+        }
     }
 
     /**
