@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Core\Subscribers;
 
-use Illuminate\Contracts\Config\Config;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -33,7 +33,7 @@ class CommandSubscriber
     /**
      * The config instance.
      *
-     * @var \Illuminate\Contracts\Config\Config
+     * @var \Illuminate\Contracts\Config\Repository
      */
     protected $config;
 
@@ -54,13 +54,13 @@ class CommandSubscriber
     /**
      * Create a new instance.
      *
-     * @param \Illuminate\Contracts\Config\Config        $config
+     * @param \Illuminate\Contracts\Config\Repository    $config
      * @param \Illuminate\Contracts\Encryption\Encrypter $crypt
      * @param bool                                       $assets
      *
      * @return void
      */
-    public function __construct(Config $config, Encrypter $crypt, $assets = false)
+    public function __construct(Repository $config, Encrypter $crypt, $assets = false)
     {
         $this->config = $config;
         $this->crypt = $crypt;

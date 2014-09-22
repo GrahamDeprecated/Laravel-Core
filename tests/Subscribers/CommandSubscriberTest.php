@@ -56,7 +56,7 @@ class CommandSubscriberTest extends AbstractTestCase
 
     protected function getSubscriber()
     {
-        $config = Mockery::mock('Illuminate\Contracts\Config\Config');
+        $config = Mockery::mock('Illuminate\Contracts\Config\Repository');
         $crypt = Mockery::mock('Illuminate\Contracts\Encryption\Encrypter');
 
         return new CommandSubscriber($config, $crypt);
