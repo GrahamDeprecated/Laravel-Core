@@ -51,7 +51,6 @@ class CoreServiceProvider extends ServiceProvider
 
         if ($this->app->bound('html')) {
             $this->setupMacros();
-
         }
 
         $this->setupFilters();

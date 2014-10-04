@@ -36,7 +36,7 @@ class MacroTest extends AbstractTestCase
     {
         return array(
             'Illuminate\Html\HtmlServiceProvider',
-            'Lightgear\Asset\AssetServiceProvider'
+            'Lightgear\Asset\AssetServiceProvider',
         );
     }
 
