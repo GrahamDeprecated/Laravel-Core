@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\Tests\Core\Subscribers;
 
-use Mockery;
 use GrahamCampbell\Core\Subscribers\CommandSubscriber;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use Mockery;
 
 /**
  * This is the command command test class.

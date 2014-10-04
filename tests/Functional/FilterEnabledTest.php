@@ -25,7 +25,7 @@ use GrahamCampbell\Tests\Core\AbstractTestCase;
  * @copyright 2013-2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
  */
-class FilterTest extends AbstractTestCase
+class FilterEnabledTest extends AbstractTestCase
 {
     /**
      * Specify if routing filters are enabled.
@@ -41,7 +41,7 @@ class FilterTest extends AbstractTestCase
     {
         $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
             return 'Hello World';
-        }));
+        }, ));
 
         $this->assertInstanceOf('Illuminate\Http\Response', $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest')));
     }
@@ -53,7 +53,7 @@ class FilterTest extends AbstractTestCase
     {
         $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
             return 'Hello World';
-        }));
+        }, ));
 
         $this->call('GET', 'ajax-test-route');
     }
