@@ -11,6 +11,8 @@ CHANGE LOG
 
 * Improved the test suite
 * Dropped debugbar support
+* Added cs fixers to the test suite
+* Improved the docs
 
 
 ## V0.4.2 Alpha (09/08/2014)

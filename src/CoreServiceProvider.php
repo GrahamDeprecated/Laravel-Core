@@ -186,7 +186,7 @@ class CoreServiceProvider extends ServiceProvider
         return array(
             'command.appupdate',
             'command.appinstall',
-            'command.appreset'
+            'command.appreset',
         );
     }
 }

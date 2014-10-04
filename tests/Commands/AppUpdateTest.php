@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\Tests\Core\Commands;
 
-use Mockery;
 use GrahamCampbell\Core\Commands\AppUpdate;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use Mockery;
 
 /**
  * This is the app update test class.
