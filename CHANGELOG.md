@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V1.0 RC 1 (Upcoming)
+## V1.0 (04/10/2014)
 
 * Improved the test suite
 * Dropped debugbar support
