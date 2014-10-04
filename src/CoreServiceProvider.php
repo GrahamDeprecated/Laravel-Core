@@ -17,6 +17,8 @@
 namespace GrahamCampbell\Core;
 
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
@@ -84,7 +86,7 @@ class CoreServiceProvider extends ServiceProvider
     {
         $router = $this->app['router'];
 
-        $router->filter('ajax', function ($route, $request) {
+        $router->filter('ajax', function (Route $route, Request $request) {
             if (!$request->ajax()) {
                 throw new MethodNotAllowedHttpException(array(), 'Ajax Is Required');
             }
