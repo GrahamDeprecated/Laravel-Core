@@ -38,7 +38,7 @@ Laravel Core supports optional configuration.
 To get started, first publish the package config file:
 
 ```bash
-$ php artisan config:publish graham-campbell/core
+$ php artisan publish:config graham-campbell/core
 ```
 
 There are two config options:
