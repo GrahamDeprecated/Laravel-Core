@@ -47,7 +47,7 @@ class MiddlewareTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException
+     * @expectedException \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
     public function testWithOut()
     {

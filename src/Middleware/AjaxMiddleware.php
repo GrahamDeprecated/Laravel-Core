@@ -18,7 +18,7 @@ namespace GrahamCampbell\Core\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Routing\Middleware;
-use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * This is the ajax middleware class.
@@ -40,7 +40,7 @@ class AjaxMiddleware implements Middleware
     public function handle($request, Closure $next)
     {
         if (!$request->ajax()) {
-            throw new MethodNotAllowedHttpException(array(), 'Ajax Is Required');
+            throw new AccessDeniedHttpException('Ajax Is Required');
         }
 
         return $next($request);
