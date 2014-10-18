@@ -35,6 +35,8 @@ class AjaxMiddleware implements Middleware
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
      *
+     * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
