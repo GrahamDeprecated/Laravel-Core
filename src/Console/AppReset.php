@@ -14,33 +14,33 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Core\Commands;
+namespace GrahamCampbell\Core\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;
 
 /**
- * This is the app update command class.
+ * This is the app reset command class.
  *
  * @author    Graham Campbell <graham@mineuk.com>
  * @copyright 2013-2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
  */
-class AppUpdate extends Command
+class AppReset extends Command
 {
     /**
      * The command name.
      *
      * @var string
      */
-    protected $name = 'app:update';
+    protected $name = 'app:reset';
 
     /**
      * The command description.
      *
      * @var string
      */
-    protected $description = 'Updates The Application';
+    protected $description = 'Resets And Installs The Application';
 
     /**
      * The events instance.
@@ -70,7 +70,10 @@ class AppUpdate extends Command
      */
     public function fire()
     {
+        $this->events->fire('command.genappkey', $this);
+        $this->events->fire('command.resetmigrations', $this);
         $this->events->fire('command.runmigrations', $this);
+        $this->events->fire('command.runseeding', $this);
         $this->events->fire('command.updatecache', $this);
         $this->events->fire('command.genassets', $this);
         $this->events->fire('command.extrastuff', $this);

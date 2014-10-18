@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Core\Commands;
+namespace GrahamCampbell\Tests\Core\Console;
 
-use GrahamCampbell\Core\Commands\AppUpdate;
+use GrahamCampbell\Core\Console\AppUpdate;
 use GrahamCampbell\TestBench\AbstractTestCase;
 use Mockery;
 

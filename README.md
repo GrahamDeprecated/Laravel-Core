@@ -24,7 +24,7 @@ Once Laravel Core is installed, you need to register the service provider. Open 
 
 * `'GrahamCampbell\Core\CoreServiceProvider'`
 
-You can now utilise the classes and filters in this package to speed up writing Laravel apps or packages further.
+You can now utilise the classes in this package to speed up writing Laravel apps or packages further.
 
 #### Looking for a laravel 4 compatable version?
 

@@ -17,10 +17,7 @@
 namespace GrahamCampbell\Core;
 
 use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
-use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 /**
  * This is the core service provider class.
@@ -55,7 +52,6 @@ class CoreServiceProvider extends ServiceProvider
             $this->setupMacros();
         }
 
-        $this->setupFilters();
         $this->setupListeners();
     }
 
@@ -73,22 +69,6 @@ class CoreServiceProvider extends ServiceProvider
             } else {
                 return '<abbr class="timeago" title="'
                     .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
-            }
-        });
-    }
-
-    /**
-     * Setup the filters.
-     *
-     * @return void
-     */
-    protected function setupFilters()
-    {
-        $router = $this->app['router'];
-
-        $router->filter('ajax', function (Route $route, Request $request) {
-            if (!$request->ajax()) {
-                throw new MethodNotAllowedHttpException(array(), 'Ajax Is Required');
             }
         });
     }
@@ -129,7 +109,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->bindShared('command.appupdate', function ($app) {
             $events = $app['events'];
 
-            return new Commands\AppUpdate($events);
+            return new Console\AppUpdate($events);
         });
     }
 
@@ -143,7 +123,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->bindShared('command.appinstall', function ($app) {
             $events = $app['events'];
 
-            return new Commands\AppInstall($events);
+            return new Console\AppInstall($events);
         });
     }
 
@@ -157,7 +137,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->bindShared('command.appreset', function ($app) {
             $events = $app['events'];
 
-            return new Commands\AppReset($events);
+            return new Console\AppReset($events);
         });
     }
 

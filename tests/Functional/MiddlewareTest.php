@@ -19,31 +19,31 @@ namespace GrahamCampbell\Tests\Core\Functional;
 use GrahamCampbell\Tests\Core\AbstractTestCase;
 
 /**
- * This is the filter test class.
+ * This is the middleware test class.
  *
  * @author    Graham Campbell <graham@mineuk.com>
  * @copyright 2013-2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
  */
-class FilterEnabledTest extends AbstractTestCase
+class MiddlewareTest extends AbstractTestCase
 {
     /**
-     * Specify if routing filters are enabled.
+     * Run extra setup code.
      *
-     * @return bool
+     * @return void
      */
-    protected function enableFilters()
+    protected function start()
     {
-        return true;
+        $this->app['router']->get('ajax-test-route', array('middleware' => 'GrahamCampbell\Core\Middleware\AjaxMiddleware', function () {
+            return 'Hello World';
+        }, ));
     }
 
     public function testWithAjax()
     {
-        $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
-            return 'Hello World';
-        }, ));
+        $response = $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'));
 
-        $this->assertInstanceOf('Illuminate\Http\Response', $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest')));
+        $this->assertInstanceOf('Illuminate\Http\Response', $response);
     }
 
     /**
@@ -51,10 +51,6 @@ class FilterEnabledTest extends AbstractTestCase
      */
     public function testWithOut()
     {
-        $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
-            return 'Hello World';
-        }, ));
-
         $this->call('GET', 'ajax-test-route');
     }
 }

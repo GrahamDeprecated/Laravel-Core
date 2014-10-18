@@ -5,6 +5,8 @@ CHANGE LOG
 ## V2.0 Beta 1 (Upcoming)
 
 * Upgraded to laravel 5
+* Replaced filters with middlewares
+* Moved commands to console
 
 
 ## V1.0 (04/10/2014)
