@@ -49,7 +49,7 @@ class MiddlewareTest extends AbstractTestCase
     /**
      * @expectedException \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
-    public function testWithOut()
+    public function testWithoutAjax()
     {
         $this->call('GET', 'ajax-test-route');
     }
