@@ -40,8 +40,6 @@ class CommandTest extends AbstractTestCase
         if (!class_exists('DatabaseSeeder')) {
             eval('class DatabaseSeeder extends Illuminate\Database\Seeder { public function run() {} }');
         }
-
-        $app->loadDeferredProviders();
     }
 
     public function testInstall()
