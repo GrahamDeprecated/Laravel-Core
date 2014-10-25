@@ -41,7 +41,7 @@ class MiddlewareTest extends AbstractTestCase
 
     public function testWithAjax()
     {
-        $response = $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'));
+        $response = $this->call('GET', 'ajax-test-route', array(), array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'));
 
         $this->assertInstanceOf('Illuminate\Http\Response', $response);
     }
