@@ -106,7 +106,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerUpdateCommand()
     {
-        $this->app->bindShared('command.appupdate', function ($app) {
+        $this->app->singleton('command.appupdate', function ($app) {
             $events = $app['events'];
 
             return new Console\AppUpdate($events);
@@ -120,7 +120,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerInstallCommand()
     {
-        $this->app->bindShared('command.appinstall', function ($app) {
+        $this->app->singleton('command.appinstall', function ($app) {
             $events = $app['events'];
 
             return new Console\AppInstall($events);
@@ -134,7 +134,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerResetCommand()
     {
-        $this->app->bindShared('command.appreset', function ($app) {
+        $this->app->singleton('command.appreset', function ($app) {
             $events = $app['events'];
 
             return new Console\AppReset($events);
@@ -148,7 +148,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerCommandSubscriber()
     {
-        $this->app->bindShared('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
+        $this->app->singleton('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
             $config = $app['config'];
             $crypt = $app['encrypter'];
             $assets = class_exists('Lightgear\Asset\Commands\Generate');
