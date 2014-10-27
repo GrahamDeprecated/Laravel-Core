@@ -13,10 +13,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/GrahamCampbell/asset"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/GrahamCampbell/framework"
         }
     ],
     "require": {
@@ -26,7 +22,6 @@
         "illuminate/support": "~5.0"
     },
     "require-dev": {
-        "laravel/framework": "dev-5.0-patched as 5.0.x-dev",
         "graham-campbell/testbench": "~2.0",
         "lightgear/asset": "1.5.*"
     },
