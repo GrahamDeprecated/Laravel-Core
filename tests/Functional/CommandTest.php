@@ -66,6 +66,6 @@ class CommandTest extends AbstractTestCase
 
     protected function getKernel()
     {
-        return $this->app->make('Illuminate\Contracts\Console\Commands\Kernel');
+        return $this->app->make('Illuminate\Contracts\Console\Kernel');
     }
 }
