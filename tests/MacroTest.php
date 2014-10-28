@@ -34,10 +34,10 @@ class MacroTest extends AbstractTestCase
      */
     protected function getRequiredServiceProviders()
     {
-        return array(
+        return [
             'Illuminate\Html\HtmlServiceProvider',
             'Lightgear\Asset\AssetServiceProvider',
-        );
+        ];
     }
 
     public function testSetup()

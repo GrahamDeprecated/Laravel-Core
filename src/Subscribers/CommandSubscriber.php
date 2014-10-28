@@ -130,7 +130,7 @@ class CommandSubscriber
      */
     public function onResetMigrations(Command $command)
     {
-        $command->call('migrate:reset', array('--force' => true));
+        $command->call('migrate:reset', ['--force' => true]);
     }
 
     /**
@@ -142,7 +142,7 @@ class CommandSubscriber
      */
     public function onRunMigrations(Command $command)
     {
-        $command->call('migrate', array('--force' => true));
+        $command->call('migrate', ['--force' => true]);
     }
 
     /**
@@ -154,7 +154,7 @@ class CommandSubscriber
      */
     public function onRunSeeding(Command $command)
     {
-        $command->call('db:seed', array('--force' => true));
+        $command->call('db:seed', ['--force' => true]);
     }
 
     /**

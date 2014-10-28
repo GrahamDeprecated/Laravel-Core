@@ -34,14 +34,14 @@ class MiddlewareTest extends AbstractTestCase
      */
     protected function start()
     {
-        $this->app['router']->get('ajax-test-route', array('middleware' => 'GrahamCampbell\Core\Http\Middleware\Ajax', function () {
+        $this->app['router']->get('ajax-test-route', ['middleware' => 'GrahamCampbell\Core\Http\Middleware\Ajax', function () {
             return 'Hello World';
-        }, ));
+        }, ]);
     }
 
     public function testWithAjax()
     {
-        $response = $this->call('GET', 'ajax-test-route', array(), array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'));
+        $response = $this->call('GET', 'ajax-test-route', [], [], [], ['HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest']);
 
         $this->assertInstanceOf('Illuminate\Http\Response', $response);
     }

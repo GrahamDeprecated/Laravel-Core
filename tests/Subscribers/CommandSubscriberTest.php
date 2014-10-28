@@ -49,7 +49,7 @@ class CommandSubscriberTest extends AbstractTestCase
         $subscriber = $this->getSubscriber();
         $command = $this->getCommand();
 
-        $command->shouldReceive('call')->once()->with($name, array('--force' => true));
+        $command->shouldReceive('call')->once()->with($name, ['--force' => true]);
 
         $subscriber->$method($command);
     }
