@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Core\Console;
+namespace GrahamCampbell\Core\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;

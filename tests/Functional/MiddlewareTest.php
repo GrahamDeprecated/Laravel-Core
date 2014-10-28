@@ -34,7 +34,7 @@ class MiddlewareTest extends AbstractTestCase
      */
     protected function start()
     {
-        $this->app['router']->get('ajax-test-route', array('middleware' => 'GrahamCampbell\Core\Middleware\AjaxMiddleware', function () {
+        $this->app['router']->get('ajax-test-route', array('middleware' => 'GrahamCampbell\Core\Http\Middleware\Ajax\Middleware', function () {
             return 'Hello World';
         }, ));
     }

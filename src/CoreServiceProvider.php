@@ -109,7 +109,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->singleton('command.appupdate', function ($app) {
             $events = $app['events'];
 
-            return new Console\AppUpdate($events);
+            return new Console\Commands\AppUpdate($events);
         });
     }
 
@@ -123,7 +123,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->singleton('command.appinstall', function ($app) {
             $events = $app['events'];
 
-            return new Console\AppInstall($events);
+            return new Console\Commands\AppInstall($events);
         });
     }
 
@@ -137,7 +137,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->singleton('command.appreset', function ($app) {
             $events = $app['events'];
 
-            return new Console\AppReset($events);
+            return new Console\Commands\AppReset($events);
         });
     }
 

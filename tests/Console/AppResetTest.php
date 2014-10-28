@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Core\Console;
+namespace GrahamCampbell\Tests\Core\Console\Commands;
 
-use GrahamCampbell\Core\Console\AppReset;
+use GrahamCampbell\Core\Console\Commands\AppReset;
 use GrahamCampbell\TestBench\AbstractTestCase;
 use Mockery;
 

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Core\Middleware;
+namespace GrahamCampbell\Core\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Routing\Middleware;
+use Illuminate\Contracts\Routing\Http\Middleware;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
@@ -27,7 +27,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  * @copyright 2013-2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
  */
-class AjaxMiddleware implements Middleware
+class Ajax\Middleware implements Middleware
 {
     /**
      * Handle an incoming request.
