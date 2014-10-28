@@ -17,7 +17,7 @@
 namespace GrahamCampbell\Core\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Routing\Http\Middleware;
+use Illuminate\Contracts\Routing\Middleware;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
