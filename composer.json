@@ -13,10 +13,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/GrahamCampbell/asset"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/GrahamCampbell/testbench"
         }
     ],
     "require": {
@@ -26,7 +22,6 @@
         "illuminate/support": "~5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "dev-fix-logging as 3.0.x-dev",
         "graham-campbell/testbench": "~2.0",
         "lightgear/asset": "1.5.*"
     },
