@@ -7,6 +7,7 @@ CHANGE LOG
 * Upgraded to laravel 5
 * Replaced filters with middlewares
 * Moved commands to console
+* Added some more configuration
 
 
 ## V1.0 (04/10/2014)

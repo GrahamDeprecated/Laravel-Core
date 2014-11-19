@@ -41,21 +41,13 @@ Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Core/tree/1.
 
 Laravel Core supports optional configuration.
 
-To get started, first publish the package config file:
+To get started, first publish the package config files:
 
 ```bash
 $ php artisan publish:config graham-campbell/core
 ```
 
-There are two config options:
-
-##### Home Page URL
-
-This option (`'home'`) defines the url to use for the home page. The default value for this setting is `'/'`.
-
-##### Enable Commands
-
-This option (`'commands'`) enables the install/update/reset commands and bindings shipped with this package. Other packages can read this config to save time by not registering event command event listeners if command are disabled. The default value for this setting is `true`.
+There are many config options split across 3 files. The intention here is to allow you to have a centralised point for common configuration that lots of packages and services can depend on.
 
 
 ## Usage
