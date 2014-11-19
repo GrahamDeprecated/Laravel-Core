@@ -41,13 +41,13 @@ Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Core/tree/1.
 
 Laravel Core supports optional configuration.
 
-To get started, first publish the package config files:
+To get started, first publish the package config file:
 
 ```bash
 $ php artisan publish:config graham-campbell/core
 ```
 
-There are many config options split across 3 files. The intention here is to allow you to have a centralised point for common configuration that lots of packages and services can depend on.
+There are 5 different settings provided in this config. The intention here is to allow you to have a centralised point for common configuration that lots of packages and services can depend on.
 
 
 ## Usage
