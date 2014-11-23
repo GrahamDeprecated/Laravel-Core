@@ -10,6 +10,11 @@ CHANGE LOG
 * Added some more configuration
 
 
+## V1.0.1 (Upcoming)
+
+* Removed the cs fixers
+
+
 ## V1.0 (04/10/2014)
 
 * Improved the test suite
