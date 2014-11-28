@@ -41,7 +41,7 @@ class FilterEnabledTest extends AbstractTestCase
     {
         $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
             return 'Hello World';
-        }, ));
+        }));
 
         $this->assertInstanceOf('Illuminate\Http\Response', $this->call('GET', 'ajax-test-route', array(), array(), array('HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest')));
     }
@@ -53,7 +53,7 @@ class FilterEnabledTest extends AbstractTestCase
     {
         $this->app['router']->get('ajax-test-route', array('before' => 'ajax', function () {
             return 'Hello World';
-        }, ));
+        }));
 
         $this->call('GET', 'ajax-test-route');
     }
