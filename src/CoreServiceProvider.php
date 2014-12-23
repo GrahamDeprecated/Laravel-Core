@@ -141,10 +141,10 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array(
+        return [
             'command.appupdate',
             'command.appinstall',
             'command.appreset',
-        );
+        ];
     }
 }

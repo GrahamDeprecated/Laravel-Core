@@ -53,7 +53,7 @@ class CommandSubscriberTest extends AbstractTestCase
         $command = $this->getCommand();
 
         if ($force) {
-            $command->shouldReceive('call')->once()->with($name, array('--force' => true));
+            $command->shouldReceive('call')->once()->with($name, ['--force' => true]);
         } else {
             $command->shouldReceive('call')->once()->with($name);
         }
