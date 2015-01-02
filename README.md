@@ -54,8 +54,6 @@ There are 5 different settings provided in this config. The intention here is to
 
 There is currently no usage documentation besides the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Core.
 
-You may see an example of implementation in [Laravel Credentials](https://github.com/GrahamCampbell/Laravel-Credentials) or [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
-
 
 ## License
 
