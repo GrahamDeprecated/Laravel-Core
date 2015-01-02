@@ -2,7 +2,7 @@
     "name": "graham-campbell/core",
     "description": "Core Provides Some Extra Functionality For Laravel 4.1/4.2",
     "keywords": ["laravel", "framework", "base", "starter", "core", "Core", "Laravel Core", "Laravel-Core", "Graham Campbell", "GrahamCampbell"],
-    "license": "Apache-2.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Graham Campbell",
