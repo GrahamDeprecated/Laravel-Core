@@ -10,9 +10,11 @@ CHANGE LOG
 * Added some more configuration
 
 
-## V1.0.1 (Upcoming)
+## V1.0.1 (02/01/2014)
 
 * Removed the cs fixers
+* CS fixes
+* Moved to the MIT license
 
 
 ## V1.0 (04/10/2014)
