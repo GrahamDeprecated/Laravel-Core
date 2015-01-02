@@ -14,9 +14,7 @@ namespace GrahamCampbell\Tests\Core;
 /**
  * This is the html test class.
  *
- * @author    Graham Campbell <graham@mineuk.com>
- * @copyright 2013-2014 Graham Campbell
- * @license   <https://github.com/GrahamCampbell/Laravel-Core/blob/master/LICENSE.md> Apache 2.0
+ * @author Graham Campbell <graham@mineuk.com>
  */
 class HtmlTest extends AbstractTestCase
 {
