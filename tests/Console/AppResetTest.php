@@ -33,7 +33,7 @@ class AppResetTest extends AbstractTestCase
         $command->getEvents()->shouldReceive('fire')->once()->with('command.updatecache', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.extrastuff', $command);
 
-        $this->assertEmpty($command->fire());
+        $this->assertEmpty($command->handle());
     }
 
     protected function getCommand()

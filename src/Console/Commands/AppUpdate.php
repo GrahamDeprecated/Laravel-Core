@@ -57,11 +57,11 @@ class AppUpdate extends Command
     }
 
     /**
-     * Run the commend.
+     * Execute the console command.
      *
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.updatecache', $this);
