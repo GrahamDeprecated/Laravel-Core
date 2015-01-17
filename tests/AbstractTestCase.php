@@ -31,18 +31,4 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     {
         return 'GrahamCampbell\Core\CoreServiceProvider';
     }
-
-    /**
-     * Get the required service providers.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
-     * @return string[]
-     */
-    protected function getRequiredServiceProviders($app)
-    {
-        return [
-            'Lightgear\Asset\AssetServiceProvider',
-        ];
-    }
 }

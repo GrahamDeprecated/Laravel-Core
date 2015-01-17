@@ -31,7 +31,6 @@ class AppResetTest extends AbstractTestCase
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runmigrations', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runseeding', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.updatecache', $command);
-        $command->getEvents()->shouldReceive('fire')->once()->with('command.genassets', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.extrastuff', $command);
 
         $this->assertEmpty($command->fire());

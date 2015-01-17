@@ -38,26 +38,17 @@ class CommandSubscriber
     protected $crypt;
 
     /**
-     * The assets flag.
-     *
-     * @var bool
-     */
-    protected $assets;
-
-    /**
      * Create a new instance.
      *
      * @param \Illuminate\Contracts\Config\Repository    $config
      * @param \Illuminate\Contracts\Encryption\Encrypter $crypt
-     * @param bool                                       $assets
      *
      * @return void
      */
-    public function __construct(Repository $config, Encrypter $crypt, $assets = false)
+    public function __construct(Repository $config, Encrypter $crypt)
     {
         $this->config = $config;
         $this->crypt = $crypt;
-        $this->assets = $assets;
     }
 
     /**
@@ -94,11 +85,6 @@ class CommandSubscriber
             'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache',
             5
         );
-        $events->listen(
-            'command.genassets',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAssets',
-            5
-        );
     }
 
     /**
@@ -111,6 +97,7 @@ class CommandSubscriber
     public function onGenAppKey(Command $command)
     {
         $command->call('key:generate');
+
         $this->crypt->setKey($this->config->get('app.key'));
     }
 
@@ -162,21 +149,5 @@ class CommandSubscriber
         $command->line('Clearing cache...');
         $command->call('cache:clear');
         $command->info('Cache cleared!');
-    }
-
-    /**
-     * Handle a command.genassets event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onGenAssets(Command $command)
-    {
-        if ($this->assets) {
-            $command->line('Building assets...');
-            $command->call('asset:generate');
-            $command->info('Assets built!');
-        }
     }
 }

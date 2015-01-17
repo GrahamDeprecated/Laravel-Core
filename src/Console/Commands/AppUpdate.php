@@ -65,7 +65,6 @@ class AppUpdate extends Command
     {
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.updatecache', $this);
-        $this->events->fire('command.genassets', $this);
         $this->events->fire('command.extrastuff', $this);
     }
 
