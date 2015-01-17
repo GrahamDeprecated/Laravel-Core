@@ -12,29 +12,20 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/GrahamCampbell/asset"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/GrahamCampbell/framework"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/GrahamCampbell/html"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/GrahamCampbell/testbench"
+            "url": "https://github.com/BootstrapCMS/asset"
         }
     ],
     "require": {
         "php": ">=5.4.7",
         "illuminate/console": "~5.0",
         "illuminate/contracts": "~5.0",
-        "illuminate/support": "~5.0"
+        "illuminate/support": "~5.0",
+        "orchestra/config": "~3.0",
+        "orchestra/support-providers": "~3.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "~2.0",
+        "illuminate/html": "~5.0",
         "lightgear/asset": "1.5.*"
     },
     "autoload": {
