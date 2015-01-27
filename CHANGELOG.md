@@ -4,7 +4,7 @@ CHANGE LOG
 
 ## V2.0 Beta 1 (Upcoming)
 
-* Upgraded to laravel 5
+* Upgraded to laravel 5.0
 * Replaced filters with middlewares
 * Moved commands to console
 * Added some more configuration
