@@ -29,7 +29,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->setupConfig($this->app);
+        $this->setupConfig();
 
         if ($this->app->config->get('core.commands')) {
             $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
@@ -47,11 +47,9 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Setup the config.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function setupConfig(Application $app)
+    protected function setupConfig()
     {
         $source = realpath(__DIR__.'/../config/core.php');
 
