@@ -44,7 +44,7 @@ class MacroTest extends AbstractTestCase
      */
     public function testBasic()
     {
-        $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5));
+        $result = $this->app->html->ago(Carbon::create(2014, 1, 2, 3, 4, 5));
 
         $this->assertSame('<abbr class="timeago" title="2014-01-02T03:04:05+0000">2014-01-02 03:04:05</abbr>', $result);
     }
@@ -54,7 +54,7 @@ class MacroTest extends AbstractTestCase
      */
     public function testId()
     {
-        $result = $this->app['html']->ago(Carbon::create(2014, 1, 2, 3, 4, 5), 'foo');
+        $result = $this->app->html->ago(Carbon::create(2014, 1, 2, 3, 4, 5), 'foo');
 
         $this->assertSame('<abbr id="foo" class="timeago" title="2014-01-02T03:04:05+0000">2014-01-02 03:04:05</abbr>', $result);
     }
