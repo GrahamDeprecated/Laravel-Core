@@ -39,15 +39,15 @@ Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Core/tree/1.
 
 ## Configuration
 
-Laravel Core supports optional configuration through [orchestral/config](https://github.com/orchestral/config).
+Laravel Core supports optional configuration.
 
-If you want an automated way to publish the config, then install [orchestral/publisher](https://github.com/orchestral/publisher).
-
-You can then publish the config file by running:
+To get started, you'll need to publish all vendor assets:
 
 ```bash
-$ php artisan publish:config graham-campbell/core
+$ php artisan vendor:publish
 ```
+
+This will create a `config/core.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
 
 There are 5 different settings provided in this config. The intention here is to allow you to have a centralised point for common configuration that lots of packages and services can depend on.
 

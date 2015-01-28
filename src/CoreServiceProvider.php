@@ -12,7 +12,8 @@
 namespace GrahamCampbell\Core;
 
 use Carbon\Carbon;
-use Orchestra\Support\Providers\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * This is the core service provider class.
@@ -28,27 +29,33 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->addConfigComponent('graham-campbell/core', 'graham-campbell/core', realpath(__DIR__.'/../config'));
+        $this->publishes([
+            realpath(__DIR__.'/../config/core.php') => config_path('core.php'),
+        ]);
 
-        if ($this->app['config']['graham-campbell/core::commands']) {
+        if ($this->app->config->get('core.commands')) {
             $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
         }
 
         if ($this->app->bound('html')) {
-            $this->setupMacros();
+            $this->setupMacros($this->app);
         }
 
-        $this->setupListeners();
+        if ($app->config->get('core.commands')) {
+            $this->setupListeners($this->app);
+        }
     }
 
     /**
      * Setup the html macros.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function setupMacros()
+    protected function setupMacros(Application $app)
     {
-        $this->app['html']->macro('ago', function (Carbon $carbon, $id = null) {
+        $app->html->macro('ago', function (Carbon $carbon, $id = null) {
             if ($id) {
                 return '<abbr id="'.$id.'" class="timeago" title="'
                     .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
@@ -62,14 +69,15 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Setup the listeners.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function setupListeners()
+    protected function setupListeners(Application $app)
     {
-        if ($this->app['config']['graham-campbell/core::commands']) {
-            $subscriber = $this->app->make('GrahamCampbell\Core\Subscribers\CommandSubscriber');
-            $this->app['events']->subscribe($subscriber);
-        }
+        $subscriber = $app->make('GrahamCampbell\Core\Subscribers\CommandSubscriber');
+
+        $app->events->subscribe($subscriber);
     }
 
     /**
@@ -79,20 +87,22 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerUpdateCommand();
-        $this->registerInstallCommand();
-        $this->registerResetCommand();
-        $this->registerCommandSubscriber();
+        $this->registerUpdateCommand($this->app);
+        $this->registerInstallCommand($this->app);
+        $this->registerResetCommand($this->app);
+        $this->registerCommandSubscriber($this->app);
     }
 
     /**
      * Register the updated command class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerUpdateCommand()
+    protected function registerUpdateCommand(Application $app)
     {
-        $this->app->singleton('command.appupdate', function ($app) {
+        $app->singleton('command.appupdate', function ($app) {
             $events = $app['events'];
 
             return new Console\Commands\AppUpdate($events);
@@ -102,11 +112,13 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Register the install command class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerInstallCommand()
+    protected function registerInstallCommand(Application $app)
     {
-        $this->app->singleton('command.appinstall', function ($app) {
+        $app->singleton('command.appinstall', function ($app) {
             $events = $app['events'];
 
             return new Console\Commands\AppInstall($events);
@@ -116,11 +128,13 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Register the reset command class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerResetCommand()
+    protected function registerResetCommand(Application $app)
     {
-        $this->app->singleton('command.appreset', function ($app) {
+        $app->singleton('command.appreset', function ($app) {
             $events = $app['events'];
 
             return new Console\Commands\AppReset($events);
@@ -130,11 +144,13 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Register the command subscriber class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerCommandSubscriber()
+    protected function registerCommandSubscriber(Application $app)
     {
-        $this->app->singleton('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
+        $app->singleton('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
             $config = $app['config'];
             $crypt = $app['encrypter'];
 
