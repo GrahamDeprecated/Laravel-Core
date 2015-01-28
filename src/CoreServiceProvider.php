@@ -57,9 +57,7 @@ class CoreServiceProvider extends ServiceProvider
 
         $this->publishes([$source => config_path('core.php')]);
 
-        if (count($app->config->get('core', [])) === 0) {
-            $app->config->set('core', require $source);
-        }
+        $this->mergeConfigFrom('core', $source);
     }
 
     /**
