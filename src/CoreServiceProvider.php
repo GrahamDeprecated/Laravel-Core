@@ -29,9 +29,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            realpath(__DIR__.'/../config/core.php') => config_path('core.php'),
-        ]);
+        $this->setupConfig($this->app);
 
         if ($this->app->config->get('core.commands')) {
             $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
@@ -41,8 +39,26 @@ class CoreServiceProvider extends ServiceProvider
             $this->setupMacros($this->app);
         }
 
-        if ($app->config->get('core.commands')) {
+        if ($this->app->config->get('core.commands')) {
             $this->setupListeners($this->app);
+        }
+    }
+
+    /**
+     * Setup the config.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return void
+     */
+    protected function setupConfig(Application $app)
+    {
+        $source = realpath(__DIR__.'/../config/core.php');
+
+        $this->publishes([$source => config_path('core.php')]);
+
+        if (count($app->config->get('core', [])) === 0) {
+            $app->config->set('core', require $source);
         }
     }
 
