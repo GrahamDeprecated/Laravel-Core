@@ -55,7 +55,7 @@ class CoreServiceProvider extends ServiceProvider
 
         $this->publishes([$source => config_path('core.php')]);
 
-        $this->mergeConfigFrom('core', $source);
+        $this->mergeConfigFrom($source, 'core');
     }
 
     /**
