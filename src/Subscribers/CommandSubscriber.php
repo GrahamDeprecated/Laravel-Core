@@ -62,6 +62,7 @@ class CommandSubscriber
     {
         $events->listen('command.genappkey', __CLASS__ .'@onGenAppKey', 5);
         $events->listen('command.publishvendors', __CLASS__ .'@onPublishVendors', 5);
+        $events->listen('command.runoptimize', __CLASS__ .'@onRunOptimize', 5);
         $events->listen('command.resetmigrations', __CLASS__ .'@onResetMigrations', 5);
         $events->listen('command.runmigrations', __CLASS__ .'@onRunMigrations', 5);
         $events->listen('command.runseeding', __CLASS__ .'@onRunSeeding', 5);
@@ -92,6 +93,18 @@ class CommandSubscriber
     public function onPublishVendors(Command $command)
     {
         $command->call('vendor:publish');
+    }
+
+    /**
+     * Handle a command.runoptimize event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onRunOptimize(Command $command)
+    {
+        $command->call('optimize');
     }
 
     /**

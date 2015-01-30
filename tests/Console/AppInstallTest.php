@@ -28,6 +28,7 @@ class AppInstallTest extends AbstractTestCase
 
         $command->getEvents()->shouldReceive('fire')->once()->with('command.genappkey', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.publishvendors', $command);
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.runoptimize', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runmigrations', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runseeding', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.updatecache', $command);

@@ -65,6 +65,7 @@ class AppReset extends Command
     {
         $this->events->fire('command.genappkey', $this);
         $this->events->fire('command.publishvendors', $this);
+        $this->events->fire('command.runoptimize', $this);
         $this->events->fire('command.resetmigrations', $this);
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.runseeding', $this);
