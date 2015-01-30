@@ -26,6 +26,7 @@ class AppUpdateTest extends AbstractTestCase
     {
         $command = $this->getCommand();
 
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.publishvendors', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runmigrations', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.updatecache', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.extrastuff', $command);
