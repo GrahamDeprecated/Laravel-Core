@@ -60,31 +60,12 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(
-            'command.genappkey',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onGenAppKey',
-            5
-        );
-        $events->listen(
-            'command.resetmigrations',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onResetMigrations',
-            5
-        );
-        $events->listen(
-            'command.runmigrations',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunMigrations',
-            5
-        );
-        $events->listen(
-            'command.runseeding',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onRunSeeding',
-            5
-        );
-        $events->listen(
-            'command.updatecache',
-            'GrahamCampbell\Core\Subscribers\CommandSubscriber@onUpdateCache',
-            5
-        );
+        $events->listen('command.genappkey', __CLASS__ .'@onGenAppKey', 5);
+        $events->listen('command.publishvendors', __CLASS__ .'@onPublishVendors', 5);
+        $events->listen('command.resetmigrations', __CLASS__ .'@onResetMigrations', 5);
+        $events->listen('command.runmigrations', __CLASS__ .'@onRunMigrations', 5);
+        $events->listen('command.runseeding', __CLASS__ .'@onRunSeeding', 5);
+        $events->listen('command.updatecache', __CLASS__ .'@onUpdateCache', 5);
     }
 
     /**
@@ -99,6 +80,18 @@ class CommandSubscriber
         $command->call('key:generate');
 
         $this->crypt->setKey($this->config->get('app.key'));
+    }
+
+    /**
+     * Handle a command.publishvendors event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onPublishVendors(Command $command)
+    {
+        $command->call('vendor:publish');
     }
 
     /**
