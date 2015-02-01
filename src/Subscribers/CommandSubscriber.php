@@ -12,8 +12,6 @@
 namespace GrahamCampbell\Core\Subscribers;
 
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Contracts\Events\Dispatcher;
 
 /**
@@ -24,34 +22,6 @@ use Illuminate\Contracts\Events\Dispatcher;
 class CommandSubscriber
 {
     /**
-     * The config instance.
-     *
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
-     * The encryption instance.
-     *
-     * @var \Illuminate\Contracts\Encryption\Encrypter
-     */
-    protected $crypt;
-
-    /**
-     * Create a new instance.
-     *
-     * @param \Illuminate\Contracts\Config\Repository    $config
-     * @param \Illuminate\Contracts\Encryption\Encrypter $crypt
-     *
-     * @return void
-     */
-    public function __construct(Repository $config, Encrypter $crypt)
-    {
-        $this->config = $config;
-        $this->crypt = $crypt;
-    }
-
-    /**
      * Register the listeners for the subscriber.
      *
      * @param \Illuminate\Contracts\Events\Dispatcher $events
@@ -60,26 +30,11 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen('command.genappkey', __CLASS__.'@onGenAppKey', 5);
         $events->listen('command.publishvendors', __CLASS__.'@onPublishVendors', 5);
         $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations', 5);
         $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations', 5);
         $events->listen('command.runseeding', __CLASS__.'@onRunSeeding', 5);
         $events->listen('command.updatecache', __CLASS__.'@onUpdateCache', 5);
-    }
-
-    /**
-     * Handle a command.genappkey event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onGenAppKey(Command $command)
-    {
-        $command->call('key:generate');
-
-        $this->crypt->setKey($this->config->get('app.key'));
     }
 
     /**

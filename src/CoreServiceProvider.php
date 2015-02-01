@@ -162,11 +162,8 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerCommandSubscriber(Application $app)
     {
-        $app->singleton('GrahamCampbell\Core\Subscribers\CommandSubscriber', function ($app) {
-            $config = $app['config'];
-            $crypt = $app['encrypter'];
-
-            return new Subscribers\CommandSubscriber($config, $crypt);
+        $app->singleton('GrahamCampbell\Core\Subscribers\CommandSubscriber', function () {
+            return new Subscribers\CommandSubscriber();
         });
     }
 
