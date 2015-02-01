@@ -39,24 +39,11 @@ class CommandSubscriberTest extends AbstractTestCase
 
     protected function callCommand($name, $method)
     {
-        $subscriber = $this->getSubscriber();
-        $command = $this->getCommand();
+        $subscriber = new CommandSubscriber();
+        $command = Mockery::mock('Illuminate\Console\Command');
 
         $command->shouldReceive('call')->once()->with($name, ['--force' => true]);
 
         $subscriber->$method($command);
-    }
-
-    protected function getSubscriber()
-    {
-        $config = Mockery::mock('Illuminate\Contracts\Config\Repository');
-        $crypt = Mockery::mock('Illuminate\Contracts\Encryption\Encrypter');
-
-        return new CommandSubscriber($config, $crypt);
-    }
-
-    protected function getCommand()
-    {
-        return Mockery::mock('Illuminate\Console\Command');
     }
 }

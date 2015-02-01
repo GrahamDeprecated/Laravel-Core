@@ -26,7 +26,6 @@ class AppResetTest extends AbstractTestCase
     {
         $command = $this->getCommand();
 
-        $command->getEvents()->shouldReceive('fire')->once()->with('command.genappkey', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.publishvendors', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.resetmigrations', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runmigrations', $command);
