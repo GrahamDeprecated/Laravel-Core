@@ -2,12 +2,13 @@ CHANGE LOG
 ==========
 
 
-## V2.0 Beta 1 (Upcoming)
+## V2.0 (04/02/2015)
 
 * Upgraded to laravel 5.0
 * Replaced filters with middlewares
 * Moved commands to console
 * Added some more configuration
+* Removed key generation
 
 
 ## V1.0.1 (02/01/2014)
