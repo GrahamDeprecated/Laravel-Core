@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V2.0.1 (Upcoming)
+## V2.0.1 (20/02/2015)
 
 * Added another config option
 
