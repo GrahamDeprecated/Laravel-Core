@@ -52,16 +52,29 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Email Layout
+    | Html Email Layout
     |--------------------------------------------------------------------------
     |
-    | This specifies the view that your email views should extend.
+    | This specifies the view that your html email views should extend.
     |
     | Default to 'layouts.email'.
     |
     */
 
     'email' => 'layouts.email',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Text Email Layout
+    |--------------------------------------------------------------------------
+    |
+    | This specifies the view that your text email views should extend.
+    |
+    | Default to 'layouts.text'.
+    |
+    */
+
+    'text' => 'layouts.text',
 
     /*
     |--------------------------------------------------------------------------

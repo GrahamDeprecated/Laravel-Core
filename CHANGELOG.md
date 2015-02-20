@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.0.1 (Upcoming)
+
+* Added another config option
+
+
 ## V2.0 (04/02/2015)
 
 * Upgraded to laravel 5.0
