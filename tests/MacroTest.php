@@ -30,7 +30,7 @@ class MacroTest extends AbstractTestCase
     protected function getRequiredServiceProviders($app)
     {
         return [
-            'Illuminate\Html\HtmlServiceProvider',
+            'Collective\Html\HtmlServiceProvider',
         ];
     }
 
