@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V2.1 (Upcoming)
+
+* Test will laravel collective html instead of illuminate
+* Support both laravel 5.0 and 5.1
+* Dropped php 5.4 support
+
+
 ## V2.0.1 (20/02/2015)
 
 * Added another config option
