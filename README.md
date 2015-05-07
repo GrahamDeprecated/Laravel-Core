@@ -32,10 +32,6 @@ Once Laravel Core is installed, you need to register the service provider. Open 
 
 You can now utilise the classes in this package to speed up writing Laravel apps or packages further.
 
-#### Looking for a laravel 4 compatable version?
-
-Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Core/tree/1.0), installable by requiring `"graham-campbell/core": "~1.0"`.
-
 
 ## Configuration
 
