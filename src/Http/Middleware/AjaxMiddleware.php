@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  *
  * @author Graham Campbell <graham@mineuk.com>
  */
-class Ajax implements Middleware
+class AjaxMiddleware implements Middleware
 {
     /**
      * Handle an incoming request.
