@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V3.0 (Upcoming)
+## V3.0 (19/05/2015)
 
 * Support laravel collective html instead of illuminate
 * Support both laravel 5.0 and 5.1
