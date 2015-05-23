@@ -1,7 +1,7 @@
 Laravel Core
 ============
 
-Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some extra functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Core/releases), [license](LICENSE), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some extra functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Core/releases), [license](LICENSE), [api docs](http://docs.gjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel Core](https://cloud.githubusercontent.com/assets/2829600/4432284/a987fd4a-468c-11e4-814b-f0d09118089c.PNG)
 
@@ -50,7 +50,7 @@ There are 5 different settings provided in this config. The intention here is to
 
 ## Usage
 
-There is currently no usage documentation besides the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Core.
+There is currently no usage documentation besides the [API Documentation](http://docs.gjcampbell.co.uk) for Laravel Core.
 
 
 ## License
