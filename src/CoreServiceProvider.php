@@ -29,53 +29,9 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->setupConfig();
+        $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
 
-        if ($this->app->config->get('core.commands')) {
-            $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
-        }
-
-        if ($this->app->bound('html')) {
-            $this->setupMacros($this->app);
-        }
-
-        if ($this->app->config->get('core.commands')) {
-            $this->setupListeners($this->app);
-        }
-    }
-
-    /**
-     * Setup the config.
-     *
-     * @return void
-     */
-    protected function setupConfig()
-    {
-        $source = realpath(__DIR__.'/../config/core.php');
-
-        $this->publishes([$source => config_path('core.php')]);
-
-        $this->mergeConfigFrom($source, 'core');
-    }
-
-    /**
-     * Setup the html macros.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
-     * @return void
-     */
-    protected function setupMacros(Application $app)
-    {
-        $app->html->macro('ago', function (Carbon $carbon, $id = null) {
-            if ($id) {
-                return '<abbr id="'.$id.'" class="timeago" title="'
-                    .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
-            } else {
-                return '<abbr class="timeago" title="'
-                    .$carbon->toISO8601String().'">'.$carbon->toDateTimeString().'</abbr>';
-            }
-        });
+        $this->setupListeners($this->app);
     }
 
     /**

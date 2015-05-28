@@ -16,8 +16,7 @@
         "illuminate/support": "5.0.*|5.1.*"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~2.1",
-        "laravelcollective/html": "5.0.*|5.1.*"
+        "graham-campbell/testbench": "~2.1"
     },
     "autoload": {
         "psr-4": {
@@ -31,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0-dev"
+            "dev-master": "4.0-dev"
         }
     },
     "minimum-stability": "dev",

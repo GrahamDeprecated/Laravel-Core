@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V4.0 (Upcoming)
+
+* Dropped all config
+* Dropped ajax middleware
+* Dropped html macros
+
+
 ## V3.0 (19/05/2015)
 
 * Support laravel collective html instead of illuminate

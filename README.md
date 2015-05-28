@@ -21,7 +21,7 @@ Laravel Core was created by, and is maintained by [Graham Campbell](https://gith
 To get the latest version of Laravel Core, simply add the following line to the require block of your `composer.json` file:
 
 ```
-"graham-campbell/core": "~3.0"
+"graham-campbell/core": "~4.0"
 ```
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
@@ -30,22 +30,12 @@ Once Laravel Core is installed, you need to register the service provider. Open 
 
 * `'GrahamCampbell\Core\CoreServiceProvider'`
 
-You can now utilise the classes in this package to speed up writing Laravel apps or packages further.
+You can now utilize this package to provide a basic cli installation framework for your application.
 
 
 ## Configuration
 
-Laravel Core supports optional configuration.
-
-To get started, you'll need to publish all vendor assets:
-
-```bash
-$ php artisan vendor:publish
-```
-
-This will create a `config/core.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
-
-There are 5 different settings provided in this config. The intention here is to allow you to have a centralised point for common configuration that lots of packages and services can depend on.
+Laravel Core requires no configuration. Just follow the simple install instructions and go!
 
 
 ## Usage
