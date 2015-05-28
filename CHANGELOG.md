@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V4.0 (Upcoming)
+## V4.0 (28/05/2015)
 
 * Dropped all config
 * Dropped ajax middleware
