@@ -11,7 +11,6 @@
 
 namespace GrahamCampbell\Core;
 
-use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
