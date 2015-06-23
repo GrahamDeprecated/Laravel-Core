@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.1 (Upcoming)
+
+* Lumen support
+
+
 ## V4.0 (28/05/2015)
 
 * Dropped all config
