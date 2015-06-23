@@ -22,13 +22,9 @@ use Illuminate\Contracts\Foundation\Application;
 class CommandTest extends AbstractTestCase
 {
     /**
-     * Additional application environment setup.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
-     * @return void
+     * @beforeClass
      */
-    protected function additionalSetup($app)
+    public static function setUpDatabaseSeeder()
     {
         if (!class_exists('DatabaseSeeder')) {
             eval('class DatabaseSeeder extends Illuminate\Database\Seeder { public function run() {} }');
