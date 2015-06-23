@@ -11,6 +11,10 @@
 
 namespace GrahamCampbell\Core;
 
+use GrahamCampbell\Core\Subscribers\CommandSubscriber;
+use GrahamCampbell\Core\\Console\Commands\AppInstall;
+use GrahamCampbell\Core\\Console\Commands\AppReset;
+use GrahamCampbell\Core\\Console\Commands\AppUpdate;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -42,7 +46,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function setupListeners(Application $app)
     {
-        $subscriber = $app->make('GrahamCampbell\Core\Subscribers\CommandSubscriber');
+        $subscriber = $app->make(CommandSubscriber::class);
 
         $app->events->subscribe($subscriber);
     }
@@ -72,7 +76,7 @@ class CoreServiceProvider extends ServiceProvider
         $app->singleton('command.appupdate', function ($app) {
             $events = $app['events'];
 
-            return new Console\Commands\AppUpdate($events);
+            return new AppUpdate($events);
         });
     }
 
@@ -88,7 +92,7 @@ class CoreServiceProvider extends ServiceProvider
         $app->singleton('command.appinstall', function ($app) {
             $events = $app['events'];
 
-            return new Console\Commands\AppInstall($events);
+            return new AppInstall($events);
         });
     }
 
@@ -104,7 +108,7 @@ class CoreServiceProvider extends ServiceProvider
         $app->singleton('command.appreset', function ($app) {
             $events = $app['events'];
 
-            return new Console\Commands\AppReset($events);
+            return new AppReset($events);
         });
     }
 
@@ -117,8 +121,8 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerCommandSubscriber(Application $app)
     {
-        $app->singleton('GrahamCampbell\Core\Subscribers\CommandSubscriber', function () {
-            return new Subscribers\CommandSubscriber();
+        $app->singleton(CommandSubscriber::class, function () {
+            return new CommandSubscriber();
         });
     }
 

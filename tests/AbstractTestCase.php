@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Tests\Core;
 
+use GrahamCampbell\Core\CoreServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 /**
@@ -29,6 +30,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     protected function getServiceProviderClass($app)
     {
-        return 'GrahamCampbell\Core\CoreServiceProvider';
+        return CoreServiceProvider::class;
     }
 }

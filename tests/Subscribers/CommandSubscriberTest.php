@@ -13,6 +13,7 @@ namespace GrahamCampbell\Tests\Core\Subscribers;
 
 use GrahamCampbell\Core\Subscribers\CommandSubscriber;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use Illuminate\Console\Command;
 use Mockery;
 
 /**
@@ -40,7 +41,7 @@ class CommandSubscriberTest extends AbstractTestCase
     protected function callCommand($name, $method)
     {
         $subscriber = new CommandSubscriber();
-        $command = Mockery::mock('Illuminate\Console\Command');
+        $command = Mockery::mock(Command::class);
 
         $command->shouldReceive('call')->once()->with($name, ['--force' => true]);
 

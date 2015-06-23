@@ -13,6 +13,7 @@ namespace GrahamCampbell\Tests\Core\Console\Commands;
 
 use GrahamCampbell\Core\Console\Commands\AppReset;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use Illuminate\Contracts\Events\Dispatcher;
 use Mockery;
 
 /**
@@ -38,7 +39,7 @@ class AppResetTest extends AbstractTestCase
 
     protected function getCommand()
     {
-        $events = Mockery::mock('Illuminate\Contracts\Events\Dispatcher');
+        $events = Mockery::mock(Dispatcher::class);
 
         return new AppReset($events);
     }
