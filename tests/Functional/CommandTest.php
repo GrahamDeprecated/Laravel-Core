@@ -12,7 +12,6 @@
 namespace GrahamCampbell\Tests\Core\Functional;
 
 use GrahamCampbell\Tests\Core\AbstractTestCase;
-use Illuminate\Contracts\Foundation\Application;
 
 /**
  * This is the command test class.
