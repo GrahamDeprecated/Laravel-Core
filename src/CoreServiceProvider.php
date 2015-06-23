@@ -12,9 +12,9 @@
 namespace GrahamCampbell\Core;
 
 use GrahamCampbell\Core\Subscribers\CommandSubscriber;
-use GrahamCampbell\Core\\Console\Commands\AppInstall;
-use GrahamCampbell\Core\\Console\Commands\AppReset;
-use GrahamCampbell\Core\\Console\Commands\AppUpdate;
+use GrahamCampbell\Core\Console\Commands\AppInstall;
+use GrahamCampbell\Core\Console\Commands\AppReset;
+use GrahamCampbell\Core\Console\Commands\AppUpdate;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

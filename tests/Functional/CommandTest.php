@@ -44,7 +44,7 @@ class CommandTest extends AbstractTestCase
 
     public function testUpdate()
     {
-        $this->assertSame(0, $this->getKernel()->call('app:update'));
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('app:update'));
     }
 
     public function testResetAfterInstall()
