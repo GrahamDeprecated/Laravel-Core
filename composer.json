@@ -30,6 +30,9 @@
             "GrahamCampbell\\Tests\\Core\\": "tests/"
         }
     },
+    "config": {
+        "preferred-install": "dist"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "4.1-dev"
