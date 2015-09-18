@@ -33,7 +33,7 @@ class AppReset extends Command
      *
      * @var string
      */
-    protected $description = 'Resets And Installs The Application';
+    protected $description = 'Resets and installs the application';
 
     /**
      * The events instance.

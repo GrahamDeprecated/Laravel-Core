@@ -33,7 +33,7 @@ class AppInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Installs The Application';
+    protected $description = 'Installs the application';
 
     /**
      * The events instance.

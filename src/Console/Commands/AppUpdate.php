@@ -33,7 +33,7 @@ class AppUpdate extends Command
      *
      * @var string
      */
-    protected $description = 'Updates The Application';
+    protected $description = 'Updates the application';
 
     /**
      * The events instance.
