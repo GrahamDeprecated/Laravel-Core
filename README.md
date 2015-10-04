@@ -43,6 +43,11 @@ Laravel Core requires no configuration. Just follow the simple install instructi
 There is currently no usage documentation for Laravel Core, but we are open to pull requests.
 
 
+## Security
+
+If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+
+
 ## License
 
 Laravel Core is licensed under [The MIT License (MIT)](LICENSE).
