@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.2 (Upcoming)
+
+* Added laravel 5.2 support
+
+
 ## V4.1.1 (06/10/2015)
 
 * Minor tweaks
