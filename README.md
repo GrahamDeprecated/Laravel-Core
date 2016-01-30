@@ -6,6 +6,7 @@ Laravel Core was created by, and is maintained by [Graham Campbell](https://gith
 ![Laravel Core](https://cloud.githubusercontent.com/assets/2829600/4432284/a987fd4a-468c-11e4-814b-f0d09118089c.PNG)
 
 <p align="center">
+<a href="https://styleci.io/repos/14904615"><img src="https://styleci.io/repos/14904615/shield" alt="StyleCI Status"></img></a>
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-Core"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Core/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Core.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Core"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Core.svg?style=flat-square" alt="Quality Score"></img></a>
