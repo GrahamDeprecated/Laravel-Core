@@ -15,7 +15,7 @@ use GrahamCampbell\Core\Console\Commands\AppInstall;
 use GrahamCampbell\Core\Console\Commands\AppReset;
 use GrahamCampbell\Core\Console\Commands\AppUpdate;
 use GrahamCampbell\Core\Subscribers\CommandSubscriber;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -34,21 +34,19 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->commands('command.appupdate', 'command.appinstall', 'command.appreset');
 
-        $this->setupListeners($this->app);
+        $this->setupListeners();
     }
 
     /**
      * Setup the listeners.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function setupListeners(Application $app)
+    protected function setupListeners()
     {
-        $subscriber = $app->make(CommandSubscriber::class);
+        $subscriber = $this->app->make(CommandSubscriber::class);
 
-        $app->events->subscribe($subscriber);
+        $this->app->events->subscribe($subscriber);
     }
 
     /**
@@ -58,22 +56,20 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerUpdateCommand($this->app);
-        $this->registerInstallCommand($this->app);
-        $this->registerResetCommand($this->app);
-        $this->registerCommandSubscriber($this->app);
+        $this->registerUpdateCommand();
+        $this->registerInstallCommand();
+        $this->registerResetCommand();
+        $this->registerCommandSubscriber();
     }
 
     /**
      * Register the updated command class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerUpdateCommand(Application $app)
+    protected function registerUpdateCommand()
     {
-        $app->singleton('command.appupdate', function ($app) {
+        $this->app->singleton('command.appupdate', function (Container $app) {
             $events = $app['events'];
 
             return new AppUpdate($events);
@@ -83,13 +79,11 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Register the install command class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerInstallCommand(Application $app)
+    protected function registerInstallCommand()
     {
-        $app->singleton('command.appinstall', function ($app) {
+        $this->app->singleton('command.appinstall', function (Container $app) {
             $events = $app['events'];
 
             return new AppInstall($events);
@@ -99,13 +93,11 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Register the reset command class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerResetCommand(Application $app)
+    protected function registerResetCommand()
     {
-        $app->singleton('command.appreset', function ($app) {
+        $this->app->singleton('command.appreset', function (Container $app) {
             $events = $app['events'];
 
             return new AppReset($events);
@@ -115,13 +107,11 @@ class CoreServiceProvider extends ServiceProvider
     /**
      * Register the command subscriber class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerCommandSubscriber(Application $app)
+    protected function registerCommandSubscriber()
     {
-        $app->singleton(CommandSubscriber::class, function () {
+        $this->app->singleton(CommandSubscriber::class, function () {
             return new CommandSubscriber();
         });
     }
