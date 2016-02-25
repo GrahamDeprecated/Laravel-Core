@@ -18,6 +18,7 @@ use Illuminate\Contracts\Events\Dispatcher;
  * This is the app update command class.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 class AppUpdate extends Command
 {
@@ -63,6 +64,7 @@ class AppUpdate extends Command
      */
     public function handle()
     {
+        $this->events->fire('command.appupdate', $this);
         $this->events->fire('command.publishvendors', $this);
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.updatecache', $this);

@@ -18,6 +18,7 @@ use Illuminate\Contracts\Events\Dispatcher;
  * This is the app reset command class.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 class AppReset extends Command
 {
@@ -63,6 +64,7 @@ class AppReset extends Command
      */
     public function handle()
     {
+        $this->events->fire('command.appreset', $this);
         $this->events->fire('command.publishvendors', $this);
         $this->events->fire('command.resetmigrations', $this);
         $this->events->fire('command.runmigrations', $this);
