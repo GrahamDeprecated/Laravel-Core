@@ -30,11 +30,24 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
+        $events->listen('command.generatekey', __CLASS__.'@onGenerateKey', 5);
         $events->listen('command.publishvendors', __CLASS__.'@onPublishVendors', 5);
         $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations', 5);
         $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations', 5);
         $events->listen('command.runseeding', __CLASS__.'@onRunSeeding', 5);
         $events->listen('command.updatecache', __CLASS__.'@onUpdateCache', 5);
+    }
+
+    /**
+     * Handle a command.generatekey event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onGenerateKey(Command $command)
+    {
+        $command->call('key:generate');
     }
 
     /**
