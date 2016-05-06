@@ -22,6 +22,25 @@ use GrahamCampbell\TestBench\AbstractPackageTestCase;
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {
     /**
+     * Create an empty .env file for us to use.
+     *
+     * @before
+     */
+    public function createEnvFile()
+    {
+        file_put_contents($this->app->environmentFilePath(), "APP_KEY=SomeRandomString\n");
+    }
+
+    /**
+     * Delete our .env file after use.
+     *
+     * @after
+     */
+    {
+        unlink($this->app->environmentFilePath());
+    }
+
+    /**
      * Get the service provider class.
      *
      * @param \Illuminate\Contracts\Foundation\Application $app
