@@ -63,6 +63,7 @@ class AppReset extends Command
      */
     public function handle()
     {
+        $this->events->fire('command.resetting', $this);
         $this->events->fire('command.generatekey', $this);
         $this->events->fire('command.publishvendors', $this);
         $this->events->fire('command.resetmigrations', $this);
@@ -70,6 +71,7 @@ class AppReset extends Command
         $this->events->fire('command.runseeding', $this);
         $this->events->fire('command.updatecache', $this);
         $this->events->fire('command.extrastuff', $this);
+        $this->events->fire('command.reset', $this);
     }
 
     /**

@@ -63,12 +63,14 @@ class AppInstall extends Command
      */
     public function handle()
     {
+        $this->events->fire('command.installing', $this);
         $this->events->fire('command.generatekey', $this);
         $this->events->fire('command.publishvendors', $this);
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.runseeding', $this);
         $this->events->fire('command.updatecache', $this);
         $this->events->fire('command.extrastuff', $this);
+        $this->events->fire('command.installed', $this);
     }
 
     /**

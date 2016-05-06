@@ -27,6 +27,7 @@ class AppResetTest extends AbstractTestCase
     {
         $command = $this->getCommand();
 
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.resetting', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.generatekey', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.publishvendors', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.resetmigrations', $command);
@@ -34,6 +35,7 @@ class AppResetTest extends AbstractTestCase
         $command->getEvents()->shouldReceive('fire')->once()->with('command.runseeding', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.updatecache', $command);
         $command->getEvents()->shouldReceive('fire')->once()->with('command.extrastuff', $command);
+        $command->getEvents()->shouldReceive('fire')->once()->with('command.reset', $command);
 
         $this->assertEmpty($command->handle());
     }
