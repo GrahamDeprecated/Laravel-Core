@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.0 (Upcoming)
+
+* Generate the app key on install/reset
+
+
 ## V4.3 (26/04/2016)
 
 * Added laravel 5.3 support
