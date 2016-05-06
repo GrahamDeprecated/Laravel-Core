@@ -36,6 +36,7 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      *
      * @after
      */
+    public function deleteEnvFile()
     {
         unlink($this->app->environmentFilePath());
     }
