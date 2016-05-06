@@ -5,6 +5,7 @@ CHANGE LOG
 ## V5.0 (Upcoming)
 
 * Generate the app key on install/reset
+* Added hooks for before/after each command
 
 
 ## V4.3 (26/04/2016)
