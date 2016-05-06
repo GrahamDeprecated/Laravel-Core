@@ -32,16 +32,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     }
 
     /**
-     * Delete our .env file after use.
-     *
-     * @after
-     */
-    public function deleteEnvFile()
-    {
-        unlink($this->app->environmentFilePath());
-    }
-
-    /**
      * Get the service provider class.
      *
      * @param \Illuminate\Contracts\Foundation\Application $app
