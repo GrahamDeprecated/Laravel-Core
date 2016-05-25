@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.1 (25/05/2016)
+
+* Run the config and route caching too
+
+
 ## V5.0 (20/05/2016)
 
 * Generate the app key on install/reset
