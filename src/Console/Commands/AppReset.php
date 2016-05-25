@@ -65,6 +65,8 @@ class AppReset extends Command
     {
         $this->events->fire('command.resetting', $this);
         $this->events->fire('command.generatekey', $this);
+        $this->events->fire('command.cacheconfig', $this);
+        $this->events->fire('command.cacheroutes', $this);
         $this->events->fire('command.publishvendors', $this);
         $this->events->fire('command.resetmigrations', $this);
         $this->events->fire('command.runmigrations', $this);

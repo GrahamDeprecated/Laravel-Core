@@ -31,6 +31,8 @@ class CommandSubscriber
     public function subscribe(Dispatcher $events)
     {
         $events->listen('command.generatekey', __CLASS__.'@onGenerateKey', 5);
+        $events->listen('command.cacheconfig', __CLASS__.'@onCacheConfig', 5);
+        $events->listen('command.cacheroutes', __CLASS__.'@onCacheRoutes', 5);
         $events->listen('command.publishvendors', __CLASS__.'@onPublishVendors', 5);
         $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations', 5);
         $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations', 5);
@@ -48,6 +50,30 @@ class CommandSubscriber
     public function onGenerateKey(Command $command)
     {
         $command->call('key:generate');
+    }
+
+    /**
+     * Handle a command.cacheconfig event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onCacheConfig(Command $command)
+    {
+        $command->call('config:cache');
+    }
+
+    /**
+     * Handle a command.cacheroutes event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onCacheRoutes(Command $command)
+    {
+        $command->call('route:cache');
     }
 
     /**

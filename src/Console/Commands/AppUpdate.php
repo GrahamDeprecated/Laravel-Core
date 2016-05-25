@@ -64,6 +64,8 @@ class AppUpdate extends Command
     public function handle()
     {
         $this->events->fire('command.updating', $this);
+        $this->events->fire('command.cacheconfig', $this);
+        $this->events->fire('command.cacheroutes', $this);
         $this->events->fire('command.publishvendors', $this);
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.updatecache', $this);
