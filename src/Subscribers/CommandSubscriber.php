@@ -11,8 +11,10 @@
 
 namespace GrahamCampbell\Core\Subscribers;
 
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;
+use Throwable;
 
 /**
  * This is the command subscriber class.
@@ -61,7 +63,13 @@ class CommandSubscriber
      */
     public function onCacheConfig(Command $command)
     {
-        $command->call('config:cache');
+        try {
+            $command->call('config:cache');
+        } catch (Exception $e) {
+            //
+        } catch (Throwable $e) {
+            //
+        }
     }
 
     /**
@@ -73,7 +81,13 @@ class CommandSubscriber
      */
     public function onCacheRoutes(Command $command)
     {
-        $command->call('route:cache');
+        try {
+            $command->call('route:cache');
+        } catch (Exception $e) {
+            //
+        } catch (Throwable $e) {
+            //
+        }
     }
 
     /**
