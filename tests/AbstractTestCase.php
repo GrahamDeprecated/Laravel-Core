@@ -28,7 +28,9 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     public function createEnvFile()
     {
-        file_put_contents($this->app->environmentFilePath(), "APP_KEY=SomeRandomString\n");
+        $path = method_exists($this->app, 'environmentFilePath') ? $this->app->environmentFilePath() : $this->app->basePath().'/.env';
+
+        file_put_contents($path, "APP_KEY=SomeRandomString\n");
     }
 
     /**
