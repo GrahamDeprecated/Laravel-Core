@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.2 (01/01/2017)
+
+* Added laravel 5.4 support
+
+
 ## V5.1 (25/05/2016)
 
 * Run the config and route caching too
