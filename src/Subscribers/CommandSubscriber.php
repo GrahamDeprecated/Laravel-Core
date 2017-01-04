@@ -38,6 +38,7 @@ class CommandSubscriber
         $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations', 5);
         $events->listen('command.runseeding', __CLASS__.'@onRunSeeding', 5);
         $events->listen('command.updatecache', __CLASS__.'@onUpdateCache', 5);
+        $events->listen('command.linkstorage', __CLASS__.'onLinkStorage', 5);
     }
 
     /**
@@ -136,5 +137,17 @@ class CommandSubscriber
         $command->line('Clearing cache...');
         $command->call('cache:clear');
         $command->info('Cache cleared!');
+    }
+
+    /**
+     * Handle a command.linkstorage event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onLinkStorage(Command $command)
+    {
+        $command->call('storage:link');
     }
 }

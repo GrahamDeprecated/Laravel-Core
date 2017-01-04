@@ -71,6 +71,7 @@ class AppInstall extends Command
         $this->events->fire('command.runmigrations', $this);
         $this->events->fire('command.runseeding', $this);
         $this->events->fire('command.updatecache', $this);
+        $this->events->fire('command.linkstorage', $this);
         $this->events->fire('command.extrastuff', $this);
         $this->events->fire('command.installed', $this);
     }
