@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V5.3 (19/01/2017)
+
+* Support storage linking
+* Removed unneeded priorities
+
+
 ## V5.2 (01/01/2017)
 
 * Added laravel 5.4 support
