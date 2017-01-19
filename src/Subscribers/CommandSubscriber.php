@@ -37,6 +37,7 @@ class CommandSubscriber
         $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations', 5);
         $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations', 5);
         $events->listen('command.runseeding', __CLASS__.'@onRunSeeding', 5);
+        $events->listen('command.linkstorage', __CLASS__.'onLinkStorage', 5);
         $events->listen('command.updatecache', __CLASS__.'@onUpdateCache', 5);
     }
 
@@ -122,6 +123,20 @@ class CommandSubscriber
     public function onRunSeeding(Command $command)
     {
         $command->call('db:seed', ['--force' => true]);
+    }
+
+    /**
+     * Handle a command.linkstorage event.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function onLinkStorage(Command $command)
+    {
+        if ($command->has('storage:link')) {
+            $command->call('storage:link');
+        }
     }
 
     /**
