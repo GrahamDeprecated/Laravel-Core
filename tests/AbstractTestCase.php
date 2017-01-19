@@ -22,8 +22,6 @@ use GrahamCampbell\TestBench\AbstractPackageTestCase;
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {
     /**
-     * Create an empty .env file for us to use.
-     *
      * @before
      */
     public function createEnvFile()
