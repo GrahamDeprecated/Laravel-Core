@@ -30,15 +30,15 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen('command.generatekey', __CLASS__.'@onGenerateKey', 5);
-        $events->listen('command.cacheconfig', __CLASS__.'@onCacheConfig', 5);
-        $events->listen('command.cacheroutes', __CLASS__.'@onCacheRoutes', 5);
-        $events->listen('command.publishvendors', __CLASS__.'@onPublishVendors', 5);
-        $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations', 5);
-        $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations', 5);
-        $events->listen('command.runseeding', __CLASS__.'@onRunSeeding', 5);
-        $events->listen('command.linkstorage', __CLASS__.'onLinkStorage', 5);
-        $events->listen('command.updatecache', __CLASS__.'@onUpdateCache', 5);
+        $events->listen('command.generatekey', __CLASS__.'@onGenerateKey');
+        $events->listen('command.cacheconfig', __CLASS__.'@onCacheConfig');
+        $events->listen('command.cacheroutes', __CLASS__.'@onCacheRoutes');
+        $events->listen('command.publishvendors', __CLASS__.'@onPublishVendors');
+        $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations');
+        $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations');
+        $events->listen('command.runseeding', __CLASS__.'@onRunSeeding');
+        $events->listen('command.linkstorage', __CLASS__.'onLinkStorage');
+        $events->listen('command.updatecache', __CLASS__.'@onUpdateCache');
     }
 
     /**
