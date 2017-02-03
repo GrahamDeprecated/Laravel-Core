@@ -37,7 +37,7 @@ class CommandSubscriber
         $events->listen('command.resetmigrations', __CLASS__.'@onResetMigrations');
         $events->listen('command.runmigrations', __CLASS__.'@onRunMigrations');
         $events->listen('command.runseeding', __CLASS__.'@onRunSeeding');
-        $events->listen('command.linkstorage', __CLASS__.'onLinkStorage');
+        $events->listen('command.linkstorage', __CLASS__.'@onLinkStorage');
         $events->listen('command.updatecache', __CLASS__.'@onUpdateCache');
     }
 
