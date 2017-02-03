@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.3.2 (03/02/2017)
+
+* Actually fixed broken storage linking
+
+
 ## V5.3.1 (03/02/2017)
 
 * Fixed broken storage linking
