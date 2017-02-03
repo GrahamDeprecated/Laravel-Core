@@ -134,7 +134,7 @@ class CommandSubscriber
      */
     public function onLinkStorage(Command $command)
     {
-        if ($command->has('storage:link')) {
+        if ($command->getApplication()->has('storage:link')) {
             $command->call('storage:link');
         }
     }
