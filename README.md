@@ -17,29 +17,15 @@ Laravel Core was created by, and is maintained by [Graham Campbell](https://gith
 
 ## Installation
 
-Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
+Laravel Core requires [PHP](https://php.net) 5.5+. This particular version supports Laravel 5.1, 5.2, 5.3, or 5.4 only.
 
-To get the latest version of Laravel Core, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require graham-campbell/core
 ```
 
-Instead, you may of course manually update your require block and run `composer update` if you so choose:
-
-```json
-{
-    "require": {
-        "graham-campbell/core": "^5.0"
-    }
-}
-```
-
-Once Laravel Core is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
-
-* `'GrahamCampbell\Core\CoreServiceProvider'`
-
-You can now utilize this package to provide a basic cli installation framework for your application.
+Once installed, you need to register the `GrahamCampbell\Core\CoreServiceProvider` service provider in your `config/app.php`. You can now utilize this package to provide a basic cli installation framework for your application.
 
 
 ## Configuration
