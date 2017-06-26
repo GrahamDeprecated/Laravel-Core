@@ -36,6 +36,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "5.3-dev"
+        },
+        "laravel": {
+            "providers": [
+                "GrahamCampbell\\Core\\CoreServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
